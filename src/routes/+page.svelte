@@ -72,7 +72,7 @@
 					decoding="sync"
 					loading="eager"
 					class="object-cover w-full h-full"
-					alt="This is an awesome image"
+					alt="This is an awesome image "
 				/>
 			</picture>
 		</div>
