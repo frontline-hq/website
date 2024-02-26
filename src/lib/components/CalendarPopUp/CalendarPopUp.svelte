@@ -2,6 +2,8 @@
 	import { communicationPhone as phoneCall } from '@frontline-hq/untitledui-icons';
 	import { onMount } from 'svelte';
 
+	export let language = 'de';
+
 	onMount(() => {
 		(function (C, A, L) {
 			let p = function (a, ar) {
@@ -58,6 +60,7 @@
 			hierarchy: 'secondary',
 			coloring: 'gray'
 		}}
-		icon={{ type: 'icon', leading: phoneCall }}>Schedule call</tdc-button
+		icon={{ type: 'icon', leading: phoneCall }}
+		>{language === 'de' ? 'Call vereinbaren' : 'Schedule call'}</tdc-button
 	>
 </div>

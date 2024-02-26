@@ -1,11 +1,11 @@
 <script lang="ts">
 	import CalendarPopUp from '$lib/components/CalendarPopUp/CalendarPopUp.svelte';
-	import avifBackground from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=avif&as=srcset';
-	import webpBackground from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=webp&as=srcset';
-	import avifBackgroundMobile from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=avif&as=srcset&rotate=270';
-	import webpBackgroundMobile from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=webp&as=srcset&rotate=270';
-	import fallbackBackground from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
-	import fallbackBackgroundMobile from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
+	import avifBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=avif&as=srcset';
+	import webpBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=webp&as=srcset';
+	import avifBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=avif&as=srcset&rotate=270';
+	import webpBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=webp&as=srcset&rotate=270';
+	import fallbackBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
+	import fallbackBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
 	import { browser } from '$app/environment';
 </script>
 
@@ -50,7 +50,7 @@
 				slot="actions"
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>
-				<CalendarPopUp />
+				<CalendarPopUp language="en" />
 				<tdc-button
 					on:click={() => window.open('mailto:contact@frontline.codes', '_blank')}
 					tdc={{

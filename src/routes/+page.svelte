@@ -52,7 +52,7 @@
 				slot="actions"
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>
-				<CalendarPopUp />
+				<CalendarPopUp language="de" />
 				<tdc-button
 					on:click={() => window.open('mailto:contact@frontline.codes', '_blank')}
 					tdc={{
