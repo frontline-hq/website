@@ -18,8 +18,8 @@ dependencies:
     specifier: ^0.0.4
     version: 0.0.4
   '@frontline-hq/uui':
-    specifier: ^0.0.37
-    version: 0.0.37(svelte@4.2.12)(typescript@5.3.3)
+    specifier: ^0.0.39
+    version: 0.0.39(svelte@4.2.12)(typescript@5.3.3)
   vite-imagetools:
     specifier: ^6.2.9
     version: 6.2.9
@@ -598,8 +598,8 @@ packages:
     resolution: {integrity: sha512-/wkLWYhPtpq6aDXw1lO4772Rc+drssgl/pavmMUXe5sYJ+hi0+EqqJlFKlvO13lL7hoULovS9OIwmXOtilP+FA==}
     dev: false
 
-  /@frontline-hq/uui@0.0.37(svelte@4.2.12)(typescript@5.3.3):
-    resolution: {integrity: sha512-h+S19gPNZbbF7neNGGiBib4rLLwH9JorpWf7KYzSEto0wV+MuihBQKmEfROZ6jgZKWoQS/a6uNSjm3GGjzotpw==}
+  /@frontline-hq/uui@0.0.39(svelte@4.2.12)(typescript@5.3.3):
+    resolution: {integrity: sha512-WC5swT1UsSnuc+dw5t6uP2+P/iQf37cxd7pLTw1drZmre9okDJk+iwqX1f4E28YeJkNhj9QPMxidexBcEhumEg==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:

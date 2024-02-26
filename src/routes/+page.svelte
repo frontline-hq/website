@@ -108,4 +108,25 @@
 		<p>Need help with your web project or cybersecurity? We got you covered.</p>
 		<p class="font-semibold">contact@frontline.codes</p>
 	</tdc-mc-hs>
+	<div class="w-full h-60"></div>
+	<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
+		<tdc-mc-footer-link
+			href="/privacy"
+			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
+			>Privacy</tdc-mc-footer-link
+		>
+		<tdc-mc-footer-link
+			href="/imprint"
+			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
+			>Imprint</tdc-mc-footer-link
+		><tdc-mc-footer-link
+			href="/de/"
+			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>DE</tdc-mc-footer-link
+		>
+		<tdc-mc-footer-link
+			href="/"
+			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>EN</tdc-mc-footer-link
+		>
+		<span slot="sidenote">2024, Hamburg DE</span>
+	</tdc-mc-footer>
 {/if}
