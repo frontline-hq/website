@@ -9,6 +9,31 @@
 	import { browser } from '$app/environment';
 </script>
 
+<svelte:head>
+	<title
+		>Building software at the intersection of cybersecurity, design, and sustainability |
+		Frontline.codes</title
+	>
+	<meta
+		name="description"
+		content="We are ethical hackers and a web development agency committed to delivering secure, beautifully designed, and sustainable digital solutions."
+	/>
+	<link rel="canonical" href="https://www.frontline.codes" />
+	<meta property="og:title" content="Cybersecurity and Web Development | Frontline.codes" />
+	<meta
+		property="og:description"
+		content="At the forefront of cybersecurity, design, and sustainability, we offer comprehensive services to protect and enhance your digital presence."
+	/>
+	<meta property="og:image" content="https://www.frontline.codes/static/frontline-logo.png" />
+	<meta property="og:url" content="https://www.frontline.codes" />
+	<meta name="robots" content="index, follow" />
+	<!-- Add this in later, when added to google-site-verification -->
+	<!-- <meta name="google-site-verification" content="Bq4e8ICS3Kqjp-0k2C-1PSX5cnY9btnGGI0ipjlYsds" /> -->
+	<!-- Update this value if needed -->
+	<link rel="icon" type="image/x-icon" href="/favicon.png" />
+	<!-- Update the favicon path if needed -->
+</svelte:head>
+
 {#if browser}
 	<div class="relative flex flex-col justify-end h-[100vh] uui-desktop:h-auto">
 		<tdc-mc-hhs
