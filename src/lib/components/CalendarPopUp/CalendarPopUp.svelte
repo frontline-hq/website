@@ -45,7 +45,7 @@
 
 <div class="relative group">
 	<button
-		data-cal-link="frontline-meeting/vulnerability-disclosure"
+		data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
 		data-cal-config={calConfig}
 		class="inset-0 rounded-full absolute bg-transparent"
 	></button>
