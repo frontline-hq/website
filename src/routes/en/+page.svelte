@@ -11,7 +11,7 @@
 
 <svelte:head>
 	<title
-		>Wir bewegen Technologie im Spannungsfeld von Cybersicherheit, Design und Nachhaltigkeit. |
+		>Building software at the intersection of cybersecurity, design, and sustainability |
 		frontline.codes</title
 	>
 	<meta
@@ -45,9 +45,7 @@
 			<h1 class="[&&]:font-super-large [&&]:text-5xl [&&]:uui-desktop:text-8xl [&&]:font-black">
 				frontline.
 			</h1>
-			<p>
-				Wir bewegen Technologie im Spannungsfeld von Cybersicherheit, Design und Nachhaltigkeit.
-			</p>
+			<p>— We build software at the intersection of cybersecurity, design and sustainability.</p>
 			<tdc-mc-hhs-buttongroupa
 				slot="actions"
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
@@ -61,7 +59,7 @@
 						hierarchy: 'primary',
 						coloring: 'color'
 					}}
-					icon={{ type: 'icon' }}>Email schreiben</tdc-button
+					icon={{ type: 'icon' }}>Email us</tdc-button
 				>
 			</tdc-mc-hhs-buttongroupa>
 			<div slot="img" class="w-[50vw] uui-desktop:h-[100vh]"></div>
@@ -105,28 +103,28 @@
 		</div>
 	</div>
 	<tdc-mc-hs tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
-		<span slot="subheading">Kontakt-</span>
-		<h2 slot="heading">Schreib uns eine Nachricht</h2>
-		<p>
-			Du brauchst noch Unterstützung in Sachen Web oder Cybersicherheit? Wir freuen uns auf ein
-			Gespräch mit dir!
-		</p>
+		<span slot="subheading">Don't worry -</span>
+		<h2 slot="heading">We got you covered.</h2>
+		<p>Need help with your web project or cybersecurity? We got you covered.</p>
 		<p class="font-semibold">contact@frontline.codes</p>
 	</tdc-mc-hs>
 	<div class="w-full h-60"></div>
 	<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
 		<tdc-mc-footer-link
-			href="/privatsphäre"
+			href="/privacy"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-			>Privatsphäre</tdc-mc-footer-link
+			>Privacy</tdc-mc-footer-link
 		>
 		<tdc-mc-footer-link
-			href="/impressum"
+			href="/imprint"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-			>Impressum</tdc-mc-footer-link
+			>Imprint</tdc-mc-footer-link
+		><tdc-mc-footer-link
+			href="/de/"
+			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>DE</tdc-mc-footer-link
 		>
 		<tdc-mc-footer-link
-			href="/en"
+			href="/"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>EN</tdc-mc-footer-link
 		>
 		<span slot="sidenote">2024, Hamburg DE</span>
