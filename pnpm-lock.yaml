@@ -12,8 +12,8 @@ dependencies:
     specifier: ^5.0.8
     version: 5.0.8
   '@frontline-hq/tdc':
-    specifier: ^0.0.24
-    version: 0.0.24(vite@5.1.4)
+    specifier: ^0.0.25
+    version: 0.0.25(vite@5.1.4)
   '@frontline-hq/untitledui-icons':
     specifier: ^0.0.4
     version: 0.0.4
@@ -567,8 +567,8 @@ packages:
     resolution: {integrity: sha512-AoR7K2YtlGKy3LApyLYjqjyz0o8XtkRvbB/juMsGSGNayBBAly140ykZls+VxcXjZSLQpp2RyxKo6lYOuHPmUw==}
     dev: false
 
-  /@frontline-hq/tdc@0.0.24(vite@5.1.4):
-    resolution: {integrity: sha512-aIRKUBSE19JnmAVujscraGicKctxRlB9mz4qC3sVshxBU2EZ1+Syoe3FJ6kbwl1EcipO923TmBQDlqIIyT14Xw==}
+  /@frontline-hq/tdc@0.0.25(vite@5.1.4):
+    resolution: {integrity: sha512-dqATqURdAA5pZo3nYn98SXhW49NF1hsgyTe9o0395mz+9vKA59T/9nxDtG8fabEfpGNs7bUtBqmc8UK/fv25AA==}
     dependencies:
       '@parcel/watcher': 2.4.1
       '@sveltejs/kit': 1.30.4(svelte@4.2.12)(vite@5.1.4)
