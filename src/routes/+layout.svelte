@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { PUBLIC_LICENSE } from '$env/static/public';
+	import { UUI_LICENSE } from '$env/static/UUI';
 	import { License } from '@frontline-hq/uui/license';
 	import '../app.css';
 </script>
 
-<License license={PUBLIC_LICENSE}><slot /></License>
+<License license={UUI_LICENSE}><slot /></License>
