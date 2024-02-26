@@ -120,12 +120,8 @@
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>Imprint</tdc-mc-footer-link
 		><tdc-mc-footer-link
-			href="/de/"
-			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>DE</tdc-mc-footer-link
-		>
-		<tdc-mc-footer-link
 			href="/"
-			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>EN</tdc-mc-footer-link
+			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>DE</tdc-mc-footer-link
 		>
 		<span slot="sidenote">2024, Hamburg DE</span>
 	</tdc-mc-footer>
