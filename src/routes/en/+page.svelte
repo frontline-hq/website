@@ -104,7 +104,7 @@
 	</div>
 	<tdc-mc-hs tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
 		<span slot="subheading">Contact us -</span>
-		<h2 slot="heading">Web Craftsmanship</h2>
+		<h2 slot="heading">Write us</h2>
 		<p>Need help with your web project or cybersecurity? Reach out now.</p>
 		<p class="font-semibold">contact@frontline.codes</p>
 	</tdc-mc-hs>

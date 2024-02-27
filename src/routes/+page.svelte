@@ -106,7 +106,7 @@
 	</div>
 	<tdc-mc-hs tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
 		<span slot="subheading">Kontakt-</span>
-		<h2 slot="heading">Schreib uns eine Nachricht</h2>
+		<h2 slot="heading">Schreib uns</h2>
 		<p>
 			Du brauchst noch Unterstützung in Sachen Web oder Cybersicherheit? Wir freuen uns auf ein
 			Gespräch mit dir!
