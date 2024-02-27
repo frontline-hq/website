@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@calcom/embed-snippet':
+    specifier: ^1.1.3
+    version: 1.1.3
   '@fontsource-variable/inter':
     specifier: ^5.0.16
     version: 5.0.16
@@ -18,8 +21,8 @@ dependencies:
     specifier: ^0.0.4
     version: 0.0.4
   '@frontline-hq/uui':
-    specifier: ^0.0.39
-    version: 0.0.39(svelte@4.2.12)(typescript@5.3.3)
+    specifier: ^0.0.40
+    version: 0.0.40(svelte@4.2.12)(typescript@5.3.3)
   vite-imagetools:
     specifier: ^6.2.9
     version: 6.2.9
@@ -117,6 +120,16 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
+    dev: false
+
+  /@calcom/embed-core@1.3.3:
+    resolution: {integrity: sha512-bz7S9cvz1JMVWFcJI+dvoOQd5F63YzdQ5gOp1vunob5idje7PoYfiTf6ncMSVeX6vsrJA1oVFD07JMxuYt/d+A==}
+    dev: false
+
+  /@calcom/embed-snippet@1.1.3:
+    resolution: {integrity: sha512-whtpkc54btyIIDfCXsCP7BN8wE3GGgh8cTX5JiprvbcHaej+OEUcuMuhMcLlBersMADwGENpFrlB6AhSJfEA/Q==}
+    dependencies:
+      '@calcom/embed-core': 1.3.3
     dev: false
 
   /@emnapi/runtime@0.45.0:
@@ -598,8 +611,8 @@ packages:
     resolution: {integrity: sha512-/wkLWYhPtpq6aDXw1lO4772Rc+drssgl/pavmMUXe5sYJ+hi0+EqqJlFKlvO13lL7hoULovS9OIwmXOtilP+FA==}
     dev: false
 
-  /@frontline-hq/uui@0.0.39(svelte@4.2.12)(typescript@5.3.3):
-    resolution: {integrity: sha512-WC5swT1UsSnuc+dw5t6uP2+P/iQf37cxd7pLTw1drZmre9okDJk+iwqX1f4E28YeJkNhj9QPMxidexBcEhumEg==}
+  /@frontline-hq/uui@0.0.40(svelte@4.2.12)(typescript@5.3.3):
+    resolution: {integrity: sha512-P4wvZM62yCFwUfUTTIfsTLth08EM9BJvfkELBGOhsVJEUKXG+dudCOic96sfSPXMxQhKKpAoeTDClnwUQqCMCg==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:

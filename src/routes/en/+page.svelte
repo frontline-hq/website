@@ -1,12 +1,25 @@
 <script lang="ts">
-	import CalendarPopUp from '$lib/components/CalendarPopUp/CalendarPopUp.svelte';
 	import avifBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=avif&as=srcset';
 	import webpBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=webp&as=srcset';
 	import avifBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=avif&as=srcset&rotate=270';
 	import webpBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=webp&as=srcset&rotate=270';
 	import fallbackBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
 	import fallbackBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
+	import { communicationPhone as phoneCall } from '@frontline-hq/untitledui-icons';
 	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
+	import calFn from '@calcom/embed-snippet';
+
+	onMount(() => {
+		const Cal = calFn('https://app.cal.com/embed/embed.js');
+		Cal('init', { origin: 'https://cal.com' });
+
+		Cal('ui', {
+			styles: { branding: { brandColor: '#000000' } },
+			hideEventTypeDetails: false,
+			layout: 'month_view'
+		});
+	});
 </script>
 
 <svelte:head>
@@ -50,16 +63,27 @@
 				slot="actions"
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>
-				<CalendarPopUp language="en" />
 				<tdc-button
-					on:click={() => window.open('mailto:contact@frontline.codes', '_blank')}
+					type="button"
+					data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+					data-cal-config={JSON.stringify({ layout: 'month_view' })}
+					tdc={{
+						size: { default: 'xl', 'uui-desktop': '2xl' },
+						destructive: 'false',
+						hierarchy: 'secondary',
+						coloring: 'gray'
+					}}
+					icon={{ type: 'icon', leading: phoneCall }}>{'Schedule call'}</tdc-button
+				>
+				<tdc-button-a
+					href="mailto:contact@frontline.codes"
 					tdc={{
 						size: { default: 'xl', 'uui-desktop': '2xl' },
 						destructive: 'false',
 						hierarchy: 'primary',
 						coloring: 'color'
 					}}
-					icon={{ type: 'icon' }}>Email us</tdc-button
+					icon={{ type: 'icon' }}>Email us</tdc-button-a
 				>
 			</tdc-mc-hhs-buttongroupa>
 			<div slot="img" class="w-[50vw] uui-desktop:h-[100vh]"></div>

@@ -1,38 +1,12 @@
 <script lang="ts">
 	import { communicationPhone as phoneCall } from '@frontline-hq/untitledui-icons';
 	import { onMount } from 'svelte';
+	import calFn from '@calcom/embed-snippet';
 
 	export let language = 'de';
 
 	onMount(() => {
-		(function (C, A, L) {
-			let p = function (a, ar) {
-				a.q.push(ar);
-			};
-			let d = C.document;
-			C.Cal =
-				C.Cal ||
-				function () {
-					let cal = C.Cal;
-					let ar = arguments;
-					if (!cal.loaded) {
-						cal.ns = {};
-						cal.q = cal.q || [];
-						d.head.appendChild(d.createElement('script')).src = A;
-						cal.loaded = true;
-					}
-					if (ar[0] === L) {
-						const api = function () {
-							p(api, arguments);
-						};
-						const namespace = ar[1];
-						api.q = api.q || [];
-						typeof namespace === 'string' ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
-						return;
-					}
-					p(cal, ar);
-				};
-		})(window, 'https://app.cal.com/embed/embed.js', 'init');
+		const Cal = calFn('https://app.cal.com/embed/embed.js');
 		Cal('init', { origin: 'https://cal.com' });
 
 		Cal('ui', {
@@ -41,26 +15,18 @@
 			layout: 'month_view'
 		});
 	});
-
-	$: calConfig = JSON.stringify({ layout: 'month_view' });
 </script>
 
-<div class="relative group">
-	<button
-		data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
-		data-cal-config={calConfig}
-		class="inset-0 rounded-full absolute bg-transparent"
-	></button>
-	<tdc-button
-		type="button"
-		class="group-hover:text-uui-button-secondary-fg_hover group-hover:bg-uui-button-secondary-bg_hover w-full"
-		tdc={{
-			size: { default: 'xl', 'uui-desktop': '2xl' },
-			destructive: 'false',
-			hierarchy: 'secondary',
-			coloring: 'gray'
-		}}
-		icon={{ type: 'icon', leading: phoneCall }}
-		>{language === 'de' ? 'Call vereinbaren' : 'Schedule call'}</tdc-button
-	>
-</div>
+<tdc-button
+	type="button"
+	data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+	data-cal-config={JSON.stringify({ layout: 'month_view' })}
+	tdc={{
+		size: { default: 'xl', 'uui-desktop': '2xl' },
+		destructive: 'false',
+		hierarchy: 'secondary',
+		coloring: 'gray'
+	}}
+	icon={{ type: 'icon', leading: phoneCall }}
+	>{language === 'de' ? 'Call vereinbaren' : 'Schedule call'}</tdc-button
+>
