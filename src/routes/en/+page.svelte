@@ -103,20 +103,20 @@
 		</div>
 	</div>
 	<tdc-mc-hs tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
-		<span slot="subheading">Don't worry -</span>
-		<h2 slot="heading">We got you covered.</h2>
-		<p>Need help with your web project or cybersecurity? We got you covered.</p>
+		<span slot="subheading">Contact us -</span>
+		<h2 slot="heading">Web Craftsmanship</h2>
+		<p>Need help with your web project or cybersecurity? Reach out now.</p>
 		<p class="font-semibold">contact@frontline.codes</p>
 	</tdc-mc-hs>
 	<div class="w-full h-60"></div>
 	<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
 		<tdc-mc-footer-link
-			href="/privacy"
+			href="/datenschutzerklaerung"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>Privacy</tdc-mc-footer-link
 		>
 		<tdc-mc-footer-link
-			href="/imprint"
+			href="/impressum"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>Imprint</tdc-mc-footer-link
 		><tdc-mc-footer-link

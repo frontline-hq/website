@@ -116,7 +116,7 @@
 	<div class="w-full h-60"></div>
 	<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
 		<tdc-mc-footer-link
-			href="/privatsphäre"
+			href="/datenschutzerklaerung"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>Privatsphäre</tdc-mc-footer-link
 		>
