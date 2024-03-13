@@ -5,11 +5,88 @@
 	import webpBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=webp&as=srcset&rotate=270';
 	import fallbackBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
 	import fallbackBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
-	import { communicationPhone as phoneCall } from '@frontline-hq/untitledui-icons';
+	import * as yup from 'yup';
+	import pgpPublicKey from '$lib/pgp.publickey.txt?raw';
+	import { validator } from '@felte/validator-yup';
+	import { createForm } from 'felte';
+	import {
+		alertAndFeedbackAlertCircle,
+		generalCheckCircle,
+		generalLoading01,
+		generalLoading03,
+		communicationPhone as phoneCall,
+		securityLock03
+	} from '@frontline-hq/untitledui-icons';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
+	import { readKey, encrypt, createMessage } from 'openpgp';
 	import calFn from '@calcom/embed-snippet';
 
+	const schema = yup.object({
+		'First name': yup.string().max(50).required(),
+		'Last name': yup.string().max(50).required(),
+		Email: yup.string().email().required(),
+		Message: yup.string().max(300).required(),
+		'Privacy policy': yup.bool().oneOf([true], 'Accept Ts & Cs is required')
+	});
+	let submissionTimeoutId: number | undefined;
+	let submissionState: 'success' | 'error' | undefined;
+	const { form, errors, data, isSubmitting, reset } = createForm({
+		initialValues: {
+			'First name': null,
+			'Last name': null,
+			Email: null,
+			Message: null,
+			'Privacy policy': false
+		},
+		extend: validator({ schema }),
+		onSubmit: async (values) => {
+			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
+			submissionState = undefined;
+			// Do not reformat this.
+			const publicKeyArmored = pgpPublicKey;
+
+			const publicKey = await readKey({ armoredKey: publicKeyArmored });
+
+			const encrypted = await encrypt({
+				message: await createMessage({ text: JSON.stringify(values) }), // input as Message object
+				encryptionKeys: publicKey
+			});
+			// this will either return
+			const response = await fetch('/api/send-mail', {
+				method: 'POST',
+				body: JSON.stringify({ message: encrypted }),
+				headers: {
+					'content-type': 'application/json'
+				}
+			});
+			const { message } = await response.json();
+			if (!response.ok) {
+				throw new Error(message);
+			}
+			return message;
+		},
+		onSuccess(response, context) {
+			console.log('success', response);
+			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
+			submissionState = 'success';
+			reset();
+			submissionTimeoutId = setTimeout(() => {
+				submissionState = undefined;
+			}, 3000);
+			// Do something with the returned value from `onSubmit`.
+		},
+		onError(err, context) {
+			console.log('error', (err as Error).message);
+			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
+			submissionState = 'error';
+			submissionTimeoutId = setTimeout(() => {
+				submissionState = undefined;
+			}, 3000);
+		}
+	});
+
+	$: console.log($isSubmitting);
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
 		Cal('init', { origin: 'https://cal.com' });
@@ -126,14 +203,149 @@
 			</picture>
 		</div>
 	</div>
-	<tdc-mc-hs tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
-		<span slot="subheading">Contact us -</span>
-		<h2 slot="heading">Write us</h2>
-		<p>Need help with your web project or cybersecurity? Reach out now.</p>
-		<p class="font-semibold">contact@frontline.codes</p>
-	</tdc-mc-hs>
-	<div class="w-full h-60"></div>
+	<tdc-mc-contactsection
+		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-form-01' }}
+	>
+		<h6 slot="subheading">Contact us</h6>
+		<h3 slot="heading">Get in touch</h3>
+		<p class="max-w-[50ch]">
+			Peace of mind is our currency.<br />Reach out to us at
+			<a class="uui-anchor" href="mailto:contact@frontline.codes">contact@frontline.codes</a> to unlock
+			the full potential of your digital presence.
+		</p>
+		<form use:form slot="form">
+			<tdc-mc-util-form tdc={{ type: 'regular' }}>
+				<span class="col-span-2 uui-desktop:col-span-1">
+					<tdc-input
+						bind:value={$data['First name']}
+						tdc={{ size: 'md' }}
+						destructive={$errors['First name'] !== null}
+						type="text"
+						name="First name"
+						placeholder="First name"
+						disabled={$isSubmitting}
+						hint={$errors['First name'] ?? undefined}
+					>
+						<span slot="label">First name*</span>
+					</tdc-input>
+				</span>
+				<span class="col-span-2 uui-desktop:col-span-1">
+					<tdc-input
+						bind:value={$data['Last name']}
+						tdc={{ size: 'md' }}
+						destructive={$errors['Last name'] !== null}
+						type="text"
+						name="Last name"
+						placeholder="Last name"
+						disabled={$isSubmitting}
+						hint={$errors['Last name'] ?? undefined}
+					>
+						<span slot="label">Last name*</span>
+					</tdc-input>
+				</span>
+
+				<span class="col-span-2">
+					<tdc-input
+						bind:value={$data['Email']}
+						tdc={{ size: 'md' }}
+						destructive={$errors['Email'] !== null}
+						type="text"
+						name="Email"
+						placeholder="you@company.com"
+						disabled={$isSubmitting}
+						hint={$errors['Email'] ?? undefined}
+					>
+						<span slot="label">Email*</span>
+					</tdc-input>
+				</span>
+				<span class="col-span-2">
+					<tdc-input-textarea
+						bind:value={$data['Message']}
+						disabled={$isSubmitting}
+						destructive={$errors['Message'] !== null}
+						name="Message"
+						placeholder="Please enter your message for us..."
+						hint={$errors['Message'] ?? undefined}
+					>
+						<span slot="label">Message*</span>
+					</tdc-input-textarea>
+				</span>
+				<span class="col-span-2">
+					<tdc-checkbox
+						bind:checked={$data['Privacy policy']}
+						disabled={$isSubmitting}
+						tdc={{
+							size: 'md'
+						}}
+						name="Privacy policy"
+						><span slot="hint"
+							>You agree to our friendly <a class="uui-anchor" href="/datenschutzerklaerung"
+								>privacy policy</a
+							>.*</span
+						></tdc-checkbox
+					>
+				</span>
+				<div slot="actions" class="flex flex-col items-center gap-y-uui-6xl">
+					<div class="w-full flex flex-col items-stretch">
+						{#if submissionState === 'error'}
+							<tdc-button
+								type="submit"
+								tdc={{
+									size: 'xl',
+									destructive: 'true',
+									hierarchy: 'primary',
+									coloring: 'color'
+								}}
+								disabled={false}
+								icon={{ type: 'icon', leading: alertAndFeedbackAlertCircle }}
+							>
+								Couldn't submit form</tdc-button
+							>
+						{:else}
+							<tdc-button
+								type="submit"
+								tdc={{
+									size: 'xl',
+									destructive: 'false',
+									hierarchy: 'primary',
+									coloring: 'color'
+								}}
+								disabled={$data['Privacy policy'] === false || $isSubmitting}
+								icon={{
+									type: 'icon',
+									leading: $isSubmitting
+										? generalLoading01
+										: submissionState === 'success'
+											? generalCheckCircle
+											: securityLock03
+								}}
+							>
+								{#if $isSubmitting}
+									Sending...
+								{:else if submissionState === 'success'}
+									Sent successfully.
+								{:else}
+									Send <span class="underline underline-offset-2">encrypted</span> message
+								{/if}</tdc-button
+							>
+						{/if}
+					</div>
+
+					<span
+						class="flex items-center gap-x-2 uui-text-sm font-medium text-uui-text-tertiary_on-brand"
+						>Encrypted with PGP <tdc-tooltip
+							position="right-center"
+							arrow={true}
+							supportingText="We encrypt your E-Mail right here in the browser even before it is sent. This way, no one can read our conversation. Not even our mail provider(s)."
+							text="We leverage client side PGP encryption."><tdc-tooltip-helpicon /></tdc-tooltip
+						></span
+					>
+				</div>
+			</tdc-mc-util-form>
+		</form>
+	</tdc-mc-contactsection>
 	<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
+		<tdc-fs-logo slot="logo" />
 		<tdc-mc-footer-link
 			href="/datenschutzerklaerung"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
