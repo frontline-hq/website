@@ -4,7 +4,7 @@ import { getDynamicSafelist } from '@frontline-hq/tdc/tailwind';
 import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
 
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts,json}', '!**/*.tdc.ts'],
+	content: ['./src/**/*.{html,js,svelte,ts,json}', '!**/*.tdc.ts', './messages/*.json'],
 	theme: {
 		extend: {
 			fontFamily: {
