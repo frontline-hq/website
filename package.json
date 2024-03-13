@@ -18,6 +18,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@types/eslint": "^8.56.0",
+		"@types/luxon": "^3.4.2",
 		"@typescript-eslint/eslint-plugin": "^7.0.0",
 		"@typescript-eslint/parser": "^7.0.0",
 		"autoprefixer": "^10.4.17",
@@ -44,8 +45,10 @@
 		"@frontline-hq/untitledui-icons": "^0.0.4",
 		"@frontline-hq/uui": "^0.0.59",
 		"felte": "^1.2.14",
+		"luxon": "^3.4.4",
 		"openpgp": "^5.11.1",
 		"sib-api-v3-typescript": "^2.2.2",
+		"ts-dedent": "^2.2.0",
 		"vite-imagetools": "^6.2.9",
 		"yup": "^1.4.0"
 	}

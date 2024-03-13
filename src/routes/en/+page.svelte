@@ -6,6 +6,8 @@
 	import fallbackBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
 	import fallbackBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
 	import * as yup from 'yup';
+	import { DateTime } from 'luxon';
+	import dedent from 'ts-dedent';
 	import pgpPublicKey from '$lib/pgp.publickey.txt?raw';
 	import { validator } from '@felte/validator-yup';
 	import { createForm } from 'felte';
@@ -33,10 +35,10 @@
 	let submissionState: 'success' | 'error' | undefined;
 	const { form, errors, data, isSubmitting, reset } = createForm({
 		initialValues: {
-			'First name': null,
-			'Last name': null,
-			Email: null,
-			Message: null,
+			'First name': '',
+			'Last name': '',
+			Email: '',
+			Message: '',
 			'Privacy policy': false
 		},
 		extend: validator({ schema }),
@@ -48,8 +50,39 @@
 
 			const publicKey = await readKey({ armoredKey: publicKeyArmored });
 
+			const generateMailFromValues = (values: yup.InferType<typeof schema>) => {
+				const subject = 'Frontline Contact';
+				const dt = DateTime.now();
+				const sendtime = dt.setLocale('en-GB').toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+				const body = dedent`
+					<html>
+						<head><meta http-equiv="content-type" content="text/html; charset=utf-8"></head>
+						<body dir="auto">
+							<br>
+							<blockquote type="cite">
+								${values['First name']} ${values['Last name']} <${values.Email}> wrote at ${sendtime}:
+								<br>
+								<br>
+							</blockquote>
+							<blockquote type="cite">
+							</blockquote>
+						</body>
+					</html>
+				`;
+				return dedent`
+					<html>
+						<head><meta http-equiv="content-type" content="text/html; charset=utf-8"></head>
+						<body dir="auto">
+							<h4>${values['First name']} ${values['Last name']} <${values.Email}> wrote at ${sendtime}:</h4>
+							<p>${values.Message}</p>
+							<a href="mailto:${values.Email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}">Reply</a>
+						</body>
+					</html>
+				`;
+			};
+
 			const encrypted = await encrypt({
-				message: await createMessage({ text: JSON.stringify(values) }), // input as Message object
+				message: await createMessage({ text: generateMailFromValues(values) }), // input as Message object
 				encryptionKeys: publicKey
 			});
 			// this will either return
