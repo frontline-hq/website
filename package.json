@@ -45,6 +45,7 @@
 		"@frontline-hq/uui": "^0.0.59",
 		"felte": "^1.2.14",
 		"openpgp": "^5.11.1",
+		"sib-api-v3-typescript": "^2.2.2",
 		"vite-imagetools": "^6.2.9",
 		"yup": "^1.4.0"
 	}
