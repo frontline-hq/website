@@ -21,6 +21,7 @@
 	"contactsectionformemaillabel": "Email*",
 	"contactsectionformmessageplaceholder": "Please enter your message for us...",
 	"contactsectionformmessagelabel": "Message*",
+	"contactsectionformprivacypolicyhint": "You agree to our friendly <a class=\"uui-anchor\" href=\"/datenschutzerklaerung\">\nprivacy policy\n</a>.*",
 	"contactsectionformbuttonsubmiterror": "Couldn't submit form",
 	"contactsectionformbuttonsubmitting": "Sending...",
 	"contactsectionformbuttonsubmitsuccess": "Sent successfully.",
@@ -36,5 +37,6 @@
 	"yupmixeddefault": "Field is invalid.",
 	"yupstringemail": "Please specify a valid email address.",
 	"contactformourreplyemail": "`\n<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<br>\n<blockquote type=\"cite\">\n{firstName} {lastName} <{email}> wrote at {sendtime}:\n<br>\n<br>\n</blockquote>\n<blockquote type=\"cite\">\n{message}\n</blockquote>\n</body>\n</html>\n`",
-	"contactformemailtous": "`\n<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<h4>{firstName} {lastName} <{email}> wrote at {sendtime}:</h4>\n<p>{message}</p>\n<a href=\"mailto:{email}?subject={encodedSubject}&body={encodedBody}\">Reply</a>\n</body>\n</html>\n`"
+	"contactformemailtous": "`\n<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<h4>{firstName} {lastName} <{email}> wrote at {sendtime}:</h4>\n<p>{message}</p>\n<a href=\"mailto:{email}?subject={encodedSubject}&body={encodedBody}\">Reply</a>\n</body>\n</html>\n`",
+	"contactsectionformprivacypolicyhint1": "You agree to our friendly <a class=\"uui-anchor\" href=\"{privacyLink}\">privacy policy</a>.*"
 }

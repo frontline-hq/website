@@ -179,9 +179,7 @@
 				}}
 				name="privacy-policy"
 			>
-				<span slot="hint"
-					>{@html `You agree to our friendly <a class="uui-anchor" href="${privacyLink}">privacy policy</a>.*`}</span
-				>
+				<span slot="hint">{@html m.contactsectionformprivacypolicyhint1({ privacyLink })}</span>
 			</tdc-checkbox>
 		</span>
 		<div slot="actions" class="flex flex-col items-center gap-y-uui-6xl">
