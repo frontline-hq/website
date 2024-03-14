@@ -1,10 +1,10 @@
 <script lang="ts">
-	import avifBackground from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=avif&as=srcset';
-	import webpBackground from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=webp&as=srcset';
-	import avifBackgroundMobile from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=avif&as=srcset&rotate=270';
-	import webpBackgroundMobile from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=webp&as=srcset&rotate=270';
-	import fallbackBackground from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
-	import fallbackBackgroundMobile from './jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
+	import avifBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=avif&as=srcset';
+	import webpBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=webp&as=srcset';
+	import avifBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=avif&as=srcset&rotate=270';
+	import webpBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=webp&as=srcset&rotate=270';
+	import fallbackBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
+	import fallbackBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
 	import * as yup from 'yup';
 	import * as m from '$lib/paraglide/messages.js';
 	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
@@ -379,13 +379,13 @@
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>{m.footerimprintlinktext()}</tdc-mc-footer-link
 		>
-		{#each availableLanguageTags as lang}
+		{#each availableLanguageTags.filter((lang) => lang !== languageTag()) as lang}
 			<tdc-mc-footer-link
 				href={i18n.route($page.url.pathname)}
 				hreflang={lang}
 				aria-current={lang === languageTag() ? 'page' : undefined}
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-				>{lang}</tdc-mc-footer-link
+				>{lang.toUpperCase()}</tdc-mc-footer-link
 			>
 		{/each}
 		<span slot="sidenote">{m.footersidenotetext()}</span>
