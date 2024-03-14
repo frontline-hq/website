@@ -123,7 +123,7 @@
 		}
 	});
 
-	$: console.log($isSubmitting);
+	$: console.log(languageTag());
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
 		Cal('init', { origin: 'https://cal.com' });
@@ -153,7 +153,7 @@
 </svelte:head>
 
 {#if browser}
-	<div class="relative flex flex-col justify-end h-[100vh] uui-desktop:h-auto">
+	<div class="relative flex flex-col justify-end h-[100vh] uui-desktop:h-auto overflow-hidden">
 		<tdc-mc-hhs
 			tdc={{
 				breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' },
