@@ -72,7 +72,7 @@
 					icon={{ type: 'icon', leading: phoneCall }}>{m.herosectionsecondarybutton()}</tdc-button
 				>
 				<tdc-button-a
-					href="mailto:contact@frontline.codes"
+					href="#contact"
 					tdc={{
 						size: { default: 'xl', 'uui-desktop': '2xl' },
 						destructive: 'false',
@@ -123,6 +123,7 @@
 		</div>
 	</div>
 	<tdc-mc-contactsection
+		id="contact"
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-form-01' }}
 	>
 		<h6 slot="subheading">{m.contactsectionsubheading()}</h6>
