@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "paraglide-js compile --project ./project.inlang && vite build",
+		"prod-prep": "export NPM_CONFIG_TOKEN && echo //registry.npmjs.org/:_authToken=\\$NPM_CONFIG_TOKEN >> .npmrc",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
