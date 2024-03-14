@@ -22,12 +22,8 @@ export const POST: RequestHandler = async ({ request }) => {
 		sendSmtpEmail.params = { subject: 'Frontline Contact Form' };
 
 		try {
-			const data = await apiInstance.sendTransacEmail(sendSmtpEmail);
-			if (data) {
-				console.log(`API called successfully. Send from: Email: ${sender['email']}`);
-			}
+			await apiInstance.sendTransacEmail(sendSmtpEmail);
 		} catch (error) {
-			console.error(error);
 			throw new Error();
 		}
 	} catch (e) {

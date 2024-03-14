@@ -15,7 +15,6 @@
 	import { page } from '$app/stores';
 	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
 
-	$: console.log(languageTag());
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
 		Cal('init', { origin: 'https://cal.com' });
@@ -138,12 +137,12 @@
 	<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
 		<tdc-fs-logo slot="logo" />
 		<tdc-mc-footer-link
-			href="/datenschutzerklaerung"
+			href="/privacy"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>{m.footerprivacylinktext()}</tdc-mc-footer-link
 		>
 		<tdc-mc-footer-link
-			href="/impressum"
+			href="/imprint"
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
 			>{m.footerimprintlinktext()}</tdc-mc-footer-link
 		>

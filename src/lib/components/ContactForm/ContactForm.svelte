@@ -30,7 +30,7 @@
 		message: yup.string().max(300).required()
 	});
 
-	let submissionTimeoutId: number | undefined;
+	let submissionTimeoutId: NodeJS.Timeout | undefined;
 	let submissionState: 'success' | 'error' | undefined;
 	const { form, errors, data, isSubmitting, reset } = createForm({
 		initialValues: {
@@ -90,7 +90,6 @@
 			return message;
 		},
 		onSuccess(response, context) {
-			console.log('success', response);
 			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
 			submissionState = 'success';
 			reset();
@@ -100,7 +99,6 @@
 			// Do something with the returned value from `onSubmit`.
 		},
 		onError(err, context) {
-			console.log('error', (err as Error).message);
 			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
 			submissionState = 'error';
 			submissionTimeoutId = setTimeout(() => {
