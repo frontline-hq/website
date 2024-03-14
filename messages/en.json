@@ -4,11 +4,11 @@
 	"herosectionp": "— We build software at the intersection of cybersecurity, design and sustainability.",
 	"pageheadtitle": "Building software at the intersection of cybersecurity, design, and sustainability |\n\t\tfrontline.codes",
 	"pageheadmetadescription": "We are ethical hackers and a web development agency committed to delivering secure, beautifully designed, and sustainable digital solutions.",
-	"pageheadogtitle": "Cybersecurity and Web Development | frontline.codes",
+	"pageheadogtitle": "Cybersecurity and Web Development | Frontline.codes",
 	"pageheadogdescription": "At the forefront of cybersecurity, design, and sustainability, we offer comprehensive services to protect and enhance your digital presence.",
 	"herosectionsecondarybutton": "Schedule call",
 	"herosectionprimarybutton": "Email us",
-	"herosectionimgalt": "Black and white Unsplash image that shows waves on sand",
+	"herosectionimgalt": "This is an awesome image ",
 	"contactsectionsubheading": "Contact us",
 	"contactsectionheading": "Get in touch",
 	"contactsectionp": "Peace of mind is our currency.<br />Reach out to us at\n\t\t\t<a class=\"uui-anchor\" href=\"mailto:contact@frontline.codes\">contact@frontline.codes</a> to unlock\n\t\t\tthe full potential of your digital presence.",
@@ -31,5 +31,11 @@
 	"contactsectionfootnotetooltiptext": "We leverage client side PGP encryption.",
 	"footerprivacylinktext": "Privacy",
 	"footerimprintlinktext": "Imprint",
-	"footersidenotetext": "2024, Hamburg DE"
+	"footersidenotetext": "2024, Hamburg DE",
+	"yupstringmaxchars": "Don't use more than {max} characters.",
+	"yupmixedrequired": "This field is required.",
+	"yupmixeddefault": "Field is invalid.",
+	"yupstringemail": "Please specify a valid email address.",
+	"contactformourreplyemail": "`\n<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<br>\n<blockquote type=\"cite\">\n{firstName} {lastName} <{email}> wrote at {sendtime}:\n<br>\n<br>\n</blockquote>\n<blockquote type=\"cite\">\n{message}\n</blockquote>\n</body>\n</html>\n`",
+	"contactformemailtous": "`\n<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<h4>{firstName} {lastName} <{email}> wrote at {sendtime}:</h4>\n<p>{message}</p>\n<a href=\"mailto:{email}?subject={encodedSubject}&body={encodedBody}\">Reply</a>\n</body>\n</html>\n`"
 }
