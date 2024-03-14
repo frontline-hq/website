@@ -12,6 +12,7 @@
 		generalLoading01,
 		securityLock03
 	} from '@frontline-hq/untitledui-icons';
+	import { i18n } from '$lib/i18n';
 	yup.setLocale({
 		mixed: {
 			default: m.yupmixeddefault(),
@@ -107,6 +108,9 @@
 			}, 3000);
 		}
 	});
+	const privacyLink = i18n.resolveRoute('/privacy');
+	// You agree to our friendly privacy policy .*
+	// Sie stimmen unserer <a class="uui-anchor" href="${privacyLink}">Datenschutzrichtlinie</a>zu.*
 </script>
 
 <form use:form>
@@ -175,7 +179,9 @@
 				}}
 				name="privacy-policy"
 			>
-				<span slot="hint">{@html m.contactsectionformprivacypolicyhint()}</span>
+				<span slot="hint"
+					>{@html `You agree to our friendly <a class="uui-anchor" href="${privacyLink}">privacy policy</a>.*`}</span
+				>
 			</tdc-checkbox>
 		</span>
 		<div slot="actions" class="flex flex-col items-center gap-y-uui-6xl">

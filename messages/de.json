@@ -21,7 +21,6 @@
 	"contactsectionformemaillabel": "Email*",
 	"contactsectionformmessageplaceholder": "Bitte geben Sie Ihre Nachricht für uns ein...",
 	"contactsectionformmessagelabel": "Nachricht*",
-	"contactsectionformprivacypolicyhint": "Sie stimmen unserer\n<a class=\"uui-anchor\" href=\"/datenschutzerklaerung\">Datenschutzrichtlinie</a>\nzu.*",
 	"contactsectionformbuttonsubmiterror": "Senden fehlgeschlagen",
 	"contactsectionformbuttonsubmitting": "Sende...",
 	"contactsectionformbuttonsubmitsuccess": "Erfolgreich gesendet.",
