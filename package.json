@@ -47,7 +47,7 @@
 		"@fontsource/ibm-plex-mono": "^5.0.8",
 		"@frontline-hq/tdc": "^0.0.28",
 		"@frontline-hq/untitledui-icons": "^0.0.4",
-		"@frontline-hq/uui": "^0.0.64",
+		"@frontline-hq/uui": "^0.0.65",
 		"felte": "^1.2.14",
 		"luxon": "^3.4.4",
 		"openpgp": "^5.11.1",
