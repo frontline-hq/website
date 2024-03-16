@@ -1,10 +1,10 @@
 <script lang="ts">
-	import avifBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=avif&as=srcset';
-	import webpBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=webp&as=srcset';
-	import avifBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=avif&as=srcset&rotate=270';
-	import webpBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=webp&as=srcset&rotate=270';
-	import fallbackBackground from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
-	import fallbackBackgroundMobile from '../jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
+	import avifBackground from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=avif&as=srcset';
+	import webpBackground from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920;2560;3000;4096;5120&format=webp&as=srcset';
+	import avifBackgroundMobile from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=avif&as=srcset&rotate=270';
+	import webpBackgroundMobile from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=540;768;1080;1366;1536&format=webp&as=srcset&rotate=270';
+	import fallbackBackground from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
+	import fallbackBackgroundMobile from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
 	import * as m from '$lib/paraglide/messages.js';
 	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
 	import { communicationPhone as phoneCall } from '@frontline-hq/untitledui-icons';
@@ -14,6 +14,15 @@
 	import { i18n } from '$lib/i18n';
 	import { page } from '$app/stores';
 	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
+	import { McUtilActions } from '@frontline-hq/uui/marketing-components';
+	import {
+		fsMiscIconsSocialDribbbleMask,
+		fsMiscIconsSocialGithubMask,
+		fsMiscIconsSocialLinkedinMask,
+		fsMiscIconsSocialXMask
+	} from '@frontline-hq/uui/foundations';
+	import nadiem from '$lib/assets/nadiem_cut.png?enhanced';
+	import ben from '$lib/assets/ben_cut.png?enhanced';
 
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
@@ -51,16 +60,15 @@
 				type: 'geometricshapes01'
 			}}
 		>
-			<h1 class="[&&]:font-super-large [&&]:text-5xl [&&]:uui-desktop:text-8xl [&&]:font-black">
+			<h1
+				slot="heading"
+				class="[&&]:font-super-large [&&]:text-5xl [&&]:uui-desktop:text-8xl [&&]:font-black"
+			>
 				{m.herosectionh1()}
 			</h1>
-			<p>{m.herosectionp()}</p>
-			<tdc-mc-hhs-buttongroupa
-				slot="actions"
-				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-			>
+			<p class="uui-desktop:max-w-uui-width-md">{m.herosectionp()}</p>
+			<McUtilActions slot="actions">
 				<tdc-button
-					type="button"
 					data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
 					data-cal-config={JSON.stringify({ layout: 'month_view' })}
 					tdc={{
@@ -81,8 +89,8 @@
 					}}
 					icon={{ type: 'icon' }}>{m.herosectionprimarybutton()}</tdc-button-a
 				>
-			</tdc-mc-hhs-buttongroupa>
-			<div slot="img" class="w-[50vw] uui-desktop:h-[100vh]"></div>
+			</McUtilActions>
+			<div slot="img" class="w-[50vw] uui-desktop:h-[80vh]"></div>
 		</tdc-mc-hhs>
 		<div class="absolute inset-0 -z-10 overflow-hidden">
 			<picture>
@@ -122,6 +130,94 @@
 			</picture>
 		</div>
 	</div>
+	<tdc-mc-cta-section
+		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'split-image-02' }}
+	>
+		<h2 slot="heading">{m.introsectionheading()}</h2>
+		<!-- Default slot ... -->
+		<p>{m.introsectiontext()}</p>
+		<!-- McUtilActions inherits tdc styles from parent. -->
+		<McUtilActions slot="actions">
+			<tdc-button
+				data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+				data-cal-config={JSON.stringify({ layout: 'month_view' })}
+				tdc={{
+					size: 'xl',
+					destructive: 'false',
+					hierarchy: 'secondary',
+					coloring: 'gray'
+				}}
+				icon={{ type: 'icon', leading: phoneCall }}>{m.introsectionactionsecondary()}</tdc-button
+			>
+		</McUtilActions>
+		<!-- We let users define the height of their images themself, for horizontal imgs e.g. -->
+		<div class="w-full space-y-uui-6xl" slot="img">
+			<tdc-mc-team-section-member
+				class="[&&]:uui-desktop:min-w-uui-none [&&]:uui-desktop:max-w-uui-width-lg [&&]:w-full"
+				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'image-left' }}
+			>
+				<div
+					class="relative flex justify-center uui-desktop:w-[11rem] shrink-0 overflow-hidden"
+					slot="img"
+				>
+					<div class="uui-desktop:hidden absolute inset-0 -z-10 blur-2xl">
+						<div
+							class="w-full h-full bg-[radial-gradient(circle_at_center_bottom,rgb(var(--colormodes-uui-bg-quaternary))_0%,transparent)]"
+						></div>
+					</div>
+					<div class="max-h-[40vh] uui-desktop:h-auto">
+						<enhanced:img
+							class="h-full object-scale-down object-center"
+							src={nadiem}
+							alt="An alt text"
+						/>
+					</div>
+				</div>
+				<span slot="name">Nadiem Marzguioui</span>
+				<span slot="text">{@html m.introsectionnadiemtext()}</span>
+				<a target="_blank" href="https://github.com/NadiemM">
+					<tdc-fs-misc-icons-social url={fsMiscIconsSocialGithubMask} tdc={{ style: 'gray' }} /></a
+				>
+			</tdc-mc-team-section-member>
+			<tdc-mc-team-section-member
+				class="[&&]:uui-desktop:min-w-uui-none [&&]:uui-desktop:max-w-uui-width-lg [&&]:w-full"
+				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'image-left' }}
+			>
+				<div
+					class="relative flex justify-center uui-desktop:w-[11rem] shrink-0 overflow-hidden"
+					slot="img"
+				>
+					<div class="uui-desktop:hidden absolute inset-0 -z-10 blur-2xl">
+						<div
+							class="w-full h-full bg-[radial-gradient(circle_at_center_bottom,rgb(var(--colormodes-uui-bg-quaternary))_0%,transparent)]"
+						></div>
+					</div>
+					<div class="max-h-[40vh] uui-desktop:h-auto">
+						<enhanced:img
+							class="h-full object-scale-down object-center"
+							src={ben}
+							alt="An alt text"
+						/>
+					</div>
+				</div>
+				<span slot="name">Benjamin Preiss</span>
+				<span slot="text">{@html m.introsectionbentext()}</span>
+				<a target="_blank" href="https://github.com/benjaminpreiss">
+					<tdc-fs-misc-icons-social url={fsMiscIconsSocialGithubMask} tdc={{ style: 'gray' }} /></a
+				>
+				<a target="_blank" href="https://www.linkedin.com/in/benjamin-preiss-708985231/">
+					<tdc-fs-misc-icons-social
+						url={fsMiscIconsSocialLinkedinMask}
+						tdc={{ style: 'gray' }}
+					/></a
+				>
+				<a target="_blank" href="https://twitter.com/preiss_benjamin">
+					<tdc-fs-misc-icons-social url={fsMiscIconsSocialXMask} tdc={{ style: 'gray' }} /></a
+				>
+			</tdc-mc-team-section-member>
+		</div>
+	</tdc-mc-cta-section>
+
 	<tdc-mc-contactsection
 		id="contact"
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-form-01' }}
