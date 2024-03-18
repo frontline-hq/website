@@ -107,8 +107,6 @@
 		}
 	});
 	const privacyLink = i18n.resolveRoute('/privacy');
-	// You agree to our friendly privacy policy .*
-	// Sie stimmen unserer <a class="uui-anchor" href="${privacyLink}">Datenschutzrichtlinie</a>zu.*
 </script>
 
 <form use:form>
