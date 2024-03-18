@@ -14,7 +14,10 @@
 	import { i18n } from '$lib/i18n';
 	import { page } from '$app/stores';
 	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
-	import { McUtilActions } from '@frontline-hq/uui/marketing-components';
+	import {
+		McUtilActions,
+		McHeroHeaderSectionFormWrapper
+	} from '@frontline-hq/uui/marketing-components';
 	import {
 		fsMiscIconsSocialDribbbleMask,
 		fsMiscIconsSocialGithubMask,
@@ -23,6 +26,7 @@
 	} from '@frontline-hq/uui/foundations';
 	import nadiem from '$lib/assets/nadiem_cut.png?enhanced';
 	import ben from '$lib/assets/ben_cut.png?enhanced';
+	import DomainCheckerForm from '$lib/components/DomainCheckerForm/DomainCheckerForm.svelte';
 
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
@@ -90,7 +94,7 @@
 					icon={{ type: 'icon' }}>{m.herosectionprimarybutton()}</tdc-button-a
 				>
 			</McUtilActions>
-			<div slot="img" class="w-[50vw] uui-desktop:h-[80vh]"></div>
+			<div slot="after" class="w-[50vw] uui-desktop:h-[80vh]"></div>
 		</tdc-mc-hhs>
 		<div class="absolute inset-0 -z-10 overflow-hidden">
 			<picture>
@@ -130,6 +134,54 @@
 			</picture>
 		</div>
 	</div>
+
+	<tdc-mc-hhs
+		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
+	>
+		<h1>Make your E-Mail great again.</h1>
+		<p>
+			Become compliant with the 2024 Google and Yahoo standards. Protect yourself against
+			impersonation attacks and make sure your e-mails get delivered.
+		</p>
+		<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
+		<div class="w-full" slot="after">
+			<McHeroHeaderSectionFormWrapper>
+				<div
+					class="flex text-white items-center w-full h-full mb-uui-3xl space-x-uui-xl"
+					slot="logo"
+				>
+					<img
+						src="/google-logo.svg"
+						class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
+						alt="Google logo"
+					/>
+
+					<img
+						src="/yahoo-logo.svg"
+						class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
+						alt="Yahoo logo"
+					/>
+				</div>
+				<h4 slot="title">Check your domain now.</h4>
+				<span slot="subtitle">Is your e-mail domain susceptible to impersonation attacks? </span>
+				<!-- Todo might be a solution for not setting classes on the form slot -->
+				<DomainCheckerForm slot="form" />
+				<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
+					<span>
+						Your data is safe with us!
+						<span class=" "
+							><span class="">We do</span>
+							<span class="underline underline-offset-2">not</span></span
+						>
+						<br />
+
+						<span> collect any data here. </span>
+					</span>
+				</div></McHeroHeaderSectionFormWrapper
+			>
+		</div>
+	</tdc-mc-hhs>
+
 	<tdc-mc-cta-section
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'split-image-02' }}
 	>
