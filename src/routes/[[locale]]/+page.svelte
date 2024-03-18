@@ -200,7 +200,7 @@
 				? ''
 				: 'hidden'}  bg-uui-bg-primary z-10 absolute w-full h-full top-0"
 		>
-			<div class="flex items-center justify-center w-full h-full">
+			<div class="flex items-end md:items-center justify-center w-full h-full">
 				<tdc-mc-hs
 					tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
 				>
