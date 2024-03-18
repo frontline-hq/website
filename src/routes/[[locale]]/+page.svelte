@@ -90,7 +90,7 @@
 					icon={{ type: 'icon' }}>{m.herosectionprimarybutton()}</tdc-button-a
 				>
 			</McUtilActions>
-			<div slot="img" class="w-[50vw] uui-desktop:h-[80vh]"></div>
+			<div slot="after" class="w-[50vw] uui-desktop:h-[80vh]"></div>
 		</tdc-mc-hhs>
 		<div class="absolute inset-0 -z-10 overflow-hidden">
 			<picture>
