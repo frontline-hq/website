@@ -27,6 +27,20 @@
 	import nadiem from '$lib/assets/nadiem_cut.png?enhanced';
 	import ben from '$lib/assets/ben_cut.png?enhanced';
 	import DomainCheckerForm from '$lib/components/DomainCheckerForm/DomainCheckerForm.svelte';
+	import {
+		generalSlashCircle01,
+		securityShield01,
+		arrowsArrowUpLeft
+	} from '@frontline-hq/untitledui-icons';
+
+	let domainCheckerForm: DomainCheckerForm;
+	let checkedDomain: string | undefined;
+	let domainIsSafe: boolean | undefined;
+	let subDomainIsSafe: boolean | undefined;
+
+	$: console.log(checkedDomain, 'within parent');
+	$: console.log(domainIsSafe, 'domainIsSafe within parent');
+	$: console.log(subDomainIsSafe, 'subDomainIsSafe within parent');
 
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
@@ -134,54 +148,130 @@
 			</picture>
 		</div>
 	</div>
+	<div class="relative overflow-hidden">
+		<tdc-mc-hhs
+			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
+		>
+			<h1>Make your E-Mail great again.</h1>
+			<p>
+				Become compliant with the 2024 Google and Yahoo standards. Protect yourself against
+				impersonation attacks and make sure your e-mails get delivered.
+			</p>
+			<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
+			<div class="w-full" slot="after">
+				<McHeroHeaderSectionFormWrapper>
+					<div
+						class="flex text-white items-center w-full h-full mb-uui-3xl space-x-uui-xl"
+						slot="logo"
+					>
+						<img
+							src="/google-logo.svg"
+							class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
+							alt="Google logo"
+						/>
 
-	<tdc-mc-hhs
-		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
-	>
-		<h1>Make your E-Mail great again.</h1>
-		<p>
-			Become compliant with the 2024 Google and Yahoo standards. Protect yourself against
-			impersonation attacks and make sure your e-mails get delivered.
-		</p>
-		<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
-		<div class="w-full" slot="after">
-			<McHeroHeaderSectionFormWrapper>
-				<div
-					class="flex text-white items-center w-full h-full mb-uui-3xl space-x-uui-xl"
-					slot="logo"
+						<img
+							src="/yahoo-logo.svg"
+							class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
+							alt="Yahoo logo"
+						/>
+					</div>
+					<h4 slot="title">Check your domain now.</h4>
+					<span slot="subtitle">Is your e-mail domain susceptible to impersonation attacks? </span>
+					<!-- Todo might be a solution for not setting classes on the form slot -->
+					<DomainCheckerForm
+						bind:this={domainCheckerForm}
+						bind:checkedDomain
+						bind:domainIsSafe
+						bind:subDomainIsSafe
+						slot="form"
+					/>
+					<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
+						<span>
+							Your data is safe with us!
+							<span class=" "
+								><span class="">We do</span>
+								<span class="underline underline-offset-2">not</span></span
+							>
+							<br />
+
+							<span> collect any data here. </span>
+						</span>
+					</div></McHeroHeaderSectionFormWrapper
 				>
-					<img
-						src="/google-logo.svg"
-						class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
-						alt="Google logo"
-					/>
+			</div>
+		</tdc-mc-hhs>
 
-					<img
-						src="/yahoo-logo.svg"
-						class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
-						alt="Yahoo logo"
-					/>
-				</div>
-				<h4 slot="title">Check your domain now.</h4>
-				<span slot="subtitle">Is your e-mail domain susceptible to impersonation attacks? </span>
-				<!-- Todo might be a solution for not setting classes on the form slot -->
-				<DomainCheckerForm slot="form" />
-				<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
-					<span>
-						Your data is safe with us!
-						<span class=" "
-							><span class="">We do</span>
-							<span class="underline underline-offset-2">not</span></span
+		<div
+			class="{checkedDomain !== undefined && domainIsSafe !== undefined
+				? ''
+				: 'hidden'}  bg-uui-bg-primary z-10 absolute w-full h-full top-0"
+		>
+			<div class="flex items-center justify-center w-full h-full">
+				<tdc-mc-hs
+					tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
+				>
+					<h6 slot="subheading">
+						<tdc-badge
+							icon={{
+								type: 'icon',
+								leading: domainIsSafe ? securityShield01 : generalSlashCircle01
+							}}
+							tdc={{
+								size: 'lg',
+								color: domainIsSafe ? 'success' : 'error',
+								badgeType: 'Pill color'
+							}}>{domainIsSafe ? 'Protected' : 'Not Protected'}</tdc-badge
 						>
-						<br />
+					</h6>
+					<h2 slot="heading">
+						{checkedDomain}
+						{domainIsSafe ? `seems to be protected.` : `is not protected.`}
+						<!-- This h4 only pops-up when a domainIsSafe but has false subdomain-protection settings -->
+						<h4 class="uui-text-lg">
+							{!subDomainIsSafe && domainIsSafe ? 'Your subdomains are unsafe.' : ''}
+						</h4>
+					</h2>
+					<p>
+						{domainIsSafe
+							? 'Keep your domain secure. Reach out for a straightforward security check.'
+							: "Hackers can impersonate your domain's emails, putting you at risk."}
+					</p>
+					<p>
+						{domainIsSafe ? '' : 'Your domain also fails to meet 2024 Google and Yahoo standards. '}
+					</p>
+					<p>
+						{domainIsSafe ? '' : 'Contact us today to secure your domain.'}
+					</p>
 
-						<span> collect any data here. </span>
-					</span>
-				</div></McHeroHeaderSectionFormWrapper
-			>
+					<McUtilActions slot="after">
+						<tdc-button
+							tdc={{
+								size: { default: 'xl', 'uui-desktop': 'xl' },
+								destructive: 'false',
+								hierarchy: 'secondary',
+								coloring: 'gray'
+							}}
+							type="button"
+							on:click={() => domainCheckerForm.resetForm()}
+							icon={{ type: 'icon', leading: arrowsArrowUpLeft }}>Check another domain</tdc-button
+						>
+						<tdc-button
+							data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+							data-cal-config={JSON.stringify({ layout: 'month_view' })}
+							tdc={{
+								size: { default: 'xl', 'uui-desktop': 'xl' },
+								destructive: 'false',
+								hierarchy: 'primary',
+								coloring: 'color'
+							}}
+							icon={{ type: 'icon', leading: phoneCall }}>Schedule call</tdc-button
+						>
+					</McUtilActions>
+				</tdc-mc-hs>
+			</div>
 		</div>
-	</tdc-mc-hhs>
-
+	</div>
 	<tdc-mc-cta-section
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'split-image-02' }}
 	>

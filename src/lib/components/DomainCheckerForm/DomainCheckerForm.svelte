@@ -9,6 +9,9 @@
 	import { createForm } from 'felte';
 	import { validator } from '@felte/validator-yup';
 
+	export let checkedDomain: string | undefined;
+	export let domainIsSafe: boolean | undefined;
+	export let subDomainIsSafe: boolean | undefined;
 	yup.setLocale({
 		mixed: {
 			default: m.yupmixeddefault(),
@@ -28,9 +31,7 @@
 			)
 			.required()
 	});
-	let checkedDomain: string | undefined;
-	let domainIsSafe: boolean | undefined;
-	let subDomainIsSafe: boolean | undefined;
+
 	let submissionTimeoutId: NodeJS.Timeout | undefined;
 	let submissionState: 'success' | 'error' | undefined;
 
@@ -43,10 +44,10 @@
 			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
 			submissionState = undefined;
 			let domainParts = values.domain.split('.');
-			let checkedDomain = domainParts.slice(-2).join('.');
-			console.log(checkedDomain);
+			checkedDomain = domainParts.slice(-2).join('.');
 			const endpoint = `https://dns.quad9.net:5053/dns-query?name=_dmarc.${checkedDomain}&type=txt`;
 
+			console.log(endpoint, 'endpoint');
 			const response = await fetch(endpoint, {
 				method: 'GET'
 			});
@@ -98,7 +99,7 @@
 		}
 	});
 
-	function resetForm() {
+	export function resetForm() {
 		if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
 		submissionState = undefined;
 		checkedDomain = undefined;
@@ -162,19 +163,6 @@
 					Find out now
 				{/if}</tdc-button
 			>
-		{/if}
-		{#if checkedDomain && domainIsSafe !== undefined}
-			<div class="text-white flex flex-col items-center gap-y-uui-6xl">
-				<div class="flex flex-col items-center gap-y-uui-6xl">
-					{#if submissionState === 'success'}
-						<div class="text-lg">
-							<span class="font-bold">{checkedDomain}</span> is{' '}
-							<span class="font-bold">{domainIsSafe ? 'safe' : 'not safe'}</span>
-							<button type="button" on:click={resetForm} class="mt-4">Test another domain</button>
-						</div>
-					{/if}
-				</div>
-			</div>
 		{/if}
 	</tdc-mc-util-form>
 </form>
