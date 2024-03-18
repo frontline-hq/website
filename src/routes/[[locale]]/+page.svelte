@@ -38,10 +38,6 @@
 	let domainIsSafe: boolean | undefined;
 	let subDomainIsSafe: boolean | undefined;
 
-	$: console.log(checkedDomain, 'within parent');
-	$: console.log(domainIsSafe, 'domainIsSafe within parent');
-	$: console.log(subDomainIsSafe, 'subDomainIsSafe within parent');
-
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
 		Cal('init', { origin: 'https://cal.com' });
@@ -152,10 +148,9 @@
 		<tdc-mc-hhs
 			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
 		>
-			<h1>Make your E-Mail great again.</h1>
+			<h1>{m.domaincheckerheading()}</h1>
 			<p>
-				Become compliant with the 2024 Google and Yahoo standards. Protect yourself against
-				impersonation attacks and make sure your e-mails get delivered.
+				{m.domaincheckersubtitle()}
 			</p>
 			<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
 			<div class="w-full" slot="after">
@@ -176,8 +171,8 @@
 							alt="Yahoo logo"
 						/>
 					</div>
-					<h4 slot="title">Check your domain now.</h4>
-					<span slot="subtitle">Is your e-mail domain susceptible to impersonation attacks? </span>
+					<h4 slot="title">{m.domaincheckerformheading()}</h4>
+					<span slot="subtitle">{m.domaincheckerformsubtitle()} </span>
 					<!-- Todo might be a solution for not setting classes on the form slot -->
 					<DomainCheckerForm
 						bind:this={domainCheckerForm}
@@ -188,14 +183,12 @@
 					/>
 					<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
 						<span>
-							Your data is safe with us!
-							<span class=" "
-								><span class="">We do</span>
-								<span class="underline underline-offset-2">not</span></span
-							>
-							<br />
-
-							<span> collect any data here. </span>
+							{m.domaincheckerformfooter1()}
+							<span class="flex flex-row items-center justify-center space-x-uui-xs"
+								><span class="">{m.domaincheckerformfooter2()}</span>
+								<span class="underline underline-offset-2">{m.domaincheckerformfooter3()}</span>
+								<span> {m.domaincheckerformfooter4()} </span>
+							</span>
 						</span>
 					</div></McHeroHeaderSectionFormWrapper
 				>
@@ -221,27 +214,33 @@
 								size: 'lg',
 								color: domainIsSafe ? 'success' : 'error',
 								badgeType: 'Pill color'
-							}}>{domainIsSafe ? 'Protected' : 'Not Protected'}</tdc-badge
+							}}
+							>{domainIsSafe
+								? `${m.domaincheckeroverlaybadgeprotected()}`
+								: `${m.domaincheckeroverlaybadgenotprotected()}`}</tdc-badge
 						>
 					</h6>
+					<!-- TODO continue here scheint geschützt zu sein. -->
 					<h2 slot="heading">
 						{checkedDomain}
-						{domainIsSafe ? `seems to be protected.` : `is not protected.`}
+						{domainIsSafe
+							? `${m.domaincheckeroverlaytitleprotected()}`
+							: `${m.domaincheckeroverlaytitlenotprotected()}`}
 						<!-- This h4 only pops-up when a domainIsSafe but has false subdomain-protection settings -->
 						<h4 class="uui-text-lg">
-							{!subDomainIsSafe && domainIsSafe ? 'Your subdomains are unsafe.' : ''}
+							{!subDomainIsSafe && domainIsSafe ? `${m.domaincheckeroverlaysubdomaintitle()}` : ''}
 						</h4>
 					</h2>
 					<p>
 						{domainIsSafe
-							? 'Keep your domain secure. Reach out for a straightforward security check.'
-							: "Hackers can impersonate your domain's emails, putting you at risk."}
+							? `${m.domaincheckeroverlaydomainissafetext()}`
+							: `${m.domaincheckeroverlaydomainisnotsafetext()}`}
 					</p>
 					<p>
-						{domainIsSafe ? '' : 'Your domain also fails to meet 2024 Google and Yahoo standards. '}
+						{domainIsSafe ? '' : `${m.domaincheckeroverlaydomainisnotsafetext2()}`}
 					</p>
 					<p>
-						{domainIsSafe ? '' : 'Contact us today to secure your domain.'}
+						{domainIsSafe ? '' : `${m.domaincheckeroverlaydomainisnotsafetext3()}`}
 					</p>
 
 					<McUtilActions slot="after">
@@ -254,7 +253,8 @@
 							}}
 							type="button"
 							on:click={() => domainCheckerForm.resetForm()}
-							icon={{ type: 'icon', leading: arrowsArrowUpLeft }}>Check another domain</tdc-button
+							icon={{ type: 'icon', leading: arrowsArrowUpLeft }}
+							>{m.domaincheckeroverlaycta1()}</tdc-button
 						>
 						<tdc-button
 							data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
@@ -265,7 +265,7 @@
 								hierarchy: 'primary',
 								coloring: 'color'
 							}}
-							icon={{ type: 'icon', leading: phoneCall }}>Schedule call</tdc-button
+							icon={{ type: 'icon', leading: phoneCall }}>{m.domaincheckeroverlaycta2()}</tdc-button
 						>
 					</McUtilActions>
 				</tdc-mc-hs>
