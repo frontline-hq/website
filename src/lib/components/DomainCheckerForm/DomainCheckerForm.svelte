@@ -12,22 +12,13 @@
 	export let checkedDomain: string | undefined;
 	export let domainIsSafe: boolean | undefined;
 	export let subDomainIsSafe: boolean | undefined;
-	yup.setLocale({
-		mixed: {
-			default: m.yupmixeddefault(),
-			required: m.yupmixedrequired()
-		},
-		string: {
-			max: ({ max }) => m.yupstringmaxchars({ max }),
-			email: m.yupstringemail()
-		}
-	});
+
 	const schema = yup.object({
 		domain: yup
 			.string()
 			.matches(
 				/^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$/,
-				'Invalid domain'
+				`${m.domaincheckerformdomainerrormessage()}`
 			)
 			.required()
 	});
@@ -116,11 +107,11 @@
 			tdc={{ size: 'md' }}
 			type="domain"
 			destructive={$errors['domain'] !== null}
-			placeholder="example.com"
+			placeholder={m.domaincheckerplaceholder()}
 			disabled={false}
 			hint={$errors['domain'] ?? undefined}
 		>
-			<span slot="label">Fill in your e-mail domain</span>
+			<span slot="label">{m.domaincheckerformlabel()}</span>
 		</tdc-input>
 		{#if submissionState === 'error'}
 			<tdc-button
@@ -134,7 +125,7 @@
 				disabled={false}
 				icon={{ type: 'icon', leading: alertAndFeedbackAlertCircle }}
 			>
-				Couldn't check domain</tdc-button
+				{m.domaincheckersubmitbuttonerrortext()}</tdc-button
 			>
 		{:else}
 			<tdc-button
@@ -156,11 +147,11 @@
 				}}
 			>
 				{#if $isSubmitting}
-					Checking domain...
+					{m.domaincheckersubmitbuttonissubmittingtext()}
 				{:else if submissionState === 'success'}
-					Domain checked
+					{m.domaincheckersubmitbuttonsubmissionsuccestext()}
 				{:else}
-					Find out now
+					{m.domaincheckersubmitbuttonctatext()}
 				{/if}</tdc-button
 			>
 		{/if}
