@@ -24,8 +24,8 @@ dependencies:
     specifier: ^0.0.4
     version: 0.0.4
   '@frontline-hq/uui':
-    specifier: ^0.0.70
-    version: 0.0.70(svelte@4.2.12)(typescript@5.3.3)
+    specifier: ^0.0.79
+    version: 0.0.79(svelte@4.2.12)(typescript@5.3.3)
   felte:
     specifier: ^1.2.14
     version: 1.2.14(svelte@4.2.12)
@@ -663,8 +663,8 @@ packages:
     resolution: {integrity: sha512-/wkLWYhPtpq6aDXw1lO4772Rc+drssgl/pavmMUXe5sYJ+hi0+EqqJlFKlvO13lL7hoULovS9OIwmXOtilP+FA==}
     dev: false
 
-  /@frontline-hq/uui@0.0.70(svelte@4.2.12)(typescript@5.3.3):
-    resolution: {integrity: sha512-SGIm7ZOOnZ0oeMa8mGydoj98t05Sr9R4fbsWHN1Can3RMkGelBeZgG++qBIs99IjNbc4TGgcpVErZhk1trGw1g==}
+  /@frontline-hq/uui@0.0.79(svelte@4.2.12)(typescript@5.3.3):
+    resolution: {integrity: sha512-I6FkjNu3c3TXamIMqSsFQwahgkrGn2su1RQSTgswpYTo0tenyAyH/CD30GlTXbxR9nhonVS/N5O12YDG1HP0eQ==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
