@@ -144,132 +144,130 @@
 			</picture>
 		</div>
 	</div>
-	<div class="relative overflow-hidden">
-		<tdc-mc-hhs
-			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
-		>
-			<h1>{m.domaincheckerheading()}</h1>
-			<p>
-				{m.domaincheckersubtitle()}
-			</p>
-			<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
-			<div class="w-full" slot="after">
-				<McHeroHeaderSectionFormWrapper>
-					<div
-						class="flex text-white items-center w-full h-full mb-uui-3xl space-x-uui-xl"
-						slot="logo"
-					>
-						<img
-							src="/google-logo.svg"
-							class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
-							alt="Google logo"
-						/>
-
-						<img
-							src="/yahoo-logo.svg"
-							class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
-							alt="Yahoo logo"
-						/>
-					</div>
-					<h4 slot="title">{m.domaincheckerformheading()}</h4>
-					<span slot="subtitle">{m.domaincheckerformsubtitle()} </span>
-					<!-- Todo might be a solution for not setting classes on the form slot -->
-					<DomainCheckerForm
-						bind:this={domainCheckerForm}
-						bind:checkedDomain
-						bind:domainIsSafe
-						bind:subDomainIsSafe
-						slot="form"
+	<tdc-mc-hhs
+		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
+	>
+		<h1>{m.domaincheckerheading()}</h1>
+		<p>
+			{m.domaincheckersubtitle()}
+		</p>
+		<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
+		<div class="w-full" slot="after">
+			<McHeroHeaderSectionFormWrapper>
+				<div
+					class="flex text-white items-center w-full h-full mb-uui-3xl space-x-uui-xl"
+					slot="logo"
+				>
+					<img
+						src="/google-logo.svg"
+						class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
+						alt="Google logo"
 					/>
-					<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
-						<span>
-							{m.domaincheckerformfooter1()}
-							<span class="flex flex-row items-center justify-center space-x-uui-md"
-								><span class="">{m.domaincheckerformfooter2()}</span>
-								<span class="underline underline-offset-2">{m.domaincheckerformfooter3()}</span>
-								<span> {m.domaincheckerformfooter4()} </span>
-							</span>
+
+					<img
+						src="/yahoo-logo.svg"
+						class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
+						alt="Yahoo logo"
+					/>
+				</div>
+				<h4 slot="title">{m.domaincheckerformheading()}</h4>
+				<span slot="subtitle">{m.domaincheckerformsubtitle()} </span>
+				<!-- Todo might be a solution for not setting classes on the form slot -->
+				<DomainCheckerForm
+					bind:this={domainCheckerForm}
+					bind:checkedDomain
+					bind:domainIsSafe
+					bind:subDomainIsSafe
+					slot="form"
+				/>
+				<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
+					<span>
+						{m.domaincheckerformfooter1()}
+						<span class="flex flex-row items-center justify-center space-x-uui-md"
+							><span class="">{m.domaincheckerformfooter2()}</span>
+							<span class="underline underline-offset-2">{m.domaincheckerformfooter3()}</span>
+							<span> {m.domaincheckerformfooter4()} </span>
 						</span>
-					</div></McHeroHeaderSectionFormWrapper
-				>
-			</div>
-		</tdc-mc-hhs>
+					</span>
+				</div></McHeroHeaderSectionFormWrapper
+			>
+		</div>
+	</tdc-mc-hhs>
 
-		<div
-			class="{checkedDomain !== undefined && domainIsSafe !== undefined
-				? ''
-				: 'hidden'}  bg-uui-bg-primary z-10 absolute w-full h-full top-0"
-		>
-			<div class="flex items-end md:items-center justify-center w-full h-full">
-				<tdc-mc-hs
-					tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
-				>
-					<h6 slot="subheading">
-						<tdc-badge
-							icon={{
-								type: 'icon',
-								leading: domainIsSafe ? securityShield01 : generalSlashCircle01
-							}}
-							tdc={{
-								size: 'lg',
-								color: domainIsSafe ? 'success' : 'error',
-								badgeType: 'Pill color'
-							}}
-							>{domainIsSafe
-								? `${m.domaincheckeroverlaybadgeprotected()}`
-								: `${m.domaincheckeroverlaybadgenotprotected()}`}</tdc-badge
-						>
-					</h6>
-					<!-- TODO continue here scheint geschützt zu sein. -->
-					<h2 slot="heading">
-						{checkedDomain}
-						{domainIsSafe
-							? `${m.domaincheckeroverlaytitleprotected()}`
-							: `${m.domaincheckeroverlaytitlenotprotected()}`}
-						<!-- This h4 only pops-up when a domainIsSafe but has false subdomain-protection settings -->
-						<h4 class="uui-text-lg">
-							{!subDomainIsSafe && domainIsSafe ? `${m.domaincheckeroverlaysubdomaintitle()}` : ''}
-						</h4>
-					</h2>
-					<p>
-						{domainIsSafe
-							? `${m.domaincheckeroverlaydomainissafetext()}`
-							: `${m.domaincheckeroverlaydomainisnotsafetext()}`}
-					</p>
-					<p>
-						{domainIsSafe ? '' : `${m.domaincheckeroverlaydomainisnotsafetext2()}`}
-					</p>
-					<p>
-						{domainIsSafe ? '' : `${m.domaincheckeroverlaydomainisnotsafetext3()}`}
-					</p>
+	<div
+		class="{checkedDomain !== undefined && domainIsSafe !== undefined
+			? ''
+			: 'hidden '}  bg-uui-bg-primary/70 backdrop-blur-md z-10 fixed w-full h-full top-0"
+	>
+		<div class="flex items-center justify-center w-full h-full">
+			<tdc-mc-hs
+				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
+			>
+				<h6 slot="subheading">
+					<tdc-badge
+						icon={{
+							type: 'icon',
+							leading: domainIsSafe ? securityShield01 : generalSlashCircle01
+						}}
+						tdc={{
+							size: 'lg',
+							color: domainIsSafe ? 'success' : 'error',
+							badgeType: 'Pill color'
+						}}
+						>{domainIsSafe
+							? `${m.domaincheckeroverlaybadgeprotected()}`
+							: `${m.domaincheckeroverlaybadgenotprotected()}`}</tdc-badge
+					>
+				</h6>
+				<!-- TODO continue here scheint geschützt zu sein. -->
+				<h2 slot="heading">
+					{checkedDomain}
+					{domainIsSafe
+						? `${m.domaincheckeroverlaytitleprotected()}`
+						: `${m.domaincheckeroverlaytitlenotprotected()}`}
+					<!-- This h4 only pops-up when a domainIsSafe but has false subdomain-protection settings -->
+					<h4 class="uui-text-lg">
+						{!subDomainIsSafe && domainIsSafe ? `${m.domaincheckeroverlaysubdomaintitle()}` : ''}
+					</h4>
+				</h2>
+				<p>
+					{domainIsSafe
+						? `${m.domaincheckeroverlaydomainissafetext()}`
+						: `${m.domaincheckeroverlaydomainisnotsafetext()}`}
+				</p>
+				<p>
+					{domainIsSafe ? '' : `${m.domaincheckeroverlaydomainisnotsafetext2()}`}
+				</p>
+				<p>
+					{domainIsSafe ? '' : `${m.domaincheckeroverlaydomainisnotsafetext3()}`}
+				</p>
 
-					<McUtilActions slot="after">
-						<tdc-button
-							tdc={{
-								size: { default: 'xl', 'uui-desktop': 'xl' },
-								destructive: 'false',
-								hierarchy: 'secondary',
-								coloring: 'gray'
-							}}
-							type="button"
-							on:click={() => domainCheckerForm.resetForm()}
-							icon={{ type: 'icon', leading: arrowsArrowUpLeft }}
-							>{m.domaincheckeroverlaycta1()}</tdc-button
-						>
-						<tdc-button
-							data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
-							data-cal-config={JSON.stringify({ layout: 'month_view' })}
-							tdc={{
-								size: { default: 'xl', 'uui-desktop': 'xl' },
-								destructive: 'false',
-								hierarchy: 'primary',
-								coloring: 'color'
-							}}
-							icon={{ type: 'icon', leading: phoneCall }}>{m.domaincheckeroverlaycta2()}</tdc-button
-						>
-					</McUtilActions>
-				</tdc-mc-hs>
-			</div>
+				<McUtilActions slot="after">
+					<tdc-button
+						tdc={{
+							size: { default: 'xl', 'uui-desktop': 'xl' },
+							destructive: 'false',
+							hierarchy: 'secondary',
+							coloring: 'gray'
+						}}
+						type="button"
+						on:click={() => domainCheckerForm.resetForm()}
+						icon={{ type: 'icon', leading: arrowsArrowUpLeft }}
+						>{m.domaincheckeroverlaycta1()}</tdc-button
+					>
+					<tdc-button
+						data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+						data-cal-config={JSON.stringify({ layout: 'month_view' })}
+						tdc={{
+							size: { default: 'xl', 'uui-desktop': 'xl' },
+							destructive: 'false',
+							hierarchy: 'primary',
+							coloring: 'color'
+						}}
+						icon={{ type: 'icon', leading: phoneCall }}>{m.domaincheckeroverlaycta2()}</tdc-button
+					>
+				</McUtilActions>
+			</tdc-mc-hs>
 		</div>
 	</div>
 	<tdc-mc-cta-section
