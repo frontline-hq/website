@@ -17,7 +17,7 @@
 		domain: yup
 			.string()
 			.matches(
-				/^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$/,
+				/^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$|^[\w-+]+(\.[\w-]+)*@([a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,7})$/,
 				`${m.domaincheckerformdomainerrormessage()}`
 			)
 			.required()
@@ -34,7 +34,10 @@
 		onSubmit: async (values) => {
 			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
 			submissionState = undefined;
-			let domainParts = values.domain.split('.');
+
+			let domainParts = values.domain.includes('@')
+				? values.domain.split('@')[1].split('.')
+				: values.domain.split('.');
 			checkedDomain = domainParts.slice(-2).join('.');
 			const endpoint = `https://dns.quad9.net:5053/dns-query?name=_dmarc.${checkedDomain}&type=txt`;
 
@@ -49,7 +52,6 @@
 			if (!response.ok) {
 				throw new Error(res);
 			}
-			// Probably not needed when translating in an overlay
 			domainIsSafe = false;
 			subDomainIsSafe = false;
 			if (res?.Answer) {

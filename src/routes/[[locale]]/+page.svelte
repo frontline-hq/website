@@ -184,7 +184,7 @@
 					<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
 						<span>
 							{m.domaincheckerformfooter1()}
-							<span class="flex flex-row items-center justify-center space-x-uui-xs"
+							<span class="flex flex-row items-center justify-center space-x-uui-md"
 								><span class="">{m.domaincheckerformfooter2()}</span>
 								<span class="underline underline-offset-2">{m.domaincheckerformfooter3()}</span>
 								<span> {m.domaincheckerformfooter4()} </span>
