@@ -30,7 +30,8 @@
 	import {
 		generalSlashCircle01,
 		securityShield01,
-		arrowsArrowUpLeft
+		arrowsArrowUpLeft,
+		generalXClose
 	} from '@frontline-hq/untitledui-icons';
 
 	let domainCheckerForm: DomainCheckerForm;
@@ -151,7 +152,7 @@
 			{m.domaincheckersubtitle()}
 		</p>
 		<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
-		<div class="w-full" slot="after">
+		<div class="w-full" id="domaincheckerform" slot="after">
 			<McHeroHeaderSectionFormWrapper>
 				<div
 					class="flex text-white items-center w-full h-full mb-uui-3xl space-x-uui-xl"
@@ -198,6 +199,22 @@
 			? ''
 			: 'hidden '}  bg-uui-bg-primary/70 backdrop-blur-md z-10 fixed w-full h-full top-0"
 	>
+		<tdc-button-a
+			class="absolute right-0 m-8"
+			tdc={{
+				size: { default: 'md', 'uui-desktop': 'lg' },
+				destructive: 'false',
+				hierarchy: 'secondary',
+				coloring: 'gray'
+			}}
+			type="button"
+			on:click={() => {
+				document.body.style.overflowY = 'auto';
+				domainCheckerForm.resetForm();
+			}}
+			href="#domaincheckerform"
+			icon={{ type: 'icon-only', leading: generalXClose }}
+		/>
 		<div class="flex items-center justify-center w-full h-full">
 			<tdc-mc-hs
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
@@ -242,7 +259,7 @@
 				</p>
 
 				<McUtilActions slot="after">
-					<tdc-button
+					<tdc-button-a
 						tdc={{
 							size: { default: 'xl', 'uui-desktop': 'xl' },
 							destructive: 'false',
@@ -254,8 +271,9 @@
 							document.body.style.overflowY = 'auto';
 							domainCheckerForm.resetForm();
 						}}
+						href="#domaincheckerform"
 						icon={{ type: 'icon', leading: arrowsArrowUpLeft }}
-						>{m.domaincheckeroverlaycta1()}</tdc-button
+						>{m.domaincheckeroverlaycta1()}</tdc-button-a
 					>
 					<tdc-button
 						data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
