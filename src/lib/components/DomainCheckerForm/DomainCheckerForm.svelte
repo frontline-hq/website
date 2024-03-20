@@ -35,13 +35,12 @@
 			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
 			submissionState = undefined;
 
-			let domainParts = values.domain.includes('@')
+			const domainParts = values.domain.includes('@')
 				? values.domain.split('@')[1].split('.')
 				: values.domain.split('.');
 			checkedDomain = domainParts.slice(-2).join('.');
 			const endpoint = `https://dns.quad9.net:5053/dns-query?name=_dmarc.${checkedDomain}&type=txt`;
 
-			console.log(endpoint, 'endpoint');
 			const response = await fetch(endpoint, {
 				method: 'GET'
 			});
@@ -52,10 +51,14 @@
 			if (!response.ok) {
 				throw new Error(res);
 			}
+			return { ...res, domainParts };
+		},
+		onSuccess(response: any) {
 			domainIsSafe = false;
 			subDomainIsSafe = false;
-			if (res?.Answer) {
-				const dmarcRecord = res.Answer.find(
+			document.body.style.overflowY = 'hidden';
+			if (response?.Answer) {
+				const dmarcRecord = response.Answer.find(
 					(a: { name: string | undefined }) => a.name === `_dmarc.${checkedDomain}.`
 				);
 				if (dmarcRecord) {
@@ -66,16 +69,13 @@
 
 					domainIsSafe =
 						(policy === 'reject' || policy === 'quarantine') && (!pct || pct === '100');
-					if (domainParts.length > 2 && subdomainPolicy === 'none') {
+					if (response.domainParts.length > 2 && subdomainPolicy === 'none') {
 						subDomainIsSafe = false;
 					} else {
 						subDomainIsSafe = true;
 					}
 				}
 			}
-			return res;
-		},
-		onSuccess(response, context) {
 			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
 			submissionState = 'success';
 			reset();

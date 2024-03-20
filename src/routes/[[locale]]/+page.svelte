@@ -65,7 +65,6 @@
 	<link rel="icon" type="image/x-icon" href="/favicon.png" />
 	<!-- Update the favicon path if needed -->
 </svelte:head>
-
 {#if browser}
 	<div class="relative flex flex-col justify-end h-[100vh] uui-desktop:h-auto overflow-hidden">
 		<tdc-mc-hhs
@@ -251,7 +250,10 @@
 							coloring: 'gray'
 						}}
 						type="button"
-						on:click={() => domainCheckerForm.resetForm()}
+						on:click={() => {
+							document.body.style.overflowY = 'auto';
+							domainCheckerForm.resetForm();
+						}}
 						icon={{ type: 'icon', leading: arrowsArrowUpLeft }}
 						>{m.domaincheckeroverlaycta1()}</tdc-button
 					>
