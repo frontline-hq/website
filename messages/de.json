@@ -70,5 +70,8 @@
 	"domaincheckersubmitbuttonsubmissionsuccestext": "Domain überprüft",
 	"domaincheckersubmitbuttonctatext": "Jetzt herausfinden",
 	"domaincheckerplaceholder": "beispiel.de",
-	"domaincheckerformdomainerrormessage": "Geben Sie eine korrekte E-Mail-Domain ein"
+	"domaincheckerformdomainerrormessage": "Geben Sie eine korrekte E-Mail-Domain ein",
+	"encryptedsharingcontactsectionp": "Bitte füllen Sie Ihre Unternehmensinformationen aus. <br/> Die Details, die wir in der E-Mail angefordert haben, um mit unserer Arbeit zu beginnen, können im Nachrichtenfeld eingetragen werden.",
+	"encryptedsharingcontactformmessageplaceholder": "Bitte geben Sie Ihre sensiblen Informationen wie Benutzernamen und Passwörter in dieses Feld ein. Zum Beispiel:\nmitarbeiter@beispiel.com: passwort2323 mitarbeiter2@beispiel.com: H%POazxL*@KLJA\nusw."
+
 }

@@ -377,41 +377,4 @@
 			</tdc-mc-team-section-member>
 		</div>
 	</tdc-mc-cta-section>
-
-	<tdc-mc-contactsection
-		id="contact"
-		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-form-01' }}
-	>
-		<h6 slot="subheading">{m.contactsectionsubheading()}</h6>
-		<h3 slot="heading">{m.contactsectionheading()}</h3>
-		<p class="max-w-[50ch]">
-			{@html m.contactsectionp()}
-		</p>
-		<div slot="form">
-			<ContactForm />
-		</div>
-	</tdc-mc-contactsection>
-	<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
-		<tdc-fs-logo slot="logo" />
-		<tdc-mc-footer-link
-			href="/privacy"
-			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-			>{m.footerprivacylinktext()}</tdc-mc-footer-link
-		>
-		<tdc-mc-footer-link
-			href="/imprint"
-			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-			>{m.footerimprintlinktext()}</tdc-mc-footer-link
-		>
-		{#each availableLanguageTags.filter((lang) => lang !== languageTag()) as lang}
-			<tdc-mc-footer-link
-				href={i18n.route($page.url.pathname)}
-				hreflang={lang}
-				aria-current={lang === languageTag() ? 'page' : undefined}
-				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-				>{lang.toUpperCase()}</tdc-mc-footer-link
-			>
-		{/each}
-		<span slot="sidenote">{m.footersidenotetext()}</span>
-	</tdc-mc-footer>
 {/if}
