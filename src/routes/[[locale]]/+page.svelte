@@ -6,14 +6,10 @@
 	import fallbackBackground from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
 	import fallbackBackgroundMobile from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
 	import * as m from '$lib/paraglide/messages.js';
-	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
 	import { communicationPhone as phoneCall } from '@frontline-hq/untitledui-icons';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import calFn from '@calcom/embed-snippet';
-	import { i18n } from '$lib/i18n';
-	import { page } from '$app/stores';
-	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
 	import {
 		McUtilActions,
 		McHeroHeaderSectionFormWrapper

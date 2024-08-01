@@ -1,5 +1,4 @@
 <script>
-	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
 	import TrustedForm from '$lib/components/TrustedForm/TrustedForm.svelte';
 	import * as m from '$lib/paraglide/messages.js';
 </script>
