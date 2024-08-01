@@ -38,7 +38,7 @@
 	"yupstringemail": "Please specify a valid email address.",
 	"contactformourreplyemail": "<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<br>\n<blockquote type=\"cite\">\n{firstName} {lastName} <{email}> wrote at {sendtime}:\n<br>\n<br>\n</blockquote>\n<blockquote type=\"cite\">\n{message}\n</blockquote>\n</body>\n</html>",
 	"contactformemailtous": "<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<h4>{firstName} {lastName} <{email}> wrote at {sendtime}:</h4>\n<p>{message}</p>\n<a href=\"mailto:{email}?subject={encodedSubject}&body={encodedBody}\">Reply</a>\n</body>\n</html>",
-	"contactsectionformprivacypolicyhint1": "You agree to our friendly <a class=\"uui-anchor\" href=\"${privacyLink}\">privacy policy</a>.*",
+	"contactsectionformprivacypolicyhint1": "You agree to our friendly <a class=\"uui-anchor\" href=\"{privacyLink}\">privacy policy</a>.*",
 	"introsectionheading": "We are frontline.",
 	"introsectiontext": "Need help with your web project or cybersecurity? We got you covered.",
 	"introsectionactionsecondary": "Schedule call",

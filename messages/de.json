@@ -38,7 +38,7 @@
 	"yupstringemail": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
 	"contactformourreplyemail": "`\n<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<br>\n<blockquote type=\"cite\">\n{firstName} {lastName} <{email}> schrieb um {sendtime}:\n<br>\n<br>\n</blockquote>\n<blockquote type=\"cite\">\n{message}\n</blockquote>\n</body>\n</html>\n`",
 	"contactformemailtous": "`\n<html>\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head>\n<body dir=\"auto\">\n<h4>{firstName} {lastName} <{email}> schrieb um {sendtime}:</h4>\n<p>{message}</p>\n<a href=\"mailto:{email}?subject={encodedSubject}&body={encodedBody}\">Antworten</a>\n</body>\n</html>\n`",
-	"contactsectionformprivacypolicyhint1": "Sie erklären sich einverstanden mit unserer freundlichen <a class=\"uui-anchor\" href=\"${privacyLink}\"> Datenschutzrichtlinie </a>.*",
+	"contactsectionformprivacypolicyhint1": "Sie erklären sich einverstanden mit unserer freundlichen <a class=\"uui-anchor\" href=\"{privacyLink}\"> Datenschutzrichtlinie </a>.*",
 	"introsectionheading": "Wir sind frontline.",
 	"introsectiontext": " Brauchen Sie Hilfe bei Ihrem Webprojekt oder in Sachen Cybersicherheit? Wir haben die Lösung für Sie.",
 	"introsectionactionsecondary": "Call vereinbaren",
