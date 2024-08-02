@@ -29,6 +29,7 @@
 		arrowsArrowUpLeft,
 		generalXClose
 	} from '@frontline-hq/untitledui-icons';
+	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
 
 	let domainCheckerForm: DomainCheckerForm;
 	let checkedDomain: string | undefined;
@@ -373,4 +374,18 @@
 			</tdc-mc-team-section-member>
 		</div>
 	</tdc-mc-cta-section>
+
+	<tdc-mc-contactsection
+		id="contact"
+		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-form-01' }}
+	>
+		<h6 slot="subheading">{m.contactsectionsubheading()}</h6>
+		<h3 slot="heading">{m.contactsectionheading()}</h3>
+		<p class="max-w-[50ch]">
+			{@html m.contactsectionp()}
+		</p>
+		<div slot="form">
+			<ContactForm />
+		</div>
+	</tdc-mc-contactsection>
 {/if}
