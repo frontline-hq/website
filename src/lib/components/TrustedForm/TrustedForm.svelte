@@ -157,6 +157,7 @@
 		</span>
 		<span class="col-span-2">
 			<tdc-input-textarea
+				rows="8"
 				bind:value={$data['message']}
 				disabled={$isSubmitting}
 				destructive={$errors['message'] !== null}
