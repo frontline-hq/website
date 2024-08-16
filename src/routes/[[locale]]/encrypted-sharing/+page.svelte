@@ -7,8 +7,8 @@
 	id="contact"
 	tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-form-01' }}
 >
-	<h6 slot="subheading">{m.contactsectionsubheading()}</h6>
-	<h3 slot="heading">{m.contactsectionheading()}</h3>
+	<h6 slot="subheading">{m.encryptedsharingsectionsubheading()}</h6>
+	<h3 slot="heading">{m.encryptedsharingsectionheading()}</h3>
 	<p class="max-w-[50ch]">
 		{@html m.encryptedsharingcontactsectionp()}
 	</p>

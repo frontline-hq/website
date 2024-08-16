@@ -75,6 +75,7 @@
 	"domaincheckerplaceholder": "example.com",
 	"domaincheckerformdomainerrormessage": "Fill in a correct e-mail domain",
 	"encryptedsharingcontactsectionp": "Please fill in your company information.<br/> The details we requested in the email to begin our work can be written in the message field.",
-	"encryptedsharingcontactformmessageplaceholder": "Please fill in your sensitive information, such as usernames and passwords, in this field. For example:\nemployee1@example.com: password12345 employee2@example.com: H%POazxL*@KLJA\netc."
-
+	"encryptedsharingcontactformmessageplaceholder": "Please fill in your sensitive information, such as usernames and passwords, in this field. For example:\nemployee1@example.com: password12345 employee2@example.com: H%POazxL*@KLJA\netc.",
+	"encryptedsharingsectionsubheading": "Securely share your credentials",
+	"encryptedsharingsectionheading": "Encrypted Form"
 }
