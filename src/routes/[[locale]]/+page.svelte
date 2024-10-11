@@ -141,6 +141,46 @@
 			</picture>
 		</div>
 	</div>
+
+	<tdc-mc-cta-section
+		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-left' }}
+	>
+		<h2 slot="heading">Expert IT Services for Business</h2>
+		<!-- Default slot ... -->
+		<p>
+			Boost security, streamline operations, and protect your data with our tailored IT services.
+			From email security to infrastructure optimization, we provide the foundation for growth and
+			peace of mind.
+		</p>
+		<!-- McUtilActions inherits tdc styles from parent. -->
+
+		<!-- We let users define the height of their images themself, for horizontal imgs e.g. -->
+		<div slot="img" class="flex items-stretch lg:items-start lg:ml-auto mt-uui-xl lg:mt-0">
+			<McUtilActions class="items-stretch w-full lg:w-fit lg:items-start lg:ml-auto ">
+				<!-- <tdc-button
+					tdc={{
+						size: 'xl',
+						destructive: 'false',
+						hierarchy: 'secondary',
+						coloring: 'gray'
+					}}
+					icon={{ type: 'icon' }}>Learn more</tdc-button
+				> -->
+
+				<tdc-button-a
+					href="#contact"
+					tdc={{
+						size: { default: 'xl' },
+						destructive: 'false',
+						hierarchy: 'primary',
+						coloring: 'color'
+					}}
+					icon={{ type: 'icon' }}>Contact us</tdc-button-a
+				>
+			</McUtilActions>
+		</div>
+	</tdc-mc-cta-section>
+
 	<tdc-mc-hhs
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
 	>
