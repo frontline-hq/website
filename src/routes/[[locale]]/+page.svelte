@@ -6,7 +6,17 @@
 	import fallbackBackground from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
 	import fallbackBackgroundMobile from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
 	import * as m from '$lib/paraglide/messages.js';
-	import { communicationPhone as phoneCall } from '@frontline-hq/untitledui-icons';
+	import {
+		arrowsSwitchHorizontal01,
+		communicationMail02,
+		generalActivity,
+		generalDownloadCloud01,
+		generalTool02,
+		communicationPhone as phoneCall,
+		securityFingerprint01,
+		securityFingerprint04,
+		securityShieldTick
+	} from '@frontline-hq/untitledui-icons';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import calFn from '@calcom/embed-snippet';
@@ -30,6 +40,8 @@
 		generalXClose
 	} from '@frontline-hq/untitledui-icons';
 	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
+	import FeatureText from '$lib/components/FeatureText/FeatureText.svelte';
+	import FeaturedIcon from '$lib/components/FeaturedIcon/FeaturedIcon.svelte';
 
 	let domainCheckerForm: DomainCheckerForm;
 	let checkedDomain: string | undefined;
@@ -46,6 +58,63 @@
 			layout: 'month_view'
 		});
 	});
+
+	const featuredIconArray = [
+		{
+			url: communicationMail02,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: 'Email Security Consultancy',
+			description:
+				'Identify vulnerabilities and optimize email security to protect against threats and ensure compliance.'
+		},
+		{
+			url: arrowsSwitchHorizontal01,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: 'Email Migration',
+			description:
+				'Seamlessly migrate from outdated providers to secure platforms with minimal downtime.'
+		},
+		{
+			url: securityFingerprint04,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: 'Advanced Password Management',
+			description:
+				'Secure data with Bitwarden for storage and YubiKeys for multi-factor authentication.'
+		},
+		{
+			url: generalTool02,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: 'Infrastructure Consultancy',
+			description:
+				'Tailored IT solutions that enhance efficiency, scalability, and security for your business.'
+		},
+		{
+			url: securityShieldTick,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: 'Domain Spoofing Protection',
+			description:
+				'Safeguard your brand by implementing DMARC, SPF, and DKIM to block unauthorized email use.'
+		},
+		{
+			url: generalDownloadCloud01,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: 'Automated Backup Solutions',
+			description:
+				'Automate backups to securely store critical data and minimize business disruption.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -180,6 +249,24 @@
 			</McUtilActions>
 		</div>
 	</tdc-mc-cta-section>
+
+	<div
+		class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-uui-9xl grid w-full justify-evenly mx-auto gap-uui-7xl max-w-uui-container-max-width-mobile px-uui-container-padding-mobile lg:px-uui-container-padding-desktop lg:max-w-uui-container-max-width-desktop"
+	>
+		{#each featuredIconArray as icon}
+			<FeatureText>
+				<FeaturedIcon
+					slot="icon"
+					url={icon.url}
+					type={icon.type}
+					color={icon.color}
+					size={icon.size}
+				></FeaturedIcon>
+				<h4 slot="title">{icon.title}</h4>
+				<p slot="description">{icon.description}</p>
+			</FeatureText>
+		{/each}
+	</div>
 
 	<tdc-mc-hhs
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
