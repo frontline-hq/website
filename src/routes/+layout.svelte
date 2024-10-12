@@ -42,38 +42,38 @@
 									<tdc-button-a
 										href="#services"
 										tdc={{
-											size: { default: 'sm' },
+											size: { default: 'md' },
 											destructive: 'false',
 											hierarchy: 'link',
 											coloring: 'color'
 										}}
-										icon={{ type: 'icon' }}>Services</tdc-button-a
+										icon={{ type: 'icon' }}>{m.mean_early_moose_savor()}</tdc-button-a
 									>
 									<tdc-button-a
 										href="#domaintester"
 										tdc={{
-											size: { default: 'sm' },
+											size: { default: 'md' },
 											destructive: 'false',
 											hierarchy: 'link',
 											coloring: 'color'
 										}}
-										icon={{ type: 'icon' }}>Domain tester</tdc-button-a
+										icon={{ type: 'icon' }}>{m.last_brief_ant_adore()}</tdc-button-a
 									>
 									<tdc-button-a
 										href="#about"
 										tdc={{
-											size: { default: 'sm' },
+											size: { default: 'md' },
 											destructive: 'false',
 											hierarchy: 'link',
 											coloring: 'color'
 										}}
 										icon={{ type: 'icon' }}
-										>About
+										>{m.civil_calm_walrus_reap()}
 									</tdc-button-a>
 								</div>
 							</div>
 						</div>
-						<div class="hidden text-white md:flex space-x-6">
+						<div class="hidden md:flex">
 							<tdc-button-a
 								href="#contact"
 								tdc={{
@@ -82,7 +82,7 @@
 									hierarchy: 'primary',
 									coloring: 'color'
 								}}
-								icon={{ type: 'icon' }}>Contact us</tdc-button-a
+								icon={{ type: 'icon' }}>{m.bland_alive_ocelot_chop()}</tdc-button-a
 							>
 						</div>
 						<!-- Menu Button for Mobile -->
@@ -127,7 +127,7 @@
 											hierarchy: 'link',
 											coloring: 'color'
 										}}
-										icon={{ type: 'icon' }}>Services</tdc-button-a
+										icon={{ type: 'icon' }}>{m.mean_early_moose_savor()}</tdc-button-a
 									>
 									<tdc-button-a
 										href="#domaintester"
@@ -138,7 +138,7 @@
 											hierarchy: 'link',
 											coloring: 'color'
 										}}
-										icon={{ type: 'icon' }}>Domain tester</tdc-button-a
+										icon={{ type: 'icon' }}>{m.last_brief_ant_adore()}</tdc-button-a
 									>
 									<tdc-button-a
 										href="#about"
@@ -150,10 +150,23 @@
 											coloring: 'color'
 										}}
 										icon={{ type: 'icon' }}
-										>About
+										>{m.civil_calm_walrus_reap()}
 									</tdc-button-a>
+									<tdc-button-a
+										on:click={toggleMenu}
+										href="#contact"
+										tdc={{
+											size: { default: 'md' },
+											destructive: 'false',
+											hierarchy: 'primary',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}>{m.bland_alive_ocelot_chop()}</tdc-button-a
+									>
 								</div>
-								<tdc-fs-logo />
+								<a on:click={toggleMenu} href="/">
+									<tdc-fs-logo />
+								</a>
 							</div>
 
 							<!-- Close Button -->
