@@ -117,27 +117,41 @@
 									on:click={toggleMenu}
 									icon={{ type: 'icon-only', leading: generalXClose }}
 								/>
-								<div>
-									<a
-										href="/"
-										class="block px-4 py-2 text-2xl hover:bg-gray-700"
-										on:click={toggleMenu}>Home</a
+								<div class="space-y-uui-4xl">
+									<tdc-button-a
+										href="#services"
+										on:click={toggleMenu}
+										tdc={{
+											size: { default: 'xl' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}>Services</tdc-button-a
 									>
-									<a
-										href="/about"
-										class="block px-4 py-2 text-2xl hover:bg-gray-700"
-										on:click={toggleMenu}>About</a
+									<tdc-button-a
+										href="#domaintester"
+										on:click={toggleMenu}
+										tdc={{
+											size: { default: 'xl' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}>Domain tester</tdc-button-a
 									>
-									<a
-										href="/services"
-										class="block px-4 py-2 text-2xl hover:bg-gray-700"
-										on:click={toggleMenu}>Services</a
-									>
-									<a
-										href="/contact"
-										class="block px-4 py-2 text-2xl hover:bg-gray-700"
-										on:click={toggleMenu}>Contact</a
-									>
+									<tdc-button-a
+										href="#about"
+										on:click={toggleMenu}
+										tdc={{
+											size: { default: 'xl' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}
+										>About
+									</tdc-button-a>
 								</div>
 								<tdc-fs-logo />
 							</div>
