@@ -60,60 +60,61 @@
 		});
 	});
 
-	const featuredIconArray = [
+	const featuredIconArray: {
+		url: string;
+		type: 'Dark';
+		size: 'lg';
+		color: 'Brand';
+		title: string;
+		description: string;
+	}[] = [
 		{
 			url: communicationMail02,
 			type: 'Dark',
 			color: 'Brand',
 			size: 'lg',
-			title: 'Email Security Consultancy',
-			description:
-				'Identify vulnerabilities and optimize email security to protect against threats and ensure compliance.'
+			title: m.upper_left_wren_enchant(),
+			description: m.tense_lazy_earthworm_roam()
 		},
 		{
 			url: arrowsSwitchHorizontal01,
 			type: 'Dark',
 			color: 'Brand',
 			size: 'lg',
-			title: 'Email Migration',
-			description:
-				'Seamlessly migrate from outdated providers to secure platforms with minimal downtime.'
+			title: m.inclusive_stock_mallard_read(),
+			description: m.heroic_house_ant_edit()
 		},
 		{
 			url: securityFingerprint04,
 			type: 'Dark',
 			color: 'Brand',
 			size: 'lg',
-			title: 'Advanced Password Management',
-			description:
-				'Secure data with Bitwarden for storage and YubiKeys for multi-factor authentication.'
+			title: m.bold_noble_martin_pinch(),
+			description: m.alert_yummy_stingray_taste()
 		},
 		{
 			url: generalTool02,
 			type: 'Dark',
 			color: 'Brand',
 			size: 'lg',
-			title: 'Infrastructure Consultancy',
-			description:
-				'Tailored IT solutions that enhance efficiency, scalability, and security for your business.'
+			title: m.extra_light_anaconda_hunt(),
+			description: m.slow_nice_hamster_surge()
 		},
 		{
 			url: securityShieldTick,
 			type: 'Dark',
 			color: 'Brand',
 			size: 'lg',
-			title: 'Domain Spoofing Protection',
-			description:
-				'Safeguard your brand by implementing DMARC, SPF, and DKIM to block unauthorized email use.'
+			title: m.steep_level_squirrel_laugh(),
+			description: m.plain_loud_mule_aspire()
 		},
 		{
 			url: generalDownloadCloud01,
 			type: 'Dark',
 			color: 'Brand',
 			size: 'lg',
-			title: 'Automated Backup Solutions',
-			description:
-				'Automate backups to securely store critical data and minimize business disruption.'
+			title: m.alert_tense_tuna_rest(),
+			description: m.shy_next_jackdaw_snap()
 		}
 	];
 </script>
@@ -217,12 +218,10 @@
 		class="scroll-mt-20"
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-left' }}
 	>
-		<h2 slot="heading">Expert IT Services for Business</h2>
+		<h2 slot="heading">{m.great_watery_turkey_quell()}</h2>
 		<!-- Default slot ... -->
 		<p>
-			Boost security, streamline operations, and protect your data with our tailored IT services.
-			From email security to infrastructure optimization, we provide the foundation for growth and
-			peace of mind.
+			{m.long_long_ape_clasp()}
 		</p>
 		<!-- McUtilActions inherits tdc styles from parent. -->
 
@@ -247,7 +246,7 @@
 						hierarchy: 'primary',
 						coloring: 'color'
 					}}
-					icon={{ type: 'icon' }}>Contact us</tdc-button-a
+					icon={{ type: 'icon' }}>{m.clean_less_pug_aim()}</tdc-button-a
 				>
 			</McUtilActions>
 		</div>
@@ -258,13 +257,7 @@
 	>
 		{#each featuredIconArray as icon}
 			<FeatureText>
-				<FeaturedIcon
-					slot="icon"
-					url={icon.url}
-					type={icon.type}
-					color={icon.color}
-					size={icon.size}
-				></FeaturedIcon>
+				<FeaturedIcon slot="icon" url={icon.url} type={icon.type} color={icon.color}></FeaturedIcon>
 				<h4 slot="title">{icon.title}</h4>
 				<p slot="description">{icon.description}</p>
 			</FeatureText>
@@ -275,8 +268,8 @@
 			<tdc-mc-hs
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
 			>
-				<h2 slot="heading">Secure. Sustainable. Empowered.</h2>
-				<p>Empowering businesses to innovate and thrive in a secure, sustainable digital world.</p>
+				<h2 slot="heading">{m.mean_lofty_larva_conquer()}</h2>
+				<p>{m.drab_fresh_oryx_learn()}</p>
 				<div class="flex items-center justify-center" slot="after"><tdc-fs-logo /></div>
 			</tdc-mc-hs>
 		</SectionContainer>
@@ -286,7 +279,7 @@
 		class="scroll-mt-24"
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
 	>
-		<h1>{m.domaincheckerheading()}</h1>
+		<h2>{m.domaincheckerheading()}</h2>
 		<p>
 			{m.domaincheckersubtitle()}
 		</p>
@@ -432,7 +425,7 @@
 
 	<div></div>
 
-	<div class="overflow-hidden pt-uui-4xl" id="about">
+	<div class="overflow-hidden scroll-mt-uui-10xl pt-uui-4xl" id="about">
 		<SectionContainer>
 			<div class="relative">
 				<tdc-mc-cta-section
