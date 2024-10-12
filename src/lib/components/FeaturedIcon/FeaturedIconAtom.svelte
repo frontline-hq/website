@@ -5,19 +5,11 @@
 		url: string;
 		color: 'Brand';
 		type: 'Dark';
-		size: 'md' | 'lg' | 'xl';
 	}
 
 	export let url: string;
-	export let size: $$Props['size'] = 'md';
 	export let color: $$Props['color'] = 'Brand';
 	export let type: $$Props['type'] = 'Dark';
-
-	const iconSize = {
-		md: '[&&]:w-[1.25rem] [&&]:h-[1.25rem]',
-		lg: '[&&]:w-[1.5rem] [&&]:h-[1.5rem]',
-		xl: '[&&]:w-[1.75rem] [&&]:h-[1.75rem]'
-	};
 </script>
 
 <div
@@ -28,6 +20,7 @@
 		[mask-repeat:no-repeat]
 		[mask-image:var(--featured-icon-url)]
         bg-uui-featured-icon-dark-fg-brand
-        {iconSize[size]}
+		w-[1.25rem] h-[1.25rem]
+		lg:w-[1.5rem] lg:h-[1.5rem]
 		{$$props.class}"
 />
