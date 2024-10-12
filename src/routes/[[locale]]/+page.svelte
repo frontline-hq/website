@@ -430,12 +430,12 @@
 		</div>
 	</div>
 
-	<div class=" overflow-hidden">
+	<div></div>
+
+	<div class="overflow-hidden pt-uui-4xl" id="about">
 		<SectionContainer>
 			<div class="relative">
 				<tdc-mc-cta-section
-					id="about"
-					class="scroll-mt-20"
 					tdc={{
 						breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' },
 						type: 'split-image-02'
