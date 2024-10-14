@@ -7,35 +7,199 @@
 	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime';
 	import { page } from '$app/stores';
 	import * as m from '$lib/paraglide/messages.js';
+	import { generalMenu01, generalXClose } from '@frontline-hq/untitledui-icons';
+	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
+	import { browser } from '$app/environment';
+
+	let isMenuOpen = false;
+
+	function toggleMenu() {
+		isMenuOpen = !isMenuOpen;
+		// Prevent scrolling when the menu is open
+		if (isMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}
 </script>
 
 <ParaglideJS {i18n}>
-	<License license={PUBLIC_LICENSE}
-		><slot />
-		<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
-			<a href="/">
-				<tdc-fs-logo slot="logo" />
-			</a>
-			<tdc-mc-footer-link
-				href="/privacy"
-				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-				>{m.footerprivacylinktext()}</tdc-mc-footer-link
+	<License license={PUBLIC_LICENSE}>
+		{#if browser}
+			<nav
+				class="z-40 w-full bg-uui-bg-primary fixed flex top-0 border-b-uui-1 border-b-uui-border-secondary py-uui-2xl"
 			>
-			<tdc-mc-footer-link
-				href="/imprint"
-				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-				>{m.footerimprintlinktext()}</tdc-mc-footer-link
-			>
-			{#each availableLanguageTags.filter((lang) => lang !== languageTag()) as lang}
-				<tdc-mc-footer-link
-					href={i18n.route($page.url.pathname)}
-					hreflang={lang}
-					aria-current={lang === languageTag() ? 'page' : undefined}
-					tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-					>{lang.toUpperCase()}</tdc-mc-footer-link
+				<SectionContainer>
+					<div class="flex items-center justify-between">
+						<div class="flex space-x-uui-7xl">
+							<a class="w-fit" href="/">
+								<tdc-fs-logo />
+							</a>
+							<div class="hidden items-center text-white md:flex">
+								<div class="space-x-uui-3xl flex">
+									<!-- Menu for larger screens -->
+									<tdc-button-a
+										href="#services"
+										tdc={{
+											size: { default: 'md' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}>{m.mean_early_moose_savor()}</tdc-button-a
+									>
+									<tdc-button-a
+										href="#domaintester"
+										tdc={{
+											size: { default: 'md' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}>{m.last_brief_ant_adore()}</tdc-button-a
+									>
+									<tdc-button-a
+										href="#about"
+										tdc={{
+											size: { default: 'md' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}
+										>{m.civil_calm_walrus_reap()}
+									</tdc-button-a>
+								</div>
+							</div>
+						</div>
+						<div class="hidden md:flex">
+							<tdc-button-a
+								href="#contact"
+								tdc={{
+									size: { default: 'md' },
+									destructive: 'false',
+									hierarchy: 'primary',
+									coloring: 'color'
+								}}
+								icon={{ type: 'icon' }}>{m.bland_alive_ocelot_chop()}</tdc-button-a
+							>
+						</div>
+						<!-- Menu Button for Mobile -->
+						<tdc-button
+							class="md:hidden focus:outline-none"
+							tdc={{
+								size: { default: 'md', 'uui-desktop': 'lg' },
+								destructive: 'false',
+								hierarchy: 'secondary',
+								coloring: 'gray'
+							}}
+							type="button"
+							on:click={toggleMenu}
+							icon={{ type: 'icon-only', leading: generalMenu01 }}
+						/>
+
+						<!-- Full-Screen Mobile Menu -->
+						<div
+							class={`${
+								isMenuOpen ? 'block' : 'hidden'
+							} fixed  inset-0 bg-uui-bg-primary text-uui-white  z-50 md:hidden`}
+						>
+							<div class="flex h-full py-uui-5xl flex-col items-center justify-between">
+								<tdc-button
+									tdc={{
+										size: { default: 'md', 'uui-desktop': 'lg' },
+										destructive: 'false',
+										hierarchy: 'secondary',
+										coloring: 'gray'
+									}}
+									type="button"
+									on:click={toggleMenu}
+									icon={{ type: 'icon-only', leading: generalXClose }}
+								/>
+								<div class="space-y-uui-4xl">
+									<tdc-button-a
+										href="#services"
+										on:click={toggleMenu}
+										tdc={{
+											size: { default: 'xl' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}>{m.mean_early_moose_savor()}</tdc-button-a
+									>
+									<tdc-button-a
+										href="#domaintester"
+										on:click={toggleMenu}
+										tdc={{
+											size: { default: 'xl' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}>{m.last_brief_ant_adore()}</tdc-button-a
+									>
+									<tdc-button-a
+										href="#about"
+										on:click={toggleMenu}
+										tdc={{
+											size: { default: 'xl' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}
+										>{m.civil_calm_walrus_reap()}
+									</tdc-button-a>
+									<tdc-button-a
+										on:click={toggleMenu}
+										href="#contact"
+										tdc={{
+											size: { default: 'md' },
+											destructive: 'false',
+											hierarchy: 'primary',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}>{m.bland_alive_ocelot_chop()}</tdc-button-a
+									>
+								</div>
+								<a on:click={toggleMenu} href="/">
+									<tdc-fs-logo />
+								</a>
+							</div>
+
+							<!-- Close Button -->
+						</div>
+					</div></SectionContainer
 				>
-			{/each}
-			<span slot="sidenote">{m.footersidenotetext()}</span>
-		</tdc-mc-footer>
+			</nav>
+			<slot />
+			<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
+				<a href="/">
+					<tdc-fs-logo slot="logo" />
+				</a>
+				<tdc-mc-footer-link
+					href="/privacy"
+					tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
+					>{m.footerprivacylinktext()}</tdc-mc-footer-link
+				>
+				<tdc-mc-footer-link
+					href="/imprint"
+					tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
+					>{m.footerimprintlinktext()}</tdc-mc-footer-link
+				>
+				{#each availableLanguageTags.filter((lang) => lang !== languageTag()) as lang}
+					<tdc-mc-footer-link
+						href={i18n.route($page.url.pathname)}
+						hreflang={lang}
+						aria-current={lang === languageTag() ? 'page' : undefined}
+						tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
+						>{lang.toUpperCase()}</tdc-mc-footer-link
+					>
+				{/each}
+				<span slot="sidenote">{m.footersidenotetext()}</span>
+			</tdc-mc-footer>
+		{/if}
 	</License>
 </ParaglideJS>

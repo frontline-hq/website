@@ -6,7 +6,17 @@
 	import fallbackBackground from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=1920';
 	import fallbackBackgroundMobile from '$lib/assets/jeremy-bishop-rqWoB4LFgmc-unsplash.png?w=768';
 	import * as m from '$lib/paraglide/messages.js';
-	import { communicationPhone as phoneCall } from '@frontline-hq/untitledui-icons';
+	import {
+		arrowsSwitchHorizontal01,
+		communicationMail02,
+		generalActivity,
+		generalDownloadCloud01,
+		generalTool02,
+		communicationPhone as phoneCall,
+		securityFingerprint01,
+		securityFingerprint04,
+		securityShieldTick
+	} from '@frontline-hq/untitledui-icons';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import calFn from '@calcom/embed-snippet';
@@ -30,6 +40,9 @@
 		generalXClose
 	} from '@frontline-hq/untitledui-icons';
 	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
+	import FeatureText from '$lib/components/FeatureText/FeatureText.svelte';
+	import FeaturedIcon from '$lib/components/FeaturedIcon/FeaturedIcon.svelte';
+	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
 
 	let domainCheckerForm: DomainCheckerForm;
 	let checkedDomain: string | undefined;
@@ -46,6 +59,64 @@
 			layout: 'month_view'
 		});
 	});
+
+	const featuredIconArray: {
+		url: string;
+		type: 'Dark';
+		size: 'lg';
+		color: 'Brand';
+		title: string;
+		description: string;
+	}[] = [
+		{
+			url: communicationMail02,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: m.upper_left_wren_enchant(),
+			description: m.tense_lazy_earthworm_roam()
+		},
+		{
+			url: arrowsSwitchHorizontal01,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: m.inclusive_stock_mallard_read(),
+			description: m.heroic_house_ant_edit()
+		},
+		{
+			url: securityFingerprint04,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: m.bold_noble_martin_pinch(),
+			description: m.alert_yummy_stingray_taste()
+		},
+		{
+			url: generalTool02,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: m.extra_light_anaconda_hunt(),
+			description: m.slow_nice_hamster_surge()
+		},
+		{
+			url: securityShieldTick,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: m.steep_level_squirrel_laugh(),
+			description: m.plain_loud_mule_aspire()
+		},
+		{
+			url: generalDownloadCloud01,
+			type: 'Dark',
+			color: 'Brand',
+			size: 'lg',
+			title: m.alert_tense_tuna_rest(),
+			description: m.shy_next_jackdaw_snap()
+		}
+	];
 </script>
 
 <svelte:head>
@@ -141,10 +212,74 @@
 			</picture>
 		</div>
 	</div>
+
+	<tdc-mc-cta-section
+		id="services"
+		class="scroll-mt-20"
+		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-left' }}
+	>
+		<h2 slot="heading">{m.great_watery_turkey_quell()}</h2>
+		<!-- Default slot ... -->
+		<p>
+			{m.long_long_ape_clasp()}
+		</p>
+		<!-- McUtilActions inherits tdc styles from parent. -->
+
+		<!-- We let users define the height of their images themself, for horizontal imgs e.g. -->
+		<div slot="img" class="flex items-stretch lg:items-start lg:ml-auto mt-uui-xl lg:mt-0">
+			<McUtilActions class="items-stretch w-full lg:w-fit lg:items-start lg:ml-auto ">
+				<!-- <tdc-button
+					tdc={{
+						size: 'xl',
+						destructive: 'false',
+						hierarchy: 'secondary',
+						coloring: 'gray'
+					}}
+					icon={{ type: 'icon' }}>Learn more</tdc-button
+				> -->
+
+				<tdc-button-a
+					href="#contact"
+					tdc={{
+						size: { default: 'xl' },
+						destructive: 'false',
+						hierarchy: 'primary',
+						coloring: 'color'
+					}}
+					icon={{ type: 'icon' }}>{m.clean_less_pug_aim()}</tdc-button-a
+				>
+			</McUtilActions>
+		</div>
+	</tdc-mc-cta-section>
+
+	<div
+		class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-uui-9xl grid w-full justify-evenly mx-auto gap-uui-7xl max-w-uui-container-max-width-mobile px-uui-container-padding-mobile lg:px-uui-container-padding-desktop lg:max-w-uui-container-max-width-desktop"
+	>
+		{#each featuredIconArray as icon}
+			<FeatureText>
+				<FeaturedIcon slot="icon" url={icon.url} type={icon.type} color={icon.color}></FeaturedIcon>
+				<h4 slot="title">{icon.title}</h4>
+				<p slot="description">{icon.description}</p>
+			</FeatureText>
+		{/each}
+	</div>
+	<div class="py-uui-2xl lg:py-uui-4xl">
+		<SectionContainer class="py-uui-2xl lg:py-uui-3xl  border-y-uui-1">
+			<tdc-mc-hs
+				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
+			>
+				<h2 slot="heading">{m.mean_lofty_larva_conquer()}</h2>
+				<p>{m.drab_fresh_oryx_learn()}</p>
+				<div class="flex items-center justify-center" slot="after"><tdc-fs-logo /></div>
+			</tdc-mc-hs>
+		</SectionContainer>
+	</div>
 	<tdc-mc-hhs
+		id="domaintester"
+		class="scroll-mt-24"
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
 	>
-		<h1>{m.domaincheckerheading()}</h1>
+		<h2>{m.domaincheckerheading()}</h2>
 		<p>
 			{m.domaincheckersubtitle()}
 		</p>
@@ -287,95 +422,125 @@
 			</tdc-mc-hs>
 		</div>
 	</div>
-	<tdc-mc-cta-section
-		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'split-image-02' }}
-	>
-		<h2 slot="heading">{m.introsectionheading()}</h2>
-		<!-- Default slot ... -->
-		<p>{m.introsectiontext()}</p>
-		<!-- McUtilActions inherits tdc styles from parent. -->
-		<McUtilActions slot="actions">
-			<tdc-button
-				data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
-				data-cal-config={JSON.stringify({ layout: 'month_view' })}
-				tdc={{
-					size: 'xl',
-					destructive: 'false',
-					hierarchy: 'secondary',
-					coloring: 'gray'
-				}}
-				icon={{ type: 'icon', leading: phoneCall }}>{m.introsectionactionsecondary()}</tdc-button
-			>
-		</McUtilActions>
-		<!-- We let users define the height of their images themself, for horizontal imgs e.g. -->
-		<div class="w-full space-y-uui-6xl" slot="img">
-			<tdc-mc-team-section-member
-				class="[&&]:uui-desktop:min-w-uui-none [&&]:uui-desktop:max-w-uui-width-lg [&&]:w-full"
-				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'image-left' }}
-			>
-				<div
-					class="relative flex justify-center uui-desktop:w-[11rem] shrink-0 overflow-hidden"
-					slot="img"
-				>
-					<div class="uui-desktop:hidden absolute inset-0 -z-10 blur-2xl">
-						<div
-							class="w-full h-full bg-[radial-gradient(circle_at_center_bottom,rgb(var(--colormodes-uui-bg-quaternary))_0%,transparent)]"
-						></div>
-					</div>
-					<div class="max-h-[40vh] uui-desktop:h-auto">
-						<enhanced:img
-							class="h-full object-scale-down object-center"
-							src={nadiem}
-							alt="An alt text"
-						/>
-					</div>
-				</div>
-				<span slot="name">Nadiem Marzguioui</span>
-				<span slot="text">{@html m.introsectionnadiemtext()}</span>
-				<a target="_blank" href="https://github.com/NadiemM">
-					<tdc-fs-misc-icons-social url={fsMiscIconsSocialGithubMask} tdc={{ style: 'gray' }} /></a
-				>
-			</tdc-mc-team-section-member>
-			<tdc-mc-team-section-member
-				class="[&&]:uui-desktop:min-w-uui-none [&&]:uui-desktop:max-w-uui-width-lg [&&]:w-full"
-				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'image-left' }}
-			>
-				<div
-					class="relative flex justify-center uui-desktop:w-[11rem] shrink-0 overflow-hidden"
-					slot="img"
-				>
-					<div class="uui-desktop:hidden absolute inset-0 -z-10 blur-2xl">
-						<div
-							class="w-full h-full bg-[radial-gradient(circle_at_center_bottom,rgb(var(--colormodes-uui-bg-quaternary))_0%,transparent)]"
-						></div>
-					</div>
-					<div class="max-h-[40vh] uui-desktop:h-auto">
-						<enhanced:img
-							class="h-full object-scale-down object-center"
-							src={ben}
-							alt="An alt text"
-						/>
-					</div>
-				</div>
-				<span slot="name">Benjamin Preiss</span>
-				<span slot="text">{@html m.introsectionbentext()}</span>
-				<a target="_blank" href="https://github.com/benjaminpreiss">
-					<tdc-fs-misc-icons-social url={fsMiscIconsSocialGithubMask} tdc={{ style: 'gray' }} /></a
-				>
-				<a target="_blank" href="https://www.linkedin.com/in/benjamin-preiss-708985231/">
-					<tdc-fs-misc-icons-social
-						url={fsMiscIconsSocialLinkedinMask}
-						tdc={{ style: 'gray' }}
-					/></a
-				>
-				<a target="_blank" href="https://twitter.com/preiss_benjamin">
-					<tdc-fs-misc-icons-social url={fsMiscIconsSocialXMask} tdc={{ style: 'gray' }} /></a
-				>
-			</tdc-mc-team-section-member>
-		</div>
-	</tdc-mc-cta-section>
 
+	<div></div>
+
+	<div class="overflow-hidden scroll-mt-uui-10xl pt-uui-4xl" id="about">
+		<SectionContainer>
+			<div class="relative">
+				<tdc-mc-cta-section
+					tdc={{
+						breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' },
+						type: 'split-image-02'
+					}}
+				>
+					<h2 slot="heading">{m.introsectionheading()}</h2>
+					<!-- Default slot ... -->
+					<p>{m.introsectiontext()}</p>
+					<!-- McUtilActions inherits tdc styles from parent. -->
+					<McUtilActions slot="actions">
+						<tdc-button
+							data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+							data-cal-config={JSON.stringify({ layout: 'month_view' })}
+							tdc={{
+								size: 'xl',
+								destructive: 'false',
+								hierarchy: 'secondary',
+								coloring: 'gray'
+							}}
+							icon={{ type: 'icon', leading: phoneCall }}
+							>{m.introsectionactionsecondary()}</tdc-button
+						>
+					</McUtilActions>
+					<!-- We let users define the height of their images themself, for horizontal imgs e.g. -->
+					<div class="w-full space-y-uui-6xl" slot="img">
+						<tdc-mc-team-section-member
+							class="[&&]:uui-desktop:min-w-uui-none [&&]:uui-desktop:max-w-uui-width-lg [&&]:w-full"
+							tdc={{
+								breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' },
+								type: 'image-left'
+							}}
+						>
+							<div
+								class="relative flex justify-center uui-desktop:w-[11rem] shrink-0 overflow-hidden"
+								slot="img"
+							>
+								<div class="uui-desktop:hidden absolute inset-0 -z-10 blur-2xl">
+									<div
+										class="w-full h-full bg-[radial-gradient(circle_at_center_bottom,rgb(var(--colormodes-uui-bg-quaternary))_0%,transparent)]"
+									></div>
+								</div>
+								<div class="max-h-[40vh] uui-desktop:h-auto">
+									<enhanced:img
+										class="h-full object-scale-down object-center"
+										src={nadiem}
+										alt="An alt text"
+									/>
+								</div>
+							</div>
+							<span slot="name">Nadiem Marzguioui</span>
+							<span slot="text">{@html m.introsectionnadiemtext()}</span>
+							<a target="_blank" href="https://github.com/NadiemM">
+								<tdc-fs-misc-icons-social
+									url={fsMiscIconsSocialGithubMask}
+									tdc={{ style: 'gray' }}
+								/></a
+							>
+						</tdc-mc-team-section-member>
+						<tdc-mc-team-section-member
+							class="[&&]:uui-desktop:min-w-uui-none [&&]:uui-desktop:max-w-uui-width-lg [&&]:w-full"
+							tdc={{
+								breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' },
+								type: 'image-left'
+							}}
+						>
+							<div
+								class="relative flex justify-center uui-desktop:w-[11rem] shrink-0 overflow-hidden"
+								slot="img"
+							>
+								<div class="uui-desktop:hidden absolute inset-0 -z-10 blur-2xl">
+									<div
+										class="w-full h-full bg-[radial-gradient(circle_at_center_bottom,rgb(var(--colormodes-uui-bg-quaternary))_0%,transparent)]"
+									></div>
+								</div>
+								<div class="max-h-[40vh] uui-desktop:h-auto">
+									<enhanced:img
+										class="h-full object-scale-down object-center"
+										src={ben}
+										alt="An alt text"
+									/>
+								</div>
+							</div>
+							<span slot="name">Benjamin Preiss</span>
+							<span slot="text">{@html m.introsectionbentext()}</span>
+							<a target="_blank" href="https://github.com/benjaminpreiss">
+								<tdc-fs-misc-icons-social
+									url={fsMiscIconsSocialGithubMask}
+									tdc={{ style: 'gray' }}
+								/></a
+							>
+							<a target="_blank" href="https://www.linkedin.com/in/benjamin-preiss-708985231/">
+								<tdc-fs-misc-icons-social
+									url={fsMiscIconsSocialLinkedinMask}
+									tdc={{ style: 'gray' }}
+								/></a
+							>
+							<a target="_blank" href="https://twitter.com/preiss_benjamin">
+								<tdc-fs-misc-icons-social url={fsMiscIconsSocialXMask} tdc={{ style: 'gray' }} /></a
+							>
+						</tdc-mc-team-section-member>
+					</div>
+					<img
+						class="inset-0 absolute -translate-x-[7.5%] mt-12 lg:-mt-24 -z-10 w-full min-h-[20rem] min-w-[60rem] lg:min-h-[60rem] object-fill"
+						src="/background-pattern.svg"
+						alt="dot-pattern-frontline"
+					/>
+				</tdc-mc-cta-section>
+			</div>
+		</SectionContainer>
+	</div>
 	<tdc-mc-contactsection
+		class="scroll-mt-16"
 		id="contact"
 		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-form-01' }}
 	>
