@@ -12,7 +12,6 @@
 	import { browser } from '$app/environment';
 
 	let isMenuOpen = false;
-
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
 		// Prevent scrolling when the menu is open
