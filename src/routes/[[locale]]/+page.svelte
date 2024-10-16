@@ -264,7 +264,7 @@
 		{/each}
 	</div>
 	<div class="py-uui-2xl lg:py-uui-4xl">
-		<SectionContainer class="py-uui-2xl lg:py-uui-3xl  border-y-uui-1">
+		<SectionContainer class="py-uui-2xl lg:py-uui-3xl border-uui-utility-gray-300  border-y-uui-1">
 			<tdc-mc-hs
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
 			>
