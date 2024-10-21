@@ -27,7 +27,7 @@
 	<License license={PUBLIC_LICENSE}>
 		{#if browser}
 			<nav
-				class="z-40 w-full bg-uui-bg-primary fixed flex top-0 border-b-uui-1 border-b-uui-border-secondary py-uui-2xl"
+				class="z-40 w-full bg-uui-bg-primary sticky flex top-0 border-b-uui-1 border-b-uui-border-secondary py-uui-2xl"
 			>
 				<SectionContainer>
 					<div class="flex items-center justify-between">
