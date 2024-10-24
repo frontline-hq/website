@@ -329,7 +329,7 @@
 	<div
 		class="{checkedDomain !== undefined && domainIsSafe !== undefined
 			? ''
-			: 'hidden '}  bg-uui-bg-primary/70 backdrop-blur-md z-10 fixed w-full h-full top-0"
+			: 'hidden '}  bg-uui-bg-primary/70 backdrop-blur-md z-40 fixed w-full h-full top-0"
 	>
 		<tdc-button-a
 			class="absolute right-0 m-8"
