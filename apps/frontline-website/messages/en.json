@@ -46,7 +46,8 @@
 	"introsectionnadiemtext": "Cybersecurity Expert, web developer and business strategist<br><br><a class=\"uui-anchor\" href=\"mailto:nadiem@frontline.codes\">nadiem@frontline.codes</a>",
 	"introsectionbentext": "Creative thinker, designer and web3 developer with an eye for the details<br><br><a class=\"uui-anchor\" href=\"mailto:ben@frontline.codes\">ben@frontline.codes</a>",
 	"domaincheckerheading": "Secure Your Domain and Ensure Email Deliverability.",
-	"domaincheckersubtitle": "\tEnsure your emails are delivered and protect yourself against impersonation attacks, \n\t\t\t\tall while becoming compliant with the standards set by Google and Yahoo in 2024.",	"domaincheckerformheading": "Check your domain now.",
+	"domaincheckersubtitle": "\tEnsure your emails are delivered and protect yourself against impersonation attacks, \n\t\t\t\tall while becoming compliant with the standards set by Google and Yahoo in 2024.",
+	"domaincheckerformheading": "Check your domain now.",
 	"domaincheckerformsubtitle": "Is your domain susceptible to impersonation attacks?",
 	"domaincheckerformfooter1": "Your data is safe with us!",
 	"domaincheckerformfooter2": "We do",
@@ -96,5 +97,7 @@
 	"bold_noble_martin_pinch": "Advanced Password Management",
 	"extra_light_anaconda_hunt": "Infrastructure Consultancy",
 	"steep_level_squirrel_laugh": "Domain Spoofing Protection",
-	"alert_tense_tuna_rest": "Automated Backup Solutions"
+	"alert_tense_tuna_rest": "Automated Backup Solutions",
+	"solid_topical_scallop_build": "Impressum",
+	"still_sound_slug_radiate": "Benjamin Preiss<br />\n\t\t\t\tStrandweg, 98a<br />\n\t\t\t\t22587 Hamburg"
 }
