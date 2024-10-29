@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PUBLIC_LICENSE } from '$env/static/public';
+	import { PUBLIC_UUI_LICENSE } from '$env/static/public';
 	import { License } from '@frontline-hq/uui/license';
 	import '../app.css';
 	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
@@ -24,7 +24,7 @@
 </script>
 
 <ParaglideJS {i18n}>
-	<License license={PUBLIC_LICENSE}>
+	<License license={PUBLIC_UUI_LICENSE}>
 		{#if browser}
 			<nav
 				class="z-30 w-full bg-uui-bg-primary sticky flex top-0 border-b-uui-1 border-b-uui-border-secondary py-uui-2xl"
