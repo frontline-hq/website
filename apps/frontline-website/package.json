@@ -1,10 +1,14 @@
 {
-	"name": "website",
+	"name": "frontline-website",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
-		"build": "paraglide-js compile --project ./project.inlang && vite build",
+		"dev": "infisical run -- pnpm vite dev",
+		"build": "if [ \"$NODE_ENV\" = \"production\" ]; then pnpm ci-build; else pnpm dev-build; fi",
+		"build-naked": "paraglide-js compile --project ./project.inlang && vite build",
+		"dev-build": "infisical run --env=\"dev\" -- pnpm build-naked",
+		"ci-build": "infisical run --token=$(infisical login --method=universal-auth --client-id=$INFISICAL_CLIENT_ID --client-secret=$INFISICAL_CLIENT_SECRET --silent --plain) --projectId=$INFISICAL_PROJECT_ID --env=\"prod\" -- pnpm build-naked",
+		"start": "infisical run --token=$(infisical login --method=universal-auth --client-id=$INFISICAL_CLIENT_ID --client-secret=$INFISICAL_CLIENT_SECRET --silent --plain) --projectId=$INFISICAL_PROJECT_ID --env=\"prod\" -- node build",
 		"prod-prep": "export NPM_CONFIG_TOKEN && echo //registry.npmjs.org/:_authToken=\\$NPM_CONFIG_TOKEN >> .npmrc",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

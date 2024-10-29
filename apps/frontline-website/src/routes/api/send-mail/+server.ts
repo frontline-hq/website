@@ -1,5 +1,5 @@
 import { error, json, type RequestHandler } from '@sveltejs/kit';
-import { PRIVATE_PROD_BREVO_APIKEY } from '$env/static/private';
+import { PROD_FRONTLINE_BREVO_APIKEY } from '$env/static/private';
 
 export const POST: RequestHandler = async ({ request }) => {
 	const { message } = await request.json();
@@ -19,7 +19,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			method: 'POST',
 			headers: {
 				accept: 'application/json',
-				'api-key': PRIVATE_PROD_BREVO_APIKEY,
+				'api-key': PROD_FRONTLINE_BREVO_APIKEY,
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(mail)
