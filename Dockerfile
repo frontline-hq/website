@@ -11,9 +11,8 @@ RUN curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.de
 RUN apt-get update && apt-get install -y infisical
 
 COPY . /app
-COPY entrypoint.sh /app/entrypoint.sh
 WORKDIR /app
-RUN chmod +x /entrypoint.sh
+RUN chmod +x ./entrypoint.sh
 
 # Define build arguments for Infisical credentials
 ARG INFISICAL_CLIENT_ID
@@ -26,4 +25,4 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod=false --ig
 RUN bash -c 'pnpm run build'
 
 EXPOSE 3000
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
