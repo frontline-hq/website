@@ -11,6 +11,7 @@ RUN curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.de
 RUN apt-get update && apt-get install -y infisical
 
 COPY . /app
+COPY entrypoint.sh /app/entrypoint.sh
 WORKDIR /app
 RUN chmod +x /entrypoint.sh
 
