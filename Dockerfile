@@ -1,6 +1,8 @@
 FROM node:20-slim AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+ENV FILTERS=""
+ENV COMMAND="start"
 RUN corepack enable
 
 # Install curl and add Infisical CLI
@@ -10,6 +12,7 @@ RUN apt-get update && apt-get install -y infisical
 
 COPY . /app
 WORKDIR /app
+RUN chmod +x /entrypoint.sh
 
 # Define build arguments for Infisical credentials
 ARG INFISICAL_CLIENT_ID
@@ -22,4 +25,4 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod=false --ig
 RUN bash -c 'pnpm run build'
 
 EXPOSE 3000
-CMD [ "pnpm", "start" ]
+ENTRYPOINT ["/entrypoint.sh"]
