@@ -9,11 +9,9 @@
 	import {
 		arrowsSwitchHorizontal01,
 		communicationMail02,
-		generalActivity,
 		generalDownloadCloud01,
 		generalTool02,
 		communicationPhone as phoneCall,
-		securityFingerprint01,
 		securityFingerprint04,
 		securityShieldTick
 	} from '@frontline-hq/untitledui-icons';
@@ -25,7 +23,6 @@
 		McHeroHeaderSectionFormWrapper
 	} from '@frontline-hq/uui/marketing-components';
 	import {
-		fsMiscIconsSocialDribbbleMask,
 		fsMiscIconsSocialGithubMask,
 		fsMiscIconsSocialLinkedinMask,
 		fsMiscIconsSocialXMask
@@ -33,21 +30,10 @@
 	import nadiem from '$lib/assets/nadiem_cut.png?enhanced';
 	import ben from '$lib/assets/ben_cut.png?enhanced';
 	import DomainCheckerForm from '$lib/components/DomainCheckerForm/DomainCheckerForm.svelte';
-	import {
-		generalSlashCircle01,
-		securityShield01,
-		arrowsArrowUpLeft,
-		generalXClose
-	} from '@frontline-hq/untitledui-icons';
 	import ContactForm from '$lib/components/ContactForm/ContactForm.svelte';
 	import FeatureText from '$lib/components/FeatureText/FeatureText.svelte';
 	import FeaturedIcon from '$lib/components/FeaturedIcon/FeaturedIcon.svelte';
 	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
-
-	let domainCheckerForm: DomainCheckerForm;
-	let checkedDomain: string | undefined;
-	let domainIsSafe: boolean | undefined;
-	let subDomainIsSafe: boolean | undefined;
 
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
@@ -274,157 +260,53 @@
 			</tdc-mc-hs>
 		</SectionContainer>
 	</div>
-	<tdc-mc-hhs
-		id="domaintester"
-		class="scroll-mt-24"
-		tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
-	>
-		<h2>{m.domaincheckerheading()}</h2>
-		<p>
-			{m.domaincheckersubtitle()}
-		</p>
-		<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
-		<div class="w-full" id="domaincheckerform" slot="after">
-			<McHeroHeaderSectionFormWrapper>
-				<div
-					class="flex text-white items-center w-full h-full mb-uui-3xl space-x-uui-xl"
-					slot="logo"
-				>
-					<img
-						src="/google-logo.svg"
-						class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
-						alt="Google logo"
-					/>
+	<div class="min-h-[calc(100vh-8rem)] flex flex-col justify-center">
+		<tdc-mc-hhs
+			id="domaintester"
+			class="scroll-mt-24"
+			tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'splitform02' }}
+		>
+			<h2>{m.domaincheckerheading()}</h2>
+			<p>
+				{m.domaincheckersubtitle()}
+			</p>
+			<!-- this div is tdc-hhs-form-wrapper make this a component with different types like before -->
+			<div class="w-full" id="domaincheckerform" slot="after">
+				<McHeroHeaderSectionFormWrapper>
+					<div
+						class="flex text-white items-center w-full h-full mb-uui-3xl space-x-uui-xl"
+						slot="logo"
+					>
+						<img
+							src="/google-logo.svg"
+							class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
+							alt="Google logo"
+						/>
 
-					<img
-						src="/yahoo-logo.svg"
-						class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
-						alt="Yahoo logo"
-					/>
-				</div>
-				<h4 slot="title">{m.domaincheckerformheading()}</h4>
-				<span slot="subtitle">{m.domaincheckerformsubtitle()} </span>
-				<!-- Todo might be a solution for not setting classes on the form slot -->
-				<DomainCheckerForm
-					bind:this={domainCheckerForm}
-					bind:checkedDomain
-					bind:domainIsSafe
-					bind:subDomainIsSafe
-					slot="form"
-				/>
-				<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
-					<span>
-						{m.domaincheckerformfooter1()}
-						<span class="flex flex-row items-center justify-center space-x-uui-md"
-							><span class="">{m.domaincheckerformfooter2()}</span>
-							<span class="underline underline-offset-2">{m.domaincheckerformfooter3()}</span>
-							<span> {m.domaincheckerformfooter4()} </span>
+						<img
+							src="/yahoo-logo.svg"
+							class="w-[5rem] h-[5rem] lg:w-[5.5rem] lg:h-[5.5rem] [&&]:m-0"
+							alt="Yahoo logo"
+						/>
+					</div>
+					<h4 slot="title">{m.domaincheckerformheading()}</h4>
+					<span slot="subtitle">{m.domaincheckerformsubtitle()} </span>
+					<!-- Todo might be a solution for not setting classes on the form slot -->
+					<DomainCheckerForm slot="form" />
+					<div class="space-x-uui-xs flex justify-center items-center" slot="footnote">
+						<span>
+							{m.domaincheckerformfooter1()}
+							<span class="flex flex-row items-center justify-center space-x-uui-md"
+								><span class="">{m.domaincheckerformfooter2()}</span>
+								<span class="underline underline-offset-2">{m.domaincheckerformfooter3()}</span>
+								<span> {m.domaincheckerformfooter4()} </span>
+							</span>
 						</span>
-					</span>
-				</div></McHeroHeaderSectionFormWrapper
-			>
-		</div>
-	</tdc-mc-hhs>
-
-	<div
-		class="{checkedDomain !== undefined && domainIsSafe !== undefined
-			? ''
-			: 'hidden '}  bg-uui-bg-primary/70 backdrop-blur-md z-40 fixed w-full h-full top-0"
-	>
-		<tdc-button-a
-			class="absolute right-0 m-8"
-			tdc={{
-				size: { default: 'md', 'uui-desktop': 'lg' },
-				destructive: 'false',
-				hierarchy: 'secondary',
-				coloring: 'gray'
-			}}
-			type="button"
-			on:click={() => {
-				document.body.style.overflowY = 'auto';
-				domainCheckerForm.resetForm();
-			}}
-			href="#domaincheckerform"
-			icon={{ type: 'icon-only', leading: generalXClose }}
-		/>
-		<div class="flex items-center justify-center w-full h-full">
-			<tdc-mc-hs
-				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
-			>
-				<h6 slot="subheading">
-					<tdc-badge
-						icon={{
-							type: 'icon',
-							leading: domainIsSafe ? securityShield01 : generalSlashCircle01
-						}}
-						tdc={{
-							size: 'lg',
-							color: domainIsSafe ? 'success' : 'error',
-							badgeType: 'Pill color'
-						}}
-						>{domainIsSafe
-							? `${m.domaincheckeroverlaybadgeprotected()}`
-							: `${m.domaincheckeroverlaybadgenotprotected()}`}</tdc-badge
-					>
-				</h6>
-				<!-- TODO continue here scheint geschützt zu sein. -->
-				<h2 slot="heading">
-					{checkedDomain}
-					{domainIsSafe
-						? `${m.domaincheckeroverlaytitleprotected()}`
-						: `${m.domaincheckeroverlaytitlenotprotected()}`}
-					<!-- This h4 only pops-up when a domainIsSafe but has false subdomain-protection settings -->
-					<h4 class="uui-text-lg">
-						{!subDomainIsSafe && domainIsSafe ? `${m.domaincheckeroverlaysubdomaintitle()}` : ''}
-					</h4>
-				</h2>
-				<p>
-					{domainIsSafe
-						? `${m.domaincheckeroverlaydomainissafetext()}`
-						: `${m.domaincheckeroverlaydomainisnotsafetext()}`}
-				</p>
-				<p>
-					{domainIsSafe ? '' : `${m.domaincheckeroverlaydomainisnotsafetext2()}`}
-				</p>
-				<p>
-					{domainIsSafe ? '' : `${m.domaincheckeroverlaydomainisnotsafetext3()}`}
-				</p>
-
-				<McUtilActions slot="after">
-					<tdc-button-a
-						tdc={{
-							size: { default: 'xl', 'uui-desktop': 'xl' },
-							destructive: 'false',
-							hierarchy: 'secondary',
-							coloring: 'gray'
-						}}
-						type="button"
-						on:click={() => {
-							document.body.style.overflowY = 'auto';
-							domainCheckerForm.resetForm();
-						}}
-						href="#domaincheckerform"
-						icon={{ type: 'icon', leading: arrowsArrowUpLeft }}
-						>{m.domaincheckeroverlaycta1()}</tdc-button-a
-					>
-					<tdc-button
-						data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
-						data-cal-config={JSON.stringify({ layout: 'month_view' })}
-						tdc={{
-							size: { default: 'xl', 'uui-desktop': 'xl' },
-							destructive: 'false',
-							hierarchy: 'primary',
-							coloring: 'color'
-						}}
-						icon={{ type: 'icon', leading: phoneCall }}>{m.domaincheckeroverlaycta2()}</tdc-button
-					>
-				</McUtilActions>
-			</tdc-mc-hs>
-		</div>
+					</div></McHeroHeaderSectionFormWrapper
+				>
+			</div>
+		</tdc-mc-hhs>
 	</div>
-
-	<div></div>
-
 	<div class="overflow-hidden scroll-mt-uui-10xl pt-uui-4xl" id="about">
 		<SectionContainer>
 			<div class="relative">

@@ -5,14 +5,11 @@ import { preset } from 'uui-tailwind-styles/js';
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts,json}', '!**/*.tdc.ts', './messages/*.json'],
-	theme: {
-	},
+	theme: {},
 	corePlugins: {
 		aspectRatio: false
 	},
 	safelist: [...getDynamicSafelist()],
-	presets: [
-		preset
-	],
+	presets: [preset],
 	plugins: [aspectRatioPlugin]
 } as Config;
