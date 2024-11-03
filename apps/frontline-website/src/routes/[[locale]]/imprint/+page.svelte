@@ -1,43 +1,47 @@
-<div class="w-full">
-	<div class="mx-auto mt-10 w-fit">
+<script lang="ts">
+	import * as m from '$lib/paraglide/messages.js';
+</script>
+
+<div class="w-full uui-desktop:min-h-[calc(100vh-10.5rem)] min-h-[calc(100vh-19.25rem)]">
+	<div
+		class="mx-auto mt-10 w-fit px-uui-container-padding-mobile uui-desktop:px-uui-container-padding-desktop"
+	>
 		<div class="uui-prose uui-desktop:uui-prose-desktop">
-			<h4>Impressum</h4>
+			<h4>{m.chunky_real_rat_clasp()}</h4>
 
 			<p>
-				Benjamin Preiss<br />
-				Strandweg, 98a<br />
-				22587 Hamburg
+				{m.new_mellow_impala_taste()}
 			</p>
 
-			<h5>Kontakt</h5>
+			<h5>{m.quaint_equal_cod_lock()}</h5>
 			<p>
-				Telefon: +49 160 705 97 12<br />
-				E-Mail: contact@frontline.codes
+				{m.dark_stale_swan_rise()}
 			</p>
 
-			<h5>Umsatzsteuer-ID</h5>
+			<h5>{m.grassy_true_dachshund_soar()}</h5>
 			<p>
-				Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a Umsatzsteuergesetz:<br />
-				DE328197327
+				{m.sunny_ago_slug_nourish()}
 			</p>
 
-			<h5>EU-Streitschlichtung</h5>
+			<h5>{m.strong_safe_gazelle_spark()}</h5>
 			<p>
-				Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS)
-				bereit: <a
+				{m.fresh_fine_mouse_cook()}<a
 					href="https://ec.europa.eu/consumers/odr/"
 					target="_blank"
 					rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a
-				>.<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.
+				>.<br />{m.light_smart_koala_adore()}
 			</p>
 
-			<h5>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h5>
+			<h5>{m.wise_icy_nuthatch_hug()}</h5>
 			<p>
-				Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-				Verbraucherschlichtungsstelle teilzunehmen.
+				{m.tasty_short_cow_explore()}
 			</p>
 
-			<p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+			<p>
+				{m.sour_aware_grizzly_absorb()}<a href="https://www.e-recht24.de"
+					>https://www.e-recht24.de</a
+				>
+			</p>
 		</div>
 	</div>
 </div>
