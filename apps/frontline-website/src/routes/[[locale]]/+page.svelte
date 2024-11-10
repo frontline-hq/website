@@ -157,13 +157,12 @@
 					<div class="gap-uui-3xl max-w-uui-width-xl">
 						<div class="flex flex-col">
 							<h1 class="uui-display-lg font-semibold lg:uui-display-xl text-uui-text-primary-900">
-								We secure your backline.
+								{m.slow_heroic_crab_gaze()}
 							</h1>
 							<p
 								class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl mb-uui-4xl lg:mb-uui-6xl mt-uui-2xl lg:mt-uui-3xl"
 							>
-								Partner with us to strengthen your company IT’s security. We work hand-in-hand with
-								your IT team to deliver high-impact, cost-effective protection.
+								{m.curly_dizzy_giraffe_evoke()}
 							</p>
 							<div class="flex flex-col md:flex-row gap-uui-xl">
 								<tdc-button
@@ -175,7 +174,8 @@
 										hierarchy: 'secondary',
 										coloring: 'gray'
 									}}
-									icon={{ type: 'icon', leading: phoneCall }}>Book free consultation</tdc-button
+									icon={{ type: 'icon', leading: phoneCall }}
+									>{m.icy_quiet_gazelle_cure()}</tdc-button
 								>
 
 								<tdc-button-a
@@ -186,7 +186,7 @@
 										hierarchy: 'primary',
 										coloring: 'color'
 									}}
-									icon={{ type: 'icon' }}>Get in touch</tdc-button-a
+									icon={{ type: 'icon' }}>{m.mealy_spicy_lizard_fetch()}</tdc-button-a
 								>
 							</div>
 						</div>
@@ -196,15 +196,15 @@
 					>
 						<div class="flex items-center gap-uui-lg">
 							<CheckIcon url="/check-icon.svg" />
-							<span>Comprehensive Security Check</span>
+							<span>{m.slow_ok_donkey_learn()}</span>
 						</div>
 						<div class="flex items-center gap-uui-lg">
 							<CheckIcon url="/check-icon.svg" />
-							<span>IT Team Partner</span>
+							<span>{m.sea_each_lionfish_win()}</span>
 						</div>
 						<div class="flex items-center gap-uui-lg">
 							<CheckIcon url="/check-icon.svg" />
-							<span>BSI-conform</span>
+							<span>{m.zany_red_koala_hint()}</span>
 						</div>
 					</div>
 				</div>
@@ -261,17 +261,14 @@
 				<div class="gap-uui-3xl max-w-uui-width-xl">
 					<div class="flex flex-col gap-uui-lg">
 						<h6 class="font-semibold text-uui-text-brand-secondary-700 uui-text-sm lg:uui-text-md">
-							How we work
+							{m.level_awake_donkey_flop()}
 						</h6>
 						<h2 class="font-bold text-uui-text-primary-900 uui-display-sm lg:uui-display-md">
-							Securing your IT together in 3 steps
+							{m.least_kind_peacock_gulp()}
 						</h2>
 						<div class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl">
 							<p>
-								We partner with your IT team to enhance security by targeting often-overlooked
-								vulnerabilities. With 90% of cyberattacks arising from email and password
-								weaknesses, we provide a high-impact, cost-effective solution using a 10-point
-								security checklist to protect you against emerging threats.
+								{m.strong_home_horse_honor()}
 							</p>
 						</div>
 					</div>
@@ -301,8 +298,7 @@
 			</div>
 			<div class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl flex flex-col gap-uui-4xl">
 				<p>
-					After completing our 3-step process, we provide a 1 to 5-star security rating along with a
-					frontline Security Certificate—a trusted mark of strong cybersecurity.
+					{m.major_loud_kangaroo_cry()}
 				</p>
 				<div class=" flex flex-col lg:flex-row grow w-full gap-uui-lg">
 					<tdc-button
@@ -314,7 +310,7 @@
 							hierarchy: 'secondary',
 							coloring: 'gray'
 						}}
-						icon={{ type: 'icon', leading: phoneCall }}>Book free consultation</tdc-button
+						icon={{ type: 'icon', leading: phoneCall }}>{m.empty_yummy_salmon_arise()}</tdc-button
 					>
 					<tdc-button-a
 						href="/security-assessment"
@@ -324,7 +320,7 @@
 							hierarchy: 'primary',
 							coloring: 'color'
 						}}
-						icon={{ type: 'icon' }}>Check your Cybersecurity</tdc-button-a
+						icon={{ type: 'icon' }}>{m.fluffy_warm_ape_dream()}</tdc-button-a
 					>
 				</div>
 			</div>
