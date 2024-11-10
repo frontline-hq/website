@@ -41,8 +41,8 @@
 	"contactsectionformprivacypolicyhint1": "Sie erklären sich einverstanden mit unserer freundlichen <a class=\"uui-anchor\" href=\"{privacyLink}\"> Datenschutzrichtlinie </a>.*",
 	"introsectionheading": "Wir sind frontline.",
 	"introsectiontext": " Brauchen Sie Hilfe bei Ihrem Webprojekt oder in Sachen Cybersicherheit? Wir haben die Lösung für Sie.",
-	"introsectionactionprimary": "Kontakt aufnehmen",
 	"introsectionactionsecondary": "Call vereinbaren",
+	"introsectionactionprimary": "Kontakt aufnehmen",
 	"introsectionnadiemtext": "Cybersecurity-Experte, Webentwickler und Unternehmensstratege<br><br><a class=\"uui-anchor\" href=\"mailto:nadiem@frontline.codes\">nadiem@frontline.codes</a>",
 	"introsectionbentext": "Kreativer Denker, Designer und Web3-Entwickler mit Auge fürs Detail<br><br><a class=\"uui-anchor\" href=\"mailto:ben@frontline.codes\">ben@frontline.codes</a>",
 	"domaincheckerheading": "Schützen Sie Ihre Domain und stellen Sie die Zustellbarkeit Ihrer E-Mails sicher.",
@@ -59,7 +59,6 @@
 	"domaincheckeroverlaytitleprotected": "scheint geschützt zu sein.",
 	"domaincheckeroverlaytitlenotprotected": "ist nicht geschützt.",
 	"domaincheckeroverlaysubdomaintitle": "Ihre Subdomains sind unsicher.",
-	"domaincheckeroverlaytext1": "Halten Sie Ihre Domain sicher. Kontaktieren Sie uns für eine unkomplizierte Sicherheitsüberprüfung.",
 	"domaincheckeroverlaydomainissafetext": "Halten Sie Ihre Domain sicher. Kontaktieren Sie uns für eine unkomplizierte Sicherheitsüberprüfung.",
 	"domaincheckeroverlaydomainisnotsafetext": "Hacker können E-Mails unter Ihrer Domain fälschen, was ein erhebliches Sicherheitsrisiko darstellt.",
 	"domaincheckeroverlaydomainisnotsafetext2": "Zudem entspricht Ihre Domain nicht den Google- und Yahoo-Standards für das Jahr 2024.",
@@ -185,5 +184,13 @@
 	"mealy_spicy_lizard_fetch": "Kontakt aufnehmen",
 	"slow_ok_donkey_learn": "Umfassender Sicherheitscheck",
 	"sea_each_lionfish_win": "Partner des IT-Teams",
-	"zany_red_koala_hint": "BSI-konform"
+	"zany_red_koala_hint": "BSI-konform",
+	"domaincheckeroverlaytext1": "Halten Sie Ihre Domain sicher. Kontaktieren Sie uns für eine unkomplizierte Sicherheitsüberprüfung.",
+	"bright_tangy_sheep_enrich": "Kostenlose Sicherheitsbewertung",
+    "good_jolly_chicken_wish": "Eine kostenlose Beratung zur Bewertung der Sicherheit mit unserer 10-Punkte-Checkliste zur Aufdeckung von Schwachstellen.",
+    "next_north_cheetah_build": "Umfassende Sicherheitsüberprüfung",
+    "only_polite_trout_play": "Wir arbeiten mit Ihrem IT-Team zusammen, um Ihre Sicherheit zu analysieren und einen Bericht sowie einen Aktionsplan für eine 5-Sterne-Bewertung bereitzustellen.",
+    "orange_trick_grebe_dig": "Sicherheitslösungen",
+    "lost_tired_zebra_race": "Wir setzen unsere bewährten Sicherheitslösungen ein, um Ihre Abwehrkräfte für das 21. Jahrhundert zu stärken."
+
 }
