@@ -113,21 +113,18 @@
 	}[] = [
 		{
 			url: '/number-1.svg',
-			title: 'Free Security Assessment',
-			description:
-				'A free consultation to evaluate security with our 10-point checklist, uncovering vulnerabilities.'
+			title: m.bright_tangy_sheep_enrich(),
+			description: m.good_jolly_chicken_wish()
 		},
 		{
 			url: '/number-2.svg',
-			title: 'In-Depth Security Review',
-			description:
-				'We collaborate with your IT team to analyze your security, providing a report and action plan towards a 5-star rating.'
+			title: m.next_north_cheetah_build(),
+			description: m.only_polite_trout_play()
 		},
 		{
 			url: '/number-3.svg',
-			title: 'Security Solutions',
-			description:
-				'We deploy our proven security solutions to fortify your defenses for the 21st century.'
+			title: m.orange_trick_grebe_dig(),
+			description: m.lost_tired_zebra_race()
 		}
 	];
 </script>
