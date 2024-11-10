@@ -29,7 +29,7 @@
 			<div
 				class={`${
 					isMenuOpen ? 'block' : 'hidden'
-				} fixed inset-0 bg-uui-bg-primary text-uui-white  z-50 md:hidden`}
+				} fixed inset-0 bg-uui-bg-primary text-uui-white  z-50 lg:hidden`}
 			>
 				<div class="flex h-full py-uui-5xl flex-col items-center justify-between">
 					<tdc-button
@@ -55,19 +55,9 @@
 							}}
 							icon={{ type: 'icon' }}
 						>
-							IT Security Assessment
+							{m.zany_that_lionfish_dart()}
 						</tdc-button-a>
-						<tdc-button-a
-							href="#services"
-							on:click={toggleMenu}
-							tdc={{
-								size: { default: 'xl' },
-								destructive: 'false',
-								hierarchy: 'link',
-								coloring: 'color'
-							}}
-							icon={{ type: 'icon' }}>{m.mean_early_moose_savor()}</tdc-button-a
-						>
+
 						<tdc-button-a
 							href="#domaintester"
 							on:click={toggleMenu}
@@ -116,10 +106,10 @@
 				>
 					<div class="flex w-full items-center justify-between">
 						<div class="flex space-x-uui-7xl">
-							<a class="w-fit" href="/">
+							<a class="w-fit min-w-fit" href="/">
 								<tdc-fs-logo />
 							</a>
-							<div class="hidden items-center text-white md:flex">
+							<div class="hidden items-center text-white lg:flex">
 								<div class="space-x-uui-3xl flex">
 									<!-- Menu for larger screens -->
 									<tdc-button-a
@@ -132,18 +122,9 @@
 										}}
 										icon={{ type: 'icon' }}
 									>
-										IT Security Assessment
+										{m.left_fine_yak_laugh()}
 									</tdc-button-a>
-									<tdc-button-a
-										href="#services"
-										tdc={{
-											size: { default: 'md' },
-											destructive: 'false',
-											hierarchy: 'link',
-											coloring: 'color'
-										}}
-										icon={{ type: 'icon' }}>{m.mean_early_moose_savor()}</tdc-button-a
-									>
+
 									<tdc-button-a
 										href="#domaintester"
 										tdc={{
@@ -168,7 +149,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="hidden md:flex">
+						<div class="hidden lg:flex">
 							<tdc-button-a
 								href="#contact"
 								tdc={{
@@ -182,7 +163,7 @@
 						</div>
 						<!-- Menu Button for Mobile -->
 						<tdc-button
-							class="md:hidden focus:outline-none"
+							class="lg:hidden focus:outline-none"
 							tdc={{
 								size: { default: 'md', 'uui-desktop': 'lg' },
 								destructive: 'false',
