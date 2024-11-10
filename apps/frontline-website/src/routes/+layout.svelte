@@ -26,11 +26,11 @@
 <ParaglideJS {i18n}>
 	<License license={PUBLIC_UUI_LICENSE}>
 		{#if browser}
-			<nav
-				class="z-30 w-full bg-uui-bg-primary sticky flex top-0 border-b-uui-1 border-b-uui-border-secondary py-uui-2xl"
-			>
-				<SectionContainer>
-					<div class="flex items-center justify-between">
+			<SectionContainer class="z-30 sticky flex top-0">
+				<nav
+					class=" my-2 backdrop-blur-md rounded-full px-uui-container-padding-mobile lg:px-uui-container-padding-desktop lg:-mx-uui-container-padding-desktop w-full py-uui-xl"
+				>
+					<div class="flex w-full items-center justify-between">
 						<div class="flex space-x-uui-7xl">
 							<a class="w-fit" href="/">
 								<tdc-fs-logo />
@@ -38,6 +38,18 @@
 							<div class="hidden items-center text-white md:flex">
 								<div class="space-x-uui-3xl flex">
 									<!-- Menu for larger screens -->
+									<tdc-button-a
+										href="#it-security-assessment"
+										tdc={{
+											size: { default: 'md' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}
+									>
+										IT Security Assessment
+									</tdc-button-a>
 									<tdc-button-a
 										href="#services"
 										tdc={{
@@ -118,6 +130,18 @@
 								/>
 								<div class="space-y-uui-4xl">
 									<tdc-button-a
+										href="#it-security-assessment"
+										tdc={{
+											size: { default: 'xl' },
+											destructive: 'false',
+											hierarchy: 'link',
+											coloring: 'color'
+										}}
+										icon={{ type: 'icon' }}
+									>
+										IT Security Assessment
+									</tdc-button-a>
+									<tdc-button-a
 										href="#services"
 										on:click={toggleMenu}
 										tdc={{
@@ -170,9 +194,9 @@
 
 							<!-- Close Button -->
 						</div>
-					</div></SectionContainer
-				>
-			</nav>
+					</div>
+				</nav>
+			</SectionContainer>
 			<slot />
 			<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
 				<a href="/">
