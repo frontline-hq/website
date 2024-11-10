@@ -26,6 +26,90 @@
 <ParaglideJS {i18n}>
 	<License license={PUBLIC_UUI_LICENSE}>
 		{#if browser}
+			<div
+				class={`${
+					isMenuOpen ? 'block' : 'hidden'
+				} fixed inset-0 bg-uui-bg-primary text-uui-white  z-50 md:hidden`}
+			>
+				<div class="flex h-full py-uui-5xl flex-col items-center justify-between">
+					<tdc-button
+						tdc={{
+							size: { default: 'md', 'uui-desktop': 'lg' },
+							destructive: 'false',
+							hierarchy: 'secondary',
+							coloring: 'gray'
+						}}
+						type="button"
+						on:click={toggleMenu}
+						icon={{ type: 'icon-only', leading: generalXClose }}
+					/>
+					<div class="space-y-uui-4xl">
+						<tdc-button-a
+							href="#it-security-assessment"
+							on:click={toggleMenu}
+							tdc={{
+								size: { default: 'xl' },
+								destructive: 'false',
+								hierarchy: 'link',
+								coloring: 'color'
+							}}
+							icon={{ type: 'icon' }}
+						>
+							IT Security Assessment
+						</tdc-button-a>
+						<tdc-button-a
+							href="#services"
+							on:click={toggleMenu}
+							tdc={{
+								size: { default: 'xl' },
+								destructive: 'false',
+								hierarchy: 'link',
+								coloring: 'color'
+							}}
+							icon={{ type: 'icon' }}>{m.mean_early_moose_savor()}</tdc-button-a
+						>
+						<tdc-button-a
+							href="#domaintester"
+							on:click={toggleMenu}
+							tdc={{
+								size: { default: 'xl' },
+								destructive: 'false',
+								hierarchy: 'link',
+								coloring: 'color'
+							}}
+							icon={{ type: 'icon' }}>{m.last_brief_ant_adore()}</tdc-button-a
+						>
+						<tdc-button-a
+							href="#about"
+							on:click={toggleMenu}
+							tdc={{
+								size: { default: 'xl' },
+								destructive: 'false',
+								hierarchy: 'link',
+								coloring: 'color'
+							}}
+							icon={{ type: 'icon' }}
+							>{m.civil_calm_walrus_reap()}
+						</tdc-button-a>
+						<tdc-button-a
+							on:click={toggleMenu}
+							href="#contact"
+							tdc={{
+								size: { default: 'md' },
+								destructive: 'false',
+								hierarchy: 'primary',
+								coloring: 'color'
+							}}
+							icon={{ type: 'icon' }}>{m.bland_alive_ocelot_chop()}</tdc-button-a
+						>
+					</div>
+					<a on:click={toggleMenu} href="/">
+						<tdc-fs-logo />
+					</a>
+				</div>
+
+				<!-- Close Button -->
+			</div>
 			<SectionContainer class="z-30 sticky flex top-0">
 				<nav
 					class=" my-2 backdrop-blur-md rounded-full px-uui-container-padding-mobile lg:px-uui-container-padding-desktop lg:-mx-uui-container-padding-desktop w-full py-uui-xl"
@@ -111,89 +195,6 @@
 						/>
 
 						<!-- Full-Screen Mobile Menu -->
-						<div
-							class={`${
-								isMenuOpen ? 'block' : 'hidden'
-							} fixed  inset-0 bg-uui-bg-primary text-uui-white  z-50 md:hidden`}
-						>
-							<div class="flex h-full py-uui-5xl flex-col items-center justify-between">
-								<tdc-button
-									tdc={{
-										size: { default: 'md', 'uui-desktop': 'lg' },
-										destructive: 'false',
-										hierarchy: 'secondary',
-										coloring: 'gray'
-									}}
-									type="button"
-									on:click={toggleMenu}
-									icon={{ type: 'icon-only', leading: generalXClose }}
-								/>
-								<div class="space-y-uui-4xl">
-									<tdc-button-a
-										href="#it-security-assessment"
-										tdc={{
-											size: { default: 'xl' },
-											destructive: 'false',
-											hierarchy: 'link',
-											coloring: 'color'
-										}}
-										icon={{ type: 'icon' }}
-									>
-										IT Security Assessment
-									</tdc-button-a>
-									<tdc-button-a
-										href="#services"
-										on:click={toggleMenu}
-										tdc={{
-											size: { default: 'xl' },
-											destructive: 'false',
-											hierarchy: 'link',
-											coloring: 'color'
-										}}
-										icon={{ type: 'icon' }}>{m.mean_early_moose_savor()}</tdc-button-a
-									>
-									<tdc-button-a
-										href="#domaintester"
-										on:click={toggleMenu}
-										tdc={{
-											size: { default: 'xl' },
-											destructive: 'false',
-											hierarchy: 'link',
-											coloring: 'color'
-										}}
-										icon={{ type: 'icon' }}>{m.last_brief_ant_adore()}</tdc-button-a
-									>
-									<tdc-button-a
-										href="#about"
-										on:click={toggleMenu}
-										tdc={{
-											size: { default: 'xl' },
-											destructive: 'false',
-											hierarchy: 'link',
-											coloring: 'color'
-										}}
-										icon={{ type: 'icon' }}
-										>{m.civil_calm_walrus_reap()}
-									</tdc-button-a>
-									<tdc-button-a
-										on:click={toggleMenu}
-										href="#contact"
-										tdc={{
-											size: { default: 'md' },
-											destructive: 'false',
-											hierarchy: 'primary',
-											coloring: 'color'
-										}}
-										icon={{ type: 'icon' }}>{m.bland_alive_ocelot_chop()}</tdc-button-a
-									>
-								</div>
-								<a on:click={toggleMenu} href="/">
-									<tdc-fs-logo />
-								</a>
-							</div>
-
-							<!-- Close Button -->
-						</div>
 					</div>
 				</nav>
 			</SectionContainer>
