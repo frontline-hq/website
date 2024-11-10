@@ -253,7 +253,7 @@
 	<SectionContainer>
 		<div
 			id="it-security-assessment"
-			class="flex gap-uui-5xl flex-col w-full text-left py-uui-7xl lg:py-uui-9xl"
+			class="flex scroll-mt-12 gap-uui-5xl flex-col w-full text-left py-uui-7xl lg:py-uui-9xl"
 		>
 			<div
 				class=" mx-auto max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop gap-uui-6xl w-full"
