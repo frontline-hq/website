@@ -59,7 +59,6 @@
 	"domaincheckeroverlaytitleprotected": "seems to be protected.",
 	"domaincheckeroverlaytitlenotprotected": "is not protected.",
 	"domaincheckeroverlaysubdomaintitle": "Your subdomains are unsafe.",
-	"domaincheckeroverlaytext1": "Keep your domain secure. Reach out for a straightforward security check.",
 	"domaincheckeroverlaydomainissafetext": "Keep your domain secure. Reach out for a straightforward security check.",
 	"domaincheckeroverlaydomainisnotsafetext": "Hackers can impersonate your domain's emails, putting you at risk.",
 	"domaincheckeroverlaydomainisnotsafetext2": "Your domain also fails to meet 2024 Google and Yahoo standards.",
@@ -98,8 +97,6 @@
 	"extra_light_anaconda_hunt": "Infrastructure Consultancy",
 	"steep_level_squirrel_laugh": "Domain Spoofing Protection",
 	"alert_tense_tuna_rest": "Automated Backup Solutions",
-	"solid_topical_scallop_build": "Impressum",
-	"still_sound_slug_radiate": "Benjamin Preiss<br />\n\t\t\t\tStrandweg, 98a<br />\n\t\t\t\t22587 Hamburg",
 	"early_few_raven_clap": "Privacy Policy",
 	"each_minor_giraffe_twirl": "1. Privacy at a Glance",
 	"tangy_big_husky_surge": "General Information",
@@ -188,10 +185,15 @@
 	"slow_ok_donkey_learn": "Comprehensive Security Check",
 	"sea_each_lionfish_win": "IT Team Partner",
 	"zany_red_koala_hint": "BSI-conform",
+	"domaincheckeroverlaytext1": "Keep your domain secure. Reach out for a straightforward security check.",
+	"solid_topical_scallop_build": "Impressum",
+	"still_sound_slug_radiate": "Benjamin Preiss<br />\n\t\t\t\tStrandweg, 98a<br />\n\t\t\t\t22587 Hamburg",
 	"bright_tangy_sheep_enrich": "Free Security Assessment",
 	"good_jolly_chicken_wish": "A free consultation to evaluate security with our 10-point checklist, uncovering vulnerabilities.",
 	"next_north_cheetah_build": "In-Depth Security Review",
 	"only_polite_trout_play": "We collaborate with your IT team to analyze your security, providing a report and action plan towards a 5-star rating.",
 	"orange_trick_grebe_dig": "Security Solutions",
-	"lost_tired_zebra_race": "We deploy our proven security solutions to fortify your defenses for the 21st century."
+	"lost_tired_zebra_race": "We deploy our proven security solutions to fortify your defenses for the 21st century.",
+	"left_fine_yak_laugh": "IT Security Assessment",
+	"zany_that_lionfish_dart": "IT Security Assessment"
 }
