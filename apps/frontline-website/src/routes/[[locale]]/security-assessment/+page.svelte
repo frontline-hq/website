@@ -3,6 +3,7 @@
 	import * as m from '$lib/paraglide/messages.js';
 </script>
 
+<div class="w-full bg-white"></div>
 <tdc-mc-contactsection
 	class="uui-light-default bg-white [&&]:pb-uui-none"
 	id="assessment"
