@@ -11,7 +11,7 @@
 	"herosectionimgalt": "This is an awesome image ",
 	"contactsectionsubheading": "Contact us",
 	"contactsectionheading": "Get in touch",
-	"contactsectionp": "Peace of mind is our currency.<br />Reach out to us at\n\t\t\t<a class=\"uui-anchor\" href=\"mailto:contact@frontline.codes\">contact@frontline.codes</a> to unlock\n\t\t\tthe full potential of your digital presence.",
+	"contactsectionp": "Peace of mind is our currency.<br />Reach out to us at\n\t\t\t<a class=\"uui-anchor\" href=\"mailto:contact@frontline.codes\">contact@frontline.codes</a> to unlock\n\t\t\tthe full potential of your digital security.",
 	"contactsectionformfirstnamename": "First name",
 	"contactsectionformfirstnameplaceholder": "First name",
 	"contactsectionformfirstnamelabel": "First name*",
@@ -43,8 +43,8 @@
 	"introsectiontext": "Need help with your web project or cybersecurity? We got you covered.",
 	"introsectionactionsecondary": "Schedule call",
 	"introsectionactionprimary": "Reach out",
-	"introsectionnadiemtext": "Cybersecurity Expert, web developer and business strategist<br><br><a class=\"uui-anchor\" href=\"mailto:nadiem@frontline.codes\">nadiem@frontline.codes</a>",
-	"introsectionbentext": "Creative thinker, designer and web3 developer with an eye for the details<br><br><a class=\"uui-anchor\" href=\"mailto:ben@frontline.codes\">ben@frontline.codes</a>",
+	"introsectionnadiemtext": "Strategic cybersecurity expert and web developer dedicated to real-world solutions and practical business outcomes.<br><br><a class=\"uui-anchor\" href=\"mailto:nadiem@frontline.codes\">nadiem@frontline.codes</a>",
+	"introsectionbentext": "Detail-oriented IT security expert, creative thinker, and Web3 developer with a focus on innovative and forward-thinking solutions.<br><br><a class=\"uui-anchor\" href=\"mailto:ben@frontline.codes\">ben@frontline.codes</a>",
 	"domaincheckerheading": "Secure Your Domain and Ensure Email Deliverability.",
 	"domaincheckersubtitle": "\tEnsure your emails are delivered and protect yourself against impersonation attacks, \n\t\t\t\tall while becoming compliant with the standards set by Google and Yahoo in 2024.",
 	"domaincheckerformheading": "Check your domain now.",
@@ -195,5 +195,8 @@
 	"orange_trick_grebe_dig": "Security Solutions",
 	"lost_tired_zebra_race": "We deploy our proven security solutions to fortify your defenses for the 21st century.",
 	"left_fine_yak_laugh": "IT Security Assessment",
-	"zany_that_lionfish_dart": "IT Security Assessment"
+	"zany_that_lionfish_dart": "IT Security Assessment",
+	"livid_quick_midge_pull": "unsere Kunden"
 }
+
+

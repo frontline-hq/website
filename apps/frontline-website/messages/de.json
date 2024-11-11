@@ -43,8 +43,8 @@
 	"introsectiontext": " Brauchen Sie Hilfe bei Ihrem Webprojekt oder in Sachen Cybersicherheit? Wir haben die Lösung für Sie.",
 	"introsectionactionsecondary": "Call vereinbaren",
 	"introsectionactionprimary": "Kontakt aufnehmen",
-	"introsectionnadiemtext": "Cybersecurity-Experte, Webentwickler und Unternehmensstratege<br><br><a class=\"uui-anchor\" href=\"mailto:nadiem@frontline.codes\">nadiem@frontline.codes</a>",
-	"introsectionbentext": "Kreativer Denker, Designer und Web3-Entwickler mit Auge fürs Detail<br><br><a class=\"uui-anchor\" href=\"mailto:ben@frontline.codes\">ben@frontline.codes</a>",
+	"introsectionnadiemtext": "Strategischer Cybersicherheitsexperte und Webentwickler mit Fokus auf praxisorientierte Lösungen und geschäftlichen Mehrwert.<br><br><a class=\"uui-anchor\" href=\"mailto:nadiem@frontline.codes\">nadiem@frontline.codes</a>",
+	"introsectionbentext": "Detailorientierter IT-Sicherheitsexperte, kreativer Denker und Web3-Entwickler mit Schwerpunkt auf innovative und zukunftsweisende Lösungen.<br><br><a class=\"uui-anchor\" href=\"mailto:ben@frontline.codes\">ben@frontline.codes</a>",
 	"domaincheckerheading": "Schützen Sie Ihre Domain und stellen Sie die Zustellbarkeit Ihrer E-Mails sicher.",
 	"domaincheckersubtitle": "\tStellen Sie sicher, dass Ihre E-Mails zugestellt werden und schützen Sie sich vor Identitätsdiebstahl,\n\t\t\t\twährend Sie gleichzeitig den von Google und Yahoo im Jahr 2024 festgelegten Standards entsprechen.",
 	"domaincheckerformheading": "Überprüfen Sie jetzt Ihr Domain.",
@@ -192,6 +192,6 @@
 	"only_polite_trout_play": "Wir arbeiten mit Ihrem IT-Team zusammen, um Ihre Sicherheit zu analysieren und einen Bericht sowie einen Aktionsplan für eine 5-Sterne-Bewertung bereitzustellen.",
 	"orange_trick_grebe_dig": "Sicherheitslösungen",
 	"lost_tired_zebra_race": "Wir setzen unsere bewährten Sicherheitslösungen ein, um Ihre Abwehrkräfte für das 21. Jahrhundert zu stärken.",
- "left_fine_yak_laugh": "IT-Sicherheitsbewertung",
-    "zany_that_lionfish_dart": "IT-Sicherheitsbewertung"
+	"left_fine_yak_laugh": "IT-Sicherheitsbewertung",
+	"zany_that_lionfish_dart": "IT-Sicherheitsbewertung"
 }
