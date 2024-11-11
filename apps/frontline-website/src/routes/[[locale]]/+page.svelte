@@ -247,82 +247,87 @@
 		</div>-->
 	</div>
 
-	<SectionContainer>
-		<div
-			id="it-security-assessment"
-			class="flex scroll-mt-12 gap-uui-5xl flex-col w-full text-left py-uui-7xl lg:py-uui-9xl"
-		>
+	<div class="bg-uui-bg-primary_alt">
+		<SectionContainer>
 			<div
-				class=" mx-auto max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop gap-uui-6xl w-full"
+				id="it-security-assessment"
+				class=" flex scroll-mt-12 gap-uui-5xl flex-col w-full text-left py-uui-7xl lg:py-uui-9xl"
 			>
-				<div class="gap-uui-3xl max-w-uui-width-xl">
-					<div class="flex flex-col gap-uui-lg">
-						<h6 class="font-semibold text-uui-text-brand-secondary-700 uui-text-sm lg:uui-text-md">
-							{m.level_awake_donkey_flop()}
-						</h6>
-						<h2 class="font-bold text-uui-text-primary-900 uui-display-sm lg:uui-display-md">
-							{m.least_kind_peacock_gulp()}
-						</h2>
-						<div class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl">
-							<p>
-								{m.strong_home_horse_honor()}
-							</p>
+				<div
+					class=" mx-auto max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop gap-uui-6xl w-full"
+				>
+					<div class="gap-uui-3xl max-w-uui-width-xl">
+						<div class="flex flex-col gap-uui-lg">
+							<h6
+								class="font-semibold text-uui-text-brand-secondary-700 uui-text-sm lg:uui-text-md"
+							>
+								{m.level_awake_donkey_flop()}
+							</h6>
+							<h2 class="font-bold text-uui-text-primary-900 uui-display-sm lg:uui-display-md">
+								{m.least_kind_peacock_gulp()}
+							</h2>
+							<div class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl">
+								<p>
+									{m.strong_home_horse_honor()}
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div
-			class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-uui-9xl grid w-full justify-evenly mx-auto gap-uui-7xl max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop"
-		>
-			{#each featuredNumberArray as number}
-				<FeatureText>
-					<FeaturedNumber slot="icon" url={number.url}></FeaturedNumber>
-					<h4 slot="title">{number.title}</h4>
-					<p slot="description">{number.description}</p>
-				</FeatureText>
-			{/each}
-		</div>
-	</SectionContainer>
-
-	<SectionContainer class="pb-uui-7xl lg:pb-uui-9xl">
-		<div
-			class="flex flex-col mx-auto max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop lg:flex-row gap-uui-5xl"
-		>
-			<div class="w-full md:min-w-[30rem]">
-				<img src="/certificate-svg.svg" alt="frontline cybersecurity rating" />
+			<div
+				class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-uui-9xl grid w-full justify-evenly mx-auto gap-uui-7xl max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop"
+			>
+				{#each featuredNumberArray as number}
+					<FeatureText>
+						<FeaturedNumber slot="icon" url={number.url}></FeaturedNumber>
+						<h4 slot="title">{number.title}</h4>
+						<p slot="description">{number.description}</p>
+					</FeatureText>
+				{/each}
 			</div>
-			<div class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl flex flex-col gap-uui-4xl">
-				<p>
-					{m.major_loud_kangaroo_cry()}
-				</p>
-				<div class=" flex flex-col lg:flex-row grow w-full gap-uui-lg">
-					<tdc-button
-						data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
-						data-cal-config={JSON.stringify({ layout: 'month_view' })}
-						tdc={{
-							size: { default: 'lg', 'uui-desktop': 'xl' },
-							destructive: 'false',
-							hierarchy: 'secondary',
-							coloring: 'gray'
-						}}
-						icon={{ type: 'icon', leading: phoneCall }}>{m.empty_yummy_salmon_arise()}</tdc-button
-					>
-					<tdc-button-a
-						href="/security-assessment"
-						tdc={{
-							size: { default: 'lg', 'uui-desktop': 'xl' },
-							destructive: 'false',
-							hierarchy: 'primary',
-							coloring: 'color'
-						}}
-						icon={{ type: 'icon' }}>{m.fluffy_warm_ape_dream()}</tdc-button-a
-					>
+		</SectionContainer>
+		<SectionContainer class="pb-uui-7xl lg:pb-uui-9xl">
+			<div
+				class="flex flex-col mx-auto max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop lg:flex-row gap-uui-5xl"
+			>
+				<div class="w-full md:min-w-[30rem]">
+					<img src="/certificate-svg.svg" alt="frontline cybersecurity rating" />
+				</div>
+				<div
+					class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl flex flex-col gap-uui-4xl"
+				>
+					<p>
+						{m.major_loud_kangaroo_cry()}
+					</p>
+					<div class=" flex flex-col lg:flex-row grow w-full gap-uui-lg">
+						<tdc-button
+							data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+							data-cal-config={JSON.stringify({ layout: 'month_view' })}
+							tdc={{
+								size: { default: 'lg', 'uui-desktop': 'xl' },
+								destructive: 'false',
+								hierarchy: 'secondary',
+								coloring: 'gray'
+							}}
+							icon={{ type: 'icon', leading: phoneCall }}>{m.empty_yummy_salmon_arise()}</tdc-button
+						>
+						<tdc-button-a
+							href="/security-assessment"
+							tdc={{
+								size: { default: 'lg', 'uui-desktop': 'xl' },
+								destructive: 'false',
+								hierarchy: 'primary',
+								coloring: 'color'
+							}}
+							icon={{ type: 'icon' }}>{m.fluffy_warm_ape_dream()}</tdc-button-a
+						>
+					</div>
 				</div>
 			</div>
-		</div>
-	</SectionContainer>
+		</SectionContainer>
+	</div>
 
 	<tdc-mc-cta-section
 		id="services"
@@ -376,7 +381,7 @@
 	</div>
 
 	<div class="py-uui-2xl lg:py-uui-4xl">
-		<SectionContainer class="py-uui-2xl lg:py-uui-3xl border-uui-utility-gray-300  border-y-uui-1">
+		<SectionContainer class="py-uui-2xl lg:py-uui-3xl border-uui-utility-gray-300  ">
 			<tdc-mc-hs
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
 			>
@@ -386,7 +391,8 @@
 			</tdc-mc-hs>
 		</SectionContainer>
 	</div>
-	<div class="min-h-[calc(100vh-8rem)] flex flex-col justify-center">
+
+	<div class="min-h-[calc(100vh-8rem)] flex flex-col justify-center bg-uui-bg-primary_alt">
 		<tdc-mc-hhs
 			id="domaintester"
 			class="scroll-mt-24"
