@@ -36,6 +36,7 @@
 	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
 	import FeaturedNumber from '$lib/components/FeaturedNumber/FeaturedNumber.svelte';
 	import CheckIcon from '$lib/components/CheckIcon/CheckIcon.svelte';
+	import SocialBanner from '$lib/components/SocialBanner/SocialBanner.svelte';
 
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
@@ -246,6 +247,10 @@
 			</picture>
 		</div>-->
 	</div>
+
+	<SectionContainer class="pb-uui-7xl lg:pb-uui-9xl">
+		<SocialBanner />
+	</SectionContainer>
 
 	<div class="bg-uui-bg-primary_alt">
 		<SectionContainer>
