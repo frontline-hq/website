@@ -8,10 +8,10 @@
 	id="assessment"
 	tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'simple-form-01' }}
 >
-	<h6 slot="subheading">Gain Valuable Security Insights</h6>
-	<h3 slot="heading">IT Security and Compliance Assessment</h3>
+	<h6 slot="subheading">{m.grassy_seemly_leopard_fade()}</h6>
+	<h3 slot="heading">{m.green_warm_bee_thrive()}</h3>
 	<p class="max-w-[70ch] underline-offset-4">
-		{@html `Assess your company's security with our easy-to-use assessment form. </br>  </br> Check the box <u><b>only</b></u> if your company ensures <u><b>full compliance</b></u> with <u><b>all</b></u> aspects of the question; if not leave the checkbox blank. <br/> <br/> After completing the form, you will receive an initial rating to help you understand your current security posture.`}
+		{@html m.crisp_gaudy_wasp_pick()}
 	</p>
 </tdc-mc-contactsection>
 <div

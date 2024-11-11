@@ -106,7 +106,7 @@
 				>
 					<div class="flex w-full items-center justify-between">
 						<div class="flex space-x-uui-7xl">
-							<a class="w-fit min-w-fit" href="/">
+							<a class="w-fit min-w-fit" hreflang={languageTag()} href="/{languageTag()}">
 								<tdc-fs-logo />
 							</a>
 							<div class="hidden items-center text-white lg:flex">
@@ -181,7 +181,7 @@
 			</SectionContainer>
 			<slot />
 			<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
-				<a href="/">
+				<a href={'/' + languageTag()}>
 					<tdc-fs-logo slot="logo" />
 				</a>
 				<tdc-mc-footer-link
