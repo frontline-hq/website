@@ -11,6 +11,8 @@
 		securityLock03
 	} from '@frontline-hq/untitledui-icons';
 	import { DateTime } from 'luxon';
+	import pgpPublicKey from '$lib/pgp.publickey.txt?raw';
+	import { readKey, encrypt, createMessage } from 'openpgp';
 
 	let submissionState: 'success' | 'error' | undefined;
 	let submissionTimeoutId: NodeJS.Timeout | undefined;
@@ -114,7 +116,13 @@
 		},
 		extend: validator({ schema }),
 		onSubmit: async (values) => {
-			// Generate the email
+			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);
+			submissionState = undefined;
+
+			const publicKeyArmored = pgpPublicKey;
+			const publicKey = await readKey({ armoredKey: publicKeyArmored });
+
+			// Generate the email content based on `values` and `categories`
 			const generateEmailContent = (values: any, categories: any[]): string => {
 				const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
 				const output = {
@@ -126,7 +134,7 @@
 					answers: categories.map((category) => ({
 						title: category.title,
 						questions: category.questions.map((question) => ({
-							id: question.id, // Added question ID
+							id: question.id,
 							question: question.label,
 							answer: values.questions[question.id] ? '1' : '0'
 						}))
@@ -137,10 +145,48 @@
 			};
 
 			const emailContent = generateEmailContent(values, categories);
-			console.log('Generated Email Content:\n', emailContent);
 
-			submissionState = 'success';
-			reset();
+			// Prepare the encrypted email
+			const subject = 'Frontline Security Assessment';
+			const sendtime = DateTime.now()
+				.setLocale('en-GB')
+				.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+			const firstName = values['first-name'];
+			const lastName = values['last-name'];
+			const email = values['company-email'];
+			const body = `Assessment completed by: ${firstName} ${lastName} on ${sendtime}\n\n${emailContent}`;
+			const encodedSubject = encodeURIComponent(subject);
+			const encodedBody = encodeURIComponent(body);
+
+			const mailContent = {
+				firstName,
+				lastName,
+				email,
+				body,
+				sendtime,
+				encodedBody,
+				encodedSubject
+			};
+
+			const encrypted = await encrypt({
+				message: await createMessage({ text: JSON.stringify(mailContent) }), // Encrypts mail content JSON
+				encryptionKeys: publicKey
+			});
+
+			// Send the encrypted email via your API
+			const response = await fetch('/api/send-mail', {
+				method: 'POST',
+				body: JSON.stringify({ message: encrypted }),
+				headers: {
+					'content-type': 'application/json'
+				}
+			});
+
+			const { message } = await response.json();
+			if (!response.ok) {
+				throw new Error(message);
+			}
+			return message;
 		},
 		onSuccess(response, context) {
 			if (submissionTimeoutId != undefined) clearTimeout(submissionTimeoutId);

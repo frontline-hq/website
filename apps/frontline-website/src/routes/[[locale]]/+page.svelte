@@ -146,7 +146,7 @@
 	<!-- Update the favicon path if needed -->
 </svelte:head>
 {#if browser}
-	<div class="relative flex flex-col justify-end uui-desktop:h-auto overflow-hidden">
+	<div class=" relative flex flex-col justify-end uui-desktop:h-auto overflow-hidden">
 		<SectionContainer class="py-uui-7xl lg:py-uui-9xl">
 			<div class="flex gap-uui-5xl flex-col w-full text-left py-uui-7xl lg:py-uui-9xl">
 				<div
@@ -248,7 +248,7 @@
 		</div>-->
 	</div>
 
-	<SectionContainer class="pb-uui-7xl lg:pb-uui-9xl">
+	<SectionContainer class="py-uui-7xl lg:pb-uui-9xl">
 		<SocialBanner />
 	</SectionContainer>
 

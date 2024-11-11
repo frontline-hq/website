@@ -29,7 +29,7 @@
 			<div
 				class={`${
 					isMenuOpen ? 'block' : 'hidden'
-				} fixed inset-0 bg-uui-bg-primary text-uui-white  z-50 lg:hidden`}
+				} fixed inset-0 bg-uui-bg-primary   z-50 lg:hidden`}
 			>
 				<div class="flex h-full py-uui-5xl flex-col items-center justify-between">
 					<tdc-button
@@ -100,10 +100,10 @@
 
 				<!-- Close Button -->
 			</div>
-			<SectionContainer class="z-30 sticky flex top-0">
-				<nav
-					class=" my-2 backdrop-blur-md rounded-full px-uui-container-padding-mobile lg:px-uui-container-padding-desktop lg:-mx-uui-container-padding-desktop w-full py-uui-xl"
-				>
+			<SectionContainer
+				class="z-30  sticky top-uui-md backdrop-blur-md rounded-full px-uui-container-padding-mobile lg:px-uui-container-padding-desktop w-full max-w-screen-lg py-uui-xl mx-auto"
+			>
+				<nav class=" {$page.url.pathname === '/security-assessment' ? 'bg-black/50' : ''} ">
 					<div class="flex w-full items-center justify-between">
 						<div class="flex space-x-uui-7xl">
 							<a class="w-fit min-w-fit" hreflang={languageTag()} href="/{languageTag()}">
