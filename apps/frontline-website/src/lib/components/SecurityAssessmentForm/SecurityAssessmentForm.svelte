@@ -19,68 +19,61 @@
 
 	const categories = [
 		{
-			title: 'Access and Authentication',
+			title: m.cute_moving_capybara_glow(),
 			questions: [
 				{
 					id: 'q1',
-					label: 'Do you have documented password rules and guidelines that include 2FA?'
+					label: m.honest_wild_polecat_cook()
 				},
 				{
 					id: 'q2',
-					label:
-						'Do you and your employees use an open-source password manager with a bug-bounty program?'
+					label: m.antsy_proof_chipmunk_renew()
 				},
-				{ id: 'q3', label: 'Do members with higher access privileges use physical security keys?' }
+				{ id: 'q3', label: m.crazy_nice_impala_relish() }
 			]
 		},
 		{
-			title: 'Email Security and Deliverability',
+			title: m.cozy_stock_florian_race(),
 			questions: [
-				{ id: 'q4', label: 'Do you use Office 365 for email communication?' },
+				{ id: 'q4', label: m.such_steep_eel_pop() },
 				{
 					id: 'q5',
-					label:
-						'Is your email configured with SPF, DKIM, and DMARC records, and do you have a monitoring system to alert you to failed, blocked, or spoofed email deliveries?'
+					label: m.vivid_dizzy_florian_surge()
 				},
 				{
 					id: 'q6',
-					label:
-						'Have you experienced issues with email delivery to or from customers, or has your company faced a spoofing incident in the last year?'
+					label: m.true_merry_florian_race()
 				}
 			]
 		},
 		{
-			title: 'Network and Device Security',
+			title: m.bald_plain_cow_snip(),
 			questions: [
 				{
 					id: 'q7',
-					label:
-						'Do you have secure remote access for employees, including VPNs and strong Wi-Fi policies, such as WPA2/WPA3 with complex passwords?'
+					label: m.mad_agent_nils_relish()
 				},
 				{
 					id: 'q8',
-					label:
-						'Are all employee devices equipped with up-to-date antivirus, anti-malware, and device encryption, and is there a process in place to ensure regular software updates?'
+					label: m.full_born_octopus_tear()
 				}
 			]
 		},
 		{
-			title: 'Data Protection and Backup',
+			title: m.seemly_best_lark_accept(),
 			questions: [
 				{
 					id: 'q9',
-					label:
-						'Do you have a georedundant, encrypted backup strategy for both company devices, servers, and email data?'
+					label: m.knotty_chunky_sawfish_offer()
 				}
 			]
 		},
 		{
-			title: 'Incident Response',
+			title: m.every_trite_thrush_dare(),
 			questions: [
 				{
 					id: 'q10',
-					label:
-						'Is there a documented incident response plan that is regularly tested and updated, with strategies to ensure recoverability without relying solely on backup restoration?'
+					label: m.last_tough_shrimp_gaze()
 				}
 			]
 		}
@@ -90,14 +83,14 @@
 
 	// Validation schema
 	const schema = yup.object({
-		'first-name': yup.string().required('First name is required'),
-		'last-name': yup.string().required('Last name is required'),
-		'company-name': yup.string().required('Company name is required'),
-		'company-email': yup.string().email().required('Company email is not valid'),
+		'first-name': yup.string().required(m.wide_jolly_cuckoo_radiate()),
+		'last-name': yup.string().required(m.weary_alert_capybara_forgive()),
+		'company-name': yup.string().required(m.calm_inclusive_shad_cook()),
+		'company-email': yup.string().email().required(m.kind_warm_coyote_glow()),
 		'phone-number': yup
 			.string()
-			.matches(phoneRegExp, 'Phone number is not valid')
-			.required('Phone number is required valid'),
+			.matches(phoneRegExp, m.mad_inclusive_warbler_twist())
+			.required(m.elegant_game_midge_gaze()),
 		questions: yup
 			.object()
 			.shape(
@@ -178,11 +171,11 @@
 				destructive={$errors['first-name'] !== null}
 				type="text"
 				name="first-name"
-				placeholder="First Name"
+				placeholder={m.major_acidic_starfish_cheer()}
 				disabled={$isSubmitting}
 				hint={$errors['first-name'] ?? undefined}
 			>
-				<span slot="label">First Name*</span>
+				<span slot="label">{m.proud_good_shrike_fetch()}</span>
 			</tdc-input>
 		</span>
 
@@ -194,11 +187,11 @@
 				destructive={$errors['last-name'] !== null}
 				type="text"
 				name="last-name"
-				placeholder="Last Name"
+				placeholder={m.dirty_lost_opossum_grip()}
 				disabled={$isSubmitting}
 				hint={$errors['last-name'] ?? undefined}
 			>
-				<span slot="label">Last Name*</span>
+				<span slot="label">{m.cute_wild_platypus_bump()}</span>
 			</tdc-input>
 		</span>
 		<!-- Company Name -->
@@ -209,11 +202,11 @@
 				destructive={$errors['company-name'] !== null}
 				type="text"
 				name="company-name"
-				placeholder="Your company name"
+				placeholder={m.dark_tame_tadpole_scold()}
 				disabled={$isSubmitting}
 				hint={$errors['company-name'] ?? undefined}
 			>
-				<span slot="label">Company Name*</span>
+				<span slot="label">{m.dark_brave_leopard_cuddle()}</span>
 			</tdc-input>
 		</span>
 
@@ -229,7 +222,7 @@
 				disabled={$isSubmitting}
 				hint={$errors['phone-number'] ?? undefined}
 			>
-				<span slot="label">Phone Number*</span>
+				<span slot="label">{m.white_new_cow_drum()}</span>
 			</tdc-input>
 		</span>
 
@@ -241,11 +234,11 @@
 				destructive={$errors['company-email'] !== null}
 				type="text"
 				name="company-email"
-				placeholder="you@company.de"
+				placeholder={m.novel_fuzzy_giraffe_fulfill()}
 				disabled={$isSubmitting}
 				hint={$errors['company-email'] ?? undefined}
 			>
-				<span slot="label">Company Email*</span>
+				<span slot="label">{m.suave_weak_goat_approve()}</span>
 			</tdc-input>
 		</span>
 
