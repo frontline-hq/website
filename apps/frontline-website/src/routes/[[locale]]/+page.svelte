@@ -248,7 +248,7 @@
 		</div>-->
 	</div>
 
-	<SectionContainer class="py-uui-7xl lg:pb-uui-9xl">
+	<SectionContainer class="pb-uui-7xl pt-0 lg:pb-uui-9xl">
 		<SocialBanner />
 	</SectionContainer>
 
