@@ -34,6 +34,9 @@
 	import FeatureText from '$lib/components/FeatureText/FeatureText.svelte';
 	import FeaturedIcon from '$lib/components/FeaturedIcon/FeaturedIcon.svelte';
 	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
+	import FeaturedNumber from '$lib/components/FeaturedNumber/FeaturedNumber.svelte';
+	import CheckIcon from '$lib/components/CheckIcon/CheckIcon.svelte';
+	import SocialBanner from '$lib/components/SocialBanner/SocialBanner.svelte';
 
 	onMount(() => {
 		const Cal = calFn('https://app.cal.com/embed/embed.js');
@@ -103,6 +106,28 @@
 			description: m.shy_next_jackdaw_snap()
 		}
 	];
+
+	const featuredNumberArray: {
+		title: string;
+		description: string;
+		url: string;
+	}[] = [
+		{
+			url: '/number-1.svg',
+			title: m.bright_tangy_sheep_enrich(),
+			description: m.good_jolly_chicken_wish()
+		},
+		{
+			url: '/number-2.svg',
+			title: m.next_north_cheetah_build(),
+			description: m.only_polite_trout_play()
+		},
+		{
+			url: '/number-3.svg',
+			title: m.orange_trick_grebe_dig(),
+			description: m.lost_tired_zebra_race()
+		}
+	];
 </script>
 
 <svelte:head>
@@ -121,46 +146,70 @@
 	<!-- Update the favicon path if needed -->
 </svelte:head>
 {#if browser}
-	<div class="relative flex flex-col justify-end h-[100vh] uui-desktop:h-auto overflow-hidden">
-		<tdc-mc-hhs
-			tdc={{
-				breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' },
-				type: 'geometricshapes01'
-			}}
+	<div class=" relative flex flex-col justify-end uui-desktop:h-auto overflow-hidden">
+		<SectionContainer class="py-uui-7xl lg:py-uui-9xl">
+			<div class="flex gap-uui-5xl flex-col w-full text-left py-uui-7xl lg:py-uui-9xl">
+				<div
+					class="flex flex-col lg:flex-row mx-auto max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop gap-uui-6xl w-full"
+				>
+					<div class="gap-uui-3xl max-w-uui-width-xl">
+						<div class="flex flex-col">
+							<h1 class="uui-display-lg font-semibold lg:uui-display-xl text-uui-text-primary-900">
+								{m.slow_heroic_crab_gaze()}
+							</h1>
+							<p
+								class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl mb-uui-4xl lg:mb-uui-6xl mt-uui-2xl lg:mt-uui-3xl"
+							>
+								{m.curly_dizzy_giraffe_evoke()}
+							</p>
+							<div class="flex flex-col md:flex-row gap-uui-xl">
+								<tdc-button
+									data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+									data-cal-config={JSON.stringify({ layout: 'month_view' })}
+									tdc={{
+										size: { default: 'xl', 'uui-desktop': '2xl' },
+										destructive: 'false',
+										hierarchy: 'secondary',
+										coloring: 'gray'
+									}}
+									icon={{ type: 'icon', leading: phoneCall }}
+									>{m.icy_quiet_gazelle_cure()}</tdc-button
+								>
+
+								<tdc-button-a
+									href="#contact"
+									tdc={{
+										size: { default: 'xl', 'uui-desktop': '2xl' },
+										destructive: 'false',
+										hierarchy: 'primary',
+										coloring: 'color'
+									}}
+									icon={{ type: 'icon' }}>{m.mealy_spicy_lizard_fetch()}</tdc-button-a
+								>
+							</div>
+						</div>
+					</div>
+					<div
+						class="flex px-uui-container-padding-mobile lg:px-0 max-w-uui-container-max-width-mobile lg:max-w-none gap-uui-xl pb-uui-3xl lg:gap-uui-2xl text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl text-left self-start lg:self-end flex-col items-start justify-start"
+					>
+						<div class="flex items-center gap-uui-lg">
+							<CheckIcon url="/check-icon.svg" />
+							<span>{m.slow_ok_donkey_learn()}</span>
+						</div>
+						<div class="flex items-center gap-uui-lg">
+							<CheckIcon url="/check-icon.svg" />
+							<span>{m.sea_each_lionfish_win()}</span>
+						</div>
+						<div class="flex items-center gap-uui-lg">
+							<CheckIcon url="/check-icon.svg" />
+							<span>{m.zany_red_koala_hint()}</span>
+						</div>
+					</div>
+				</div>
+			</div></SectionContainer
 		>
-			<h1
-				slot="heading"
-				class="[&&]:font-super-large [&&]:text-5xl [&&]:uui-desktop:text-8xl [&&]:font-black"
-			>
-				{m.herosectionh1()}
-			</h1>
-			<p class="uui-desktop:max-w-uui-width-md">{m.herosectionp()}</p>
-			<McUtilActions slot="actions">
-				<tdc-button
-					data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
-					data-cal-config={JSON.stringify({ layout: 'month_view' })}
-					tdc={{
-						size: { default: 'xl', 'uui-desktop': '2xl' },
-						destructive: 'false',
-						hierarchy: 'secondary',
-						coloring: 'gray'
-					}}
-					icon={{ type: 'icon', leading: phoneCall }}>{m.herosectionsecondarybutton()}</tdc-button
-				>
-				<tdc-button-a
-					href="#contact"
-					tdc={{
-						size: { default: 'xl', 'uui-desktop': '2xl' },
-						destructive: 'false',
-						hierarchy: 'primary',
-						coloring: 'color'
-					}}
-					icon={{ type: 'icon' }}>{m.herosectionprimarybutton()}</tdc-button-a
-				>
-			</McUtilActions>
-			<div slot="after" class="w-[50vw] uui-desktop:h-[80vh]"></div>
-		</tdc-mc-hhs>
-		<div class="absolute inset-0 -z-10 overflow-hidden">
+
+		<!-- <div class="absolute inset-0 -z-10 overflow-hidden">
 			<picture>
 				<source
 					media="(max-width: 1023px)"
@@ -196,7 +245,93 @@
 					alt={m.herosectionimgalt()}
 				/>
 			</picture>
-		</div>
+		</div>-->
+	</div>
+
+	<SectionContainer class="pb-uui-7xl pt-0 lg:pb-uui-9xl">
+		<SocialBanner />
+	</SectionContainer>
+
+	<div class="bg-uui-bg-primary_alt">
+		<SectionContainer>
+			<div
+				id="it-security-assessment"
+				class=" flex scroll-mt-12 gap-uui-5xl flex-col w-full text-left py-uui-7xl lg:py-uui-9xl"
+			>
+				<div
+					class=" mx-auto max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop gap-uui-6xl w-full"
+				>
+					<div class="gap-uui-3xl max-w-uui-width-xl">
+						<div class="flex flex-col gap-uui-lg">
+							<h6
+								class="font-semibold text-uui-text-brand-secondary-700 uui-text-sm lg:uui-text-md"
+							>
+								{m.level_awake_donkey_flop()}
+							</h6>
+							<h2 class="font-bold text-uui-text-primary-900 uui-display-sm lg:uui-display-md">
+								{m.least_kind_peacock_gulp()}
+							</h2>
+							<div class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl">
+								<p>
+									{m.strong_home_horse_honor()}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div
+				class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-uui-9xl grid w-full justify-evenly mx-auto gap-uui-7xl max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop"
+			>
+				{#each featuredNumberArray as number}
+					<FeatureText>
+						<FeaturedNumber slot="icon" url={number.url}></FeaturedNumber>
+						<h4 slot="title">{number.title}</h4>
+						<p slot="description">{number.description}</p>
+					</FeatureText>
+				{/each}
+			</div>
+		</SectionContainer>
+		<SectionContainer class="pb-uui-7xl lg:pb-uui-9xl">
+			<div
+				class="flex flex-col mx-auto max-w-uui-container-max-width-mobile lg:max-w-uui-container-max-width-desktop lg:flex-row gap-uui-5xl"
+			>
+				<div class="w-full md:min-w-[30rem]">
+					<img src="/certificate-svg.svg" alt="frontline cybersecurity rating" />
+				</div>
+				<div
+					class="text-uui-text-tertiary-600 uui-text-lg lg:uui-text-xl flex flex-col gap-uui-4xl"
+				>
+					<p>
+						{m.major_loud_kangaroo_cry()}
+					</p>
+					<div class=" flex flex-col lg:flex-row grow w-full gap-uui-lg">
+						<tdc-button
+							data-cal-link="frontline-meeting/20-Minute-Discovery-Session"
+							data-cal-config={JSON.stringify({ layout: 'month_view' })}
+							tdc={{
+								size: { default: 'lg', 'uui-desktop': 'xl' },
+								destructive: 'false',
+								hierarchy: 'secondary',
+								coloring: 'gray'
+							}}
+							icon={{ type: 'icon', leading: phoneCall }}>{m.empty_yummy_salmon_arise()}</tdc-button
+						>
+						<tdc-button-a
+							href="/security-assessment"
+							tdc={{
+								size: { default: 'lg', 'uui-desktop': 'xl' },
+								destructive: 'false',
+								hierarchy: 'primary',
+								coloring: 'color'
+							}}
+							icon={{ type: 'icon' }}>{m.fluffy_warm_ape_dream()}</tdc-button-a
+						>
+					</div>
+				</div>
+			</div>
+		</SectionContainer>
 	</div>
 
 	<tdc-mc-cta-section
@@ -215,14 +350,14 @@
 		<div slot="img" class="flex items-stretch lg:items-start lg:ml-auto mt-uui-xl lg:mt-0">
 			<McUtilActions class="items-stretch w-full lg:w-fit lg:items-start lg:ml-auto ">
 				<!-- <tdc-button
-					tdc={{
-						size: 'xl',
-						destructive: 'false',
-						hierarchy: 'secondary',
-						coloring: 'gray'
-					}}
-					icon={{ type: 'icon' }}>Learn more</tdc-button
-				> -->
+				tdc={{
+					size: 'xl',
+					destructive: 'false',
+					hierarchy: 'secondary',
+					coloring: 'gray'
+				}}
+				icon={{ type: 'icon' }}>Learn more</tdc-button
+			> -->
 
 				<tdc-button-a
 					href="#contact"
@@ -249,8 +384,9 @@
 			</FeatureText>
 		{/each}
 	</div>
+
 	<div class="py-uui-2xl lg:py-uui-4xl">
-		<SectionContainer class="py-uui-2xl lg:py-uui-3xl border-uui-utility-gray-300  border-y-uui-1">
+		<SectionContainer class="py-uui-2xl lg:py-uui-3xl border-uui-utility-gray-300  ">
 			<tdc-mc-hs
 				tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' }, type: 'center' }}
 			>
@@ -260,7 +396,8 @@
 			</tdc-mc-hs>
 		</SectionContainer>
 	</div>
-	<div class="min-h-[calc(100vh-8rem)] flex flex-col justify-center">
+
+	<div class="min-h-[calc(100vh-8rem)] flex flex-col justify-center bg-uui-bg-primary_alt">
 		<tdc-mc-hhs
 			id="domaintester"
 			class="scroll-mt-24"
@@ -307,6 +444,7 @@
 			</div>
 		</tdc-mc-hhs>
 	</div>
+
 	<div class="overflow-hidden scroll-mt-uui-10xl pt-uui-4xl" id="about">
 		<SectionContainer>
 			<div class="relative">
