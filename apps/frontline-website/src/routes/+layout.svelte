@@ -26,7 +26,7 @@
 <ParaglideJS {i18n}>
 	<License license={PUBLIC_UUI_LICENSE}>
 		{#if browser}
-			<div class={$page.url.pathname === '/security-assessment' ? 'bg-white' : ''}>
+			<div class={$page.url.pathname.endsWith('/security-assessment') ? 'bg-white' : ''}>
 				<div
 					class={`${
 						isMenuOpen ? 'block' : 'hidden'
@@ -102,7 +102,7 @@
 					<!-- Close Button -->
 				</div>
 				<SectionContainer
-					class="z-30 {$page.url.pathname === '/security-assessment'
+					class="z-30 {$page.url.pathname.endsWith('/security-assessment')
 						? 'bg-black/50'
 						: ''} sticky top-uui-md backdrop-blur-md rounded-full px-uui-container-padding-mobile lg:px-uui-container-padding-desktop w-full max-w-screen-lg py-uui-xl mx-auto"
 				>
