@@ -136,14 +136,19 @@
 	<link rel="canonical" href="https://www.frontline.codes" />
 	<meta property="og:title" content={m.pageheadogtitle()} />
 	<meta property="og:description" content={m.pageheadogdescription()} />
-	<meta property="og:image" content="https://www.frontline.codes/static/frontline-logo.png" />
+	<meta property="og:image" content="https://frontline.codes/LogomarkLight.svg" />
 	<meta property="og:url" content="https://www.frontline.codes" />
+	<meta property="og:image:alt" content="Frontline Codes logo" />
 	<meta name="robots" content="index, follow" />
 	<!-- Add this in later, when added to google-site-verification -->
 	<!-- <meta name="google-site-verification" content="Bq4e8ICS3Kqjp-0k2C-1PSX5cnY9btnGGI0ipjlYsds" /> -->
 	<!-- Update this value if needed -->
 	<link rel="icon" type="image/x-icon" href="/favicon.png" />
 	<!-- Update the favicon path if needed -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={m.pageheadogtitle()} />
+	<meta name="twitter:description" content={m.pageheadogdescription()} />
+	<meta name="twitter:image" content="https://frontline.codes/LogomarkLight.svg" />
 </svelte:head>
 {#if browser}
 	<div class=" relative flex flex-col justify-end uui-desktop:h-auto overflow-hidden">
