@@ -183,31 +183,33 @@
 					</nav>
 				</SectionContainer>
 				<slot />
-				<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
-					<a href={'/' + languageTag()}>
-						<tdc-fs-logo slot="logo" />
-					</a>
-					<tdc-mc-footer-link
-						href="/privacy"
-						tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-						>{m.footerprivacylinktext()}</tdc-mc-footer-link
-					>
-					<tdc-mc-footer-link
-						href="/imprint"
-						tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-						>{m.footerimprintlinktext()}</tdc-mc-footer-link
-					>
-					{#each availableLanguageTags.filter((lang) => lang !== languageTag()) as lang}
+				<div class="bg-uui-black">
+					<tdc-mc-footer tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}>
+						<a href={'/' + languageTag()}>
+							<tdc-fs-logo slot="logo" />
+						</a>
 						<tdc-mc-footer-link
-							href={i18n.route($page.url.pathname)}
-							hreflang={lang}
-							aria-current={lang === languageTag() ? 'page' : undefined}
+							href="/privacy"
 							tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
-							>{lang.toUpperCase()}</tdc-mc-footer-link
+							>{m.footerprivacylinktext()}</tdc-mc-footer-link
 						>
-					{/each}
-					<span slot="sidenote">{m.footersidenotetext()}</span>
-				</tdc-mc-footer>
+						<tdc-mc-footer-link
+							href="/imprint"
+							tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
+							>{m.footerimprintlinktext()}</tdc-mc-footer-link
+						>
+						{#each availableLanguageTags.filter((lang) => lang !== languageTag()) as lang}
+							<tdc-mc-footer-link
+								href={i18n.route($page.url.pathname)}
+								hreflang={lang}
+								aria-current={lang === languageTag() ? 'page' : undefined}
+								tdc={{ breakpoint: { default: 'mobile', 'uui-desktop': 'desktop' } }}
+								>{lang.toUpperCase()}</tdc-mc-footer-link
+							>
+						{/each}
+						<span slot="sidenote">{m.footersidenotetext()}</span>
+					</tdc-mc-footer>
+				</div>
 			</div>
 		{/if}
 	</License>
