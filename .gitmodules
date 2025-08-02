@@ -1,3 +1,6 @@
 [submodule "packages/tailwind-dynamic-components"]
 	path = packages/tailwind-dynamic-components
 	url = git@github.com:frontline-hq/tailwind-dynamic-components.git
+[submodule "packages/untitledui-icons"]
+	path = packages/untitledui-icons
+	url = git@github.com:frontline-hq/untitledui-icons.git
