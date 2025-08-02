@@ -1,0 +1,3 @@
+[submodule "packages/tailwind-dynamic-components"]
+	path = packages/tailwind-dynamic-components
+	url = git@github.com:frontline-hq/tailwind-dynamic-components.git

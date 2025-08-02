@@ -49,7 +49,7 @@
 	"dependencies": {
 		"@calcom/embed-snippet": "^1.1.3",
 		"@felte/validator-yup": "^1.1.3",
-		"@frontline-hq/tdc": "^0.0.28",
+		"@frontline-hq/tdc": "workspace:~",
 		"@frontline-hq/untitledui-icons": "^0.0.4",
 		"@frontline-hq/uui": "^0.0.96",
 		"felte": "^1.2.14",
