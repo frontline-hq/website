@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "pnpm -r --parallel dev",
-		"test": "pnpm -r test:once",
+		"dev": "pnpm --filter './apps/*' --parallel dev",
+		"test": "pnpm --filter './apps/*' -r test:once",
 		"start": "pnpm -r start",
 		"build": "pnpm -r build",
 		"prepare": "pnpm build"

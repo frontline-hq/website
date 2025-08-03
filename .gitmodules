@@ -4,3 +4,9 @@
 [submodule "packages/untitledui-icons"]
 	path = packages/untitledui-icons
 	url = git@github.com:frontline-hq/untitledui-icons.git
+[submodule "packages/untitled-ui-components"]
+	path = packages/untitled-ui-components
+	url = git@github.com:frontline-hq/untitled-ui-components.git
+[submodule "packages/untitled-ui"]
+	path = packages/untitled-ui
+	url = git@github.com:frontline-hq/untitled-ui.git
